@@ -459,9 +459,9 @@ export default function Home() {
             <button type="submit" className="mt-2 px-6 py-3 bg-blue-700 text-white rounded-lg font-semibold shadow hover:bg-blue-800 transition-colors">Send Message</button>
           </motion.form>
           <div className="mt-8 text-center text-gray-600 dark:text-gray-400">
-            <div>Phone: <a href="tel:+256700000000" className="hover:text-blue-600">+256 700 000000</a></div>
+            <div>Phone: <a href="tel:+256741341483" className="hover:text-blue-600">+256 741 341 483</a></div>
             <div>Email: <a href="mailto:info@xhenvolt.com" className="hover:text-blue-600">info@xhenvolt.com</a></div>
-            <div>Address: <span>Kampala, Uganda</span></div>
+            <div>Address: <span>Iganga, Uganda</span></div>
             <div className="flex justify-center gap-4 mt-2">
               <a href="#" aria-label="Twitter" className="hover:text-blue-600"><svg width="24" height="24" fill="currentColor"><circle cx="12" cy="12" r="10" /></svg></a>
               <a href="#" aria-label="LinkedIn" className="hover:text-blue-600"><svg width="24" height="24" fill="currentColor"><rect x="4" y="4" width="16" height="16" rx="2" /></svg></a>

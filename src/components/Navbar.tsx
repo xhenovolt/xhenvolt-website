@@ -1,9 +1,10 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Navbar() {
+  const [mobileOpen, setMobileOpen] = useState(false);
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur border-b border-gray-200 dark:border-gray-800 transition-colors">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
@@ -20,6 +21,7 @@ export default function Navbar() {
           />
           Xhenvolt
         </Link>
+        {/* Desktop Nav */}
         <div className="hidden md:flex gap-8">
           <Link href="/about" className="hover:text-blue-600 transition-colors">
             About
@@ -37,22 +39,67 @@ export default function Navbar() {
             Contact
           </Link>
         </div>
-        {/* Light/Dark Mode Toggle */}
+        {/* Mobile Hamburger */}
         <button
-          aria-label="Toggle theme"
-          className="ml-4 p-2 rounded hover:bg-blue-100 dark:hover:bg-blue-900 transition-colors"
+          aria-label="Open menu"
+          className="md:hidden ml-4 p-2 rounded hover:bg-blue-100 dark:hover:bg-blue-900 transition-colors"
+          onClick={() => setMobileOpen((v) => !v)}
         >
           <svg
-            className="w-6 h-6"
+            className="w-7 h-7"
             fill="none"
             stroke="currentColor"
             strokeWidth="2"
             viewBox="0 0 24 24"
           >
-            <path d="M12 3v1m0 16v1m8.66-13.66l-.71.71M4.05 19.95l-.71.71M21 12h-1M4 12H3m16.66 5.66l-.71-.71M4.05 4.05l-.71-.71" />
+            {mobileOpen ? (
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            ) : (
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4 8h16M4 16h16" />
+            )}
           </svg>
         </button>
       </div>
+      {/* Mobile Menu */}
+      {mobileOpen && (
+        <div className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 shadow-lg px-6 py-4 flex flex-col gap-4 animate-fade-in-down">
+          <Link
+            href="/about"
+            className="hover:text-blue-600 transition-colors"
+            onClick={() => setMobileOpen(false)}
+          >
+            About
+          </Link>
+          <Link
+            href="/services"
+            className="hover:text-blue-600 transition-colors"
+            onClick={() => setMobileOpen(false)}
+          >
+            Services
+          </Link>
+          <Link
+            href="/case-studies"
+            className="hover:text-blue-600 transition-colors"
+            onClick={() => setMobileOpen(false)}
+          >
+            Case Studies
+          </Link>
+          <Link
+            href="/testimonials"
+            className="hover:text-blue-600 transition-colors"
+            onClick={() => setMobileOpen(false)}
+          >
+            Testimonials
+          </Link>
+          <Link
+            href="/contact"
+            className="hover:text-blue-600 transition-colors"
+            onClick={() => setMobileOpen(false)}
+          >
+            Contact
+          </Link>
+        </div>
+      )}
     </nav>
   );
 }
