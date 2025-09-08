@@ -1,5 +1,7 @@
 "use client";
 import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import { motion } from "framer-motion";
@@ -38,11 +40,11 @@ export default function BlogPage() {
           {blogPosts.map((post, i) => (
             <motion.div key={post.title} whileHover={{ scale: 1.03 }} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="bg-white dark:bg-gray-800 rounded-xl shadow p-6 flex flex-col">
               <div className="w-full h-40 rounded-lg overflow-hidden mb-4 bg-gray-200 dark:bg-gray-700">
-                <img src={post.img} alt={post.title} className="object-cover w-full h-full" />
+                <Image src={post.img} alt={post.title} width={320} height={160} className="object-cover w-full h-full" />
               </div>
               <h3 className="text-lg font-semibold text-blue-700 dark:text-blue-400 mb-2">{post.title}</h3>
               <p className="text-gray-700 dark:text-gray-200 mb-4">{post.excerpt}</p>
-              <a href={post.link} className="text-blue-600 dark:text-blue-300 hover:underline mt-auto font-semibold">Read More</a>
+              <Link href={post.link} className="text-blue-600 dark:text-blue-300 hover:underline mt-auto font-semibold">Read More</Link>
             </motion.div>
           ))}
         </section>

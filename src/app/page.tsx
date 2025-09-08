@@ -1,14 +1,13 @@
-"use client"
+"use client";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { Globe, Palette, Cloud, Star, Lightbulb, Layers, MonitorSmartphone, Zap, Users, BookOpen, ShoppingCart, Workflow } from "lucide-react";
+import { Palette, Star, Lightbulb, Layers, MonitorSmartphone, BookOpen, ShoppingCart, Workflow } from "lucide-react";
 import TeamSection from "../components/TeamSection";
-import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import SeoHead from "../components/SeoHead";
 
-// Placeholder icons (replace with custom SVGs as needed)
 const Icon = ({ children }: { children: React.ReactNode }) => (
   <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300">
     {children}
@@ -72,33 +71,6 @@ const caseStudies = [
   },
 ];
 
-const team = [
-  {
-    name: "Hamuza Ibrahim",
-    role: "Founder & Chief Visionary",
-    img: "/team/hamuza.jpg",
-    bio: "Visionary leader driving digital transformation in Uganda.",
-  },
-  {
-    name: "Mubeezi Calebu Ashiraf",
-    role: "Lead Designer",
-    img: "/team/mubeezi.jpg",
-    bio: "Expert in UI/UX and brand design for digital products.",
-  },
-  {
-    name: "Nasa Matovu",
-    role: "Lead Developer",
-    img: "/team/nasa.jpg",
-    bio: "Full-stack developer specializing in scalable systems.",
-  },
-  {
-    name: "Ganiyu Kule Hussein",
-    role: "Marketing Lead",
-    img: "/team/ganiyu.jpg",
-    bio: "Marketing strategist with a passion for tech growth.",
-  },
-];
-
 const testimonials = [
   {
     name: "Jane Doe",
@@ -146,7 +118,7 @@ export default function Home() {
         url="https://xhenvolt.com/"
         ogImage="https://xhenvolt.com/og-image.png"
         ogTitle="Xhenvolt Uganda | Digital Solutions for Africa"
-        ogDescription="Web, mobile, POS, and cloud solutions for Uganda. Transform your business with Xhenvolt's expert tech team."
+        ogDescription="Web, mobile, POS, and cloud solutions for Uganda. Transform your business with Xhenvolt&apos;s expert tech team."
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "Organization",
@@ -177,25 +149,19 @@ export default function Home() {
             className="flex-1"
           >
             <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-blue-700 dark:text-blue-400">
-              Empowering Uganda's Digital Future
+              Empowering Uganda&apos;s Digital Future
             </h1>
             <p className="text-lg md:text-xl mb-8 text-gray-700 dark:text-gray-200">
               Xhenvolt Uganda delivers innovative technology solutions, transforming
               businesses with modern web, software, and system automation expertise.
             </p>
             <div className="flex gap-4">
-              <a
-                href="#contact"
-                className="px-6 py-3 bg-blue-700 text-white rounded-lg font-semibold shadow hover:bg-blue-800 transition-colors"
-              >
+              <Link href="#contact" className="px-6 py-3 bg-blue-700 text-white rounded-lg font-semibold shadow hover:bg-blue-800 transition-colors">
                 Get Started
-              </a>
-              <a
-                href="#services"
-                className="px-6 py-3 bg-blue-100 text-blue-700 rounded-lg font-semibold hover:bg-blue-200 transition-colors"
-              >
+              </Link>
+              <Link href="#services" className="px-6 py-3 bg-blue-100 text-blue-700 rounded-lg font-semibold hover:bg-blue-200 transition-colors">
                 Our Services
-              </a>
+              </Link>
             </div>
           </motion.div>
           <motion.div
@@ -402,7 +368,7 @@ export default function Home() {
                 Local Expertise
               </h3>
               <p className="text-gray-700 dark:text-gray-200">
-                Deep understanding of Uganda's market.
+                Deep understanding of Uganda&apos;s market.
               </p>
             </motion.div>
             <motion.div
@@ -435,7 +401,7 @@ export default function Home() {
         </section>
         {/* Blog / Insights */}
         <section className="max-w-7xl mx-auto px-6 py-16">
-          <motion.h2 initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-3xl font-bold mb-8 text-blue-700 dark:text-blue-400">Insights & Blog</motion.h2>
+          <motion.h2 initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-3xl font-bold mb-8 text-blue-700 dark:text-blue-400">Insights &amp; Blog</motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {blogPosts.map((post, i) => (
               <motion.div key={post.title} whileHover={{ scale: 1.03 }} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="bg-white dark:bg-gray-800 rounded-xl shadow p-6 flex flex-col">
@@ -443,7 +409,7 @@ export default function Home() {
                   <Image src={post.img} alt={post.title} width={320} height={160} className="object-cover w-full h-full" />
                 </div>
                 <h3 className="text-lg font-semibold text-blue-700 dark:text-blue-400 mb-2">{post.title}</h3>
-                <a href={post.link} className="text-blue-600 dark:text-blue-300 hover:underline mt-auto">Read More</a>
+                <Link href={post.link} className="text-blue-600 dark:text-blue-300 hover:underline mt-auto">Read More</Link>
               </motion.div>
             ))}
           </div>
@@ -454,8 +420,8 @@ export default function Home() {
             <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Business?</h2>
             <p className="mb-8">Partner with Xhenvolt Uganda to automate and scale your business with innovative digital systems.</p>
             <div className="flex gap-4">
-              <a href="#contact" className="px-6 py-3 bg-yellow-400 text-blue-900 rounded-lg font-semibold shadow hover:bg-yellow-300 transition-colors">Contact Us</a>
-              <a href="#contact" className="px-6 py-3 bg-white text-blue-700 rounded-lg font-semibold shadow hover:bg-blue-100 transition-colors">Schedule a Demo</a>
+              <Link href="#contact" className="px-6 py-3 bg-yellow-400 text-blue-900 rounded-lg font-semibold shadow hover:bg-yellow-300 transition-colors">Contact Us</Link>
+              <Link href="#contact" className="px-6 py-3 bg-white text-blue-700 rounded-lg font-semibold shadow hover:bg-blue-100 transition-colors">Schedule a Demo</Link>
             </div>
           </motion.div>
         </section>

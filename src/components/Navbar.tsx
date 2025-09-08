@@ -1,12 +1,13 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur border-b border-gray-200 dark:border-gray-800 transition-colors">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
-        <a
+        <Link
           href="/"
           className="flex items-center gap-2 font-bold text-2xl text-blue-700 dark:text-blue-400 tracking-tight hover:opacity-80 transition-opacity"
         >
@@ -18,38 +19,23 @@ export default function Navbar() {
             className="object-contain"
           />
           Xhenvolt
-        </a>
+        </Link>
         <div className="hidden md:flex gap-8">
-          <a
-            href="/about"
-            className="hover:text-blue-600 transition-colors"
-          >
+          <Link href="/about" className="hover:text-blue-600 transition-colors">
             About
-          </a>
-          <a
-            href="/services"
-            className="hover:text-blue-600 transition-colors"
-          >
+          </Link>
+          <Link href="/services" className="hover:text-blue-600 transition-colors">
             Services
-          </a>
-          <a
-            href="/case-studies"
-            className="hover:text-blue-600 transition-colors"
-          >
+          </Link>
+          <Link href="/case-studies" className="hover:text-blue-600 transition-colors">
             Case Studies
-          </a>
-          <a
-            href="/testimonials"
-            className="hover:text-blue-600 transition-colors"
-          >
+          </Link>
+          <Link href="/testimonials" className="hover:text-blue-600 transition-colors">
             Testimonials
-          </a>
-          <a
-            href="/contact"
-            className="hover:text-blue-600 transition-colors"
-          >
+          </Link>
+          <Link href="/contact" className="hover:text-blue-600 transition-colors">
             Contact
-          </a>
+          </Link>
         </div>
         {/* Light/Dark Mode Toggle */}
         <button
