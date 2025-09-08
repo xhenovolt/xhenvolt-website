@@ -39,7 +39,7 @@ export default function TestimonialsPage() {
         </section>
         {/* Introduction */}
         <section className="mb-12 text-center">
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }} className="text-lg text-gray-700 dark:text-gray-200 max-w-2xl mx-auto">At Xhenvolt Uganda, we believe our clients’ success speaks for itself. Here’s what our partners and customers have to say about working with us. From seamless system implementation to innovative solutions, we deliver value every step of the way.</motion.p>
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }} className="text-lg text-gray-700 dark:text-gray-200 max-w-2xl mx-auto">At Xhenvolt Uganda, we believe our clients&apos; success speaks for itself. Here&apos;s what our partners and customers have to say about working with us. From seamless system implementation to innovative solutions, we deliver value every step of the way.</motion.p>
         </section>
         {/* Testimonials */}
         <section className="mb-16">
