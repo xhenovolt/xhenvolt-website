@@ -16,10 +16,13 @@ const clientLogos = [
 ];
 
 const achievements = [
-  { label: "Projects", value: 120, icon: <Star size={28} /> },
-  { label: "Clients", value: 40, icon: <Users size={28} /> },
-  { label: "Lypha POS System", value: 1, icon: <ShoppingCart size={28} /> },
-  { label: "EduConnect", value: 1, icon: <BookOpen size={28} /> },
+  { label: "Projects", value: 30, icon: <Star size={28} /> },
+  { label: "Clients", value: 25, icon: <Users size={28} /> },
+  { label: "Lypha Pharmacy System", value: 1, icon: <ShoppingCart size={28} /> },
+  { label: "Sentra POS System", value: 1, icon: <ShoppingCart size={28} /> },
+  { label: "DRAIS School Management System", value: 1, icon: <BookOpen size={28} /> },
+  { label: "Constra Construction Management System", value: 1, icon: <BookOpen size={28} /> },
+  { label: "Zyra SACCO Management System", value: 1, icon: <BookOpen size={28} /> },
 ];
 
 export default function AboutPage() {
@@ -86,9 +89,8 @@ export default function AboutPage() {
             ))}
           </div>
           <ul className="mt-8 list-disc list-inside text-gray-700 dark:text-gray-200 space-y-2">
-            <li>Successfully implemented <b>Lypha POS System</b> for multiple pharmacies and retail businesses.</li>
-            <li>Developed <b>EduConnect</b>, a digital learning platform for schools.</li>
-            <li>Completed over <b>120 projects</b> serving more than <b>40 clients</b>.</li>
+            <li>Successfully implemented <b>Lypha Pharmacy System</b>, <b>Sentra POS System</b>, <b>DRAIS School Management System</b>, <b>Constra Construction Management System</b>, and <b>Zyra SACCO Management System</b> for clients in Uganda.</li>
+            <li>Completed over <b>30 projects</b> serving more than <b>25 clients</b>.</li>
             <li>Received recognition for <b>innovation and excellence</b> in digital solutions.</li>
           </ul>
         </section>
