@@ -6,6 +6,7 @@ import { Star, BookOpen, ShoppingCart, Users } from "lucide-react";
 import TeamSection from "../../components/TeamSection";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import Link from "next/link";
 
 const clientLogos = [
   "/clients/client1.svg",
@@ -107,8 +108,8 @@ export default function AboutPage() {
             <h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to Transform Your Business?</h2>
             <p className="mb-8">Partner with Xhenvolt Uganda to implement systems and software that streamline operations, enhance productivity, and grow your business.</p>
             <div className="flex gap-4">
-              <a href="/contact" className="px-6 py-3 bg-yellow-400 text-blue-900 rounded-lg font-semibold shadow hover:bg-yellow-300 transition-colors">Contact Us</a>
-              <a href="/contact" className="px-6 py-3 bg-white text-blue-700 rounded-lg font-semibold shadow hover:bg-blue-100 transition-colors">Schedule a Demo</a>
+              <Link href="/contact" className="px-6 py-3 bg-yellow-400 text-blue-900 rounded-lg font-semibold shadow hover:bg-yellow-300 transition-colors">Contact Us</Link>
+              <Link href="/contact" className="px-6 py-3 bg-white text-blue-700 rounded-lg font-semibold shadow hover:bg-blue-100 transition-colors">Schedule a Demo</Link>
             </div>
           </motion.div>
         </section>
