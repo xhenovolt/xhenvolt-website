@@ -3,10 +3,11 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Palette, Star, Lightbulb, Layers, MonitorSmartphone, BookOpen, ShoppingCart, Workflow } from "lucide-react";
+import { FaPalette, FaStar, FaLightbulb, FaLayerGroup, FaMobileAlt, FaBookOpen, FaShoppingCart, FaProjectDiagram } from "react-icons/fa";
 import TeamSection from "../components/TeamSection";
 import Footer from "../components/Footer";
 import SeoHead from "../components/SeoHead";
+import Navbar from "../components/Navbar";
 
 const Icon = ({ children }: { children: React.ReactNode }) => (
   <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300">
@@ -24,32 +25,32 @@ const services = [
   {
     title: "Custom Software Development",
     desc: "Tailored systems for schools, businesses, and retail management.",
-    icon: <Layers size={32} />,
+    icon: <FaLayerGroup size={32} />,
   },
   {
     title: "POS & Inventory Systems",
     desc: "Streamlined solutions for efficient business operations.",
-    icon: <ShoppingCart size={32} />,
+    icon: <FaShoppingCart size={32} />,
   },
   {
     title: "School Management Systems",
     desc: "Modern platforms for academic administration and reporting.",
-    icon: <BookOpen size={32} />,
+    icon: <FaBookOpen size={32} />,
   },
   {
     title: "Web & Mobile Development",
     desc: "Responsive web apps and mobile applications.",
-    icon: <MonitorSmartphone size={32} />,
+    icon: <FaMobileAlt size={32} />,
   },
   {
     title: "Automation & Integration",
     desc: "Workflow automation and system integrations for improved efficiency.",
-    icon: <Workflow size={32} />,
+    icon: <FaProjectDiagram size={32} />,
   },
   {
     title: "UI/UX Design",
     desc: "Intuitive interfaces for seamless user experiences.",
-    icon: <Palette size={32} />,
+    icon: <FaPalette size={32} />,
   },
 ];
 
@@ -57,17 +58,17 @@ const caseStudies = [
   {
     title: "AgroTech Platform",
     desc: "Connecting farmers with buyers, featuring real-time analytics and efficient workflow.",
-    icon: <Star size={32} />,
+    icon: <FaStar size={32} />,
   },
   {
     title: "EduConnect",
     desc: "Digital learning portal for schools with interactive content, progress tracking, and cloud hosting.",
-    icon: <Lightbulb size={32} />,
+    icon: <FaLightbulb size={32} />,
   },
   {
     title: "Lypha POS System",
     desc: "Complete pharmacy and retail management solution with reporting and stock tracking.",
-    icon: <ShoppingCart size={32} />,
+    icon: <FaShoppingCart size={32} />,
   },
 ];
 
@@ -112,6 +113,7 @@ const clientLogos = [
 export default function Home() {
   return (
     <main className="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen font-sans">
+      <Navbar />
       <SeoHead
         title="Xhenvolt Uganda | Web, Mobile, POS & Cloud Solutions"
         description="Leading Uganda tech company for web development, mobile apps, POS, UI/UX, and cloud solutions. Empowering African businesses with digital innovation."
