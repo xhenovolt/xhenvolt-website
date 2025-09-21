@@ -1,123 +1,254 @@
-"use client"
+"use client";
 import React from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
-import { Star, BookOpen, ShoppingCart, Users } from "lucide-react";
-import TeamSection from "../../components/TeamSection";
+import { Target, Eye, Award, Users, Zap, Shield, Globe, Heart } from "lucide-react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
-import Link from "next/link";
-
-const clientLogos = [
-  "/clients/client1.svg",
-  "/clients/client2.svg",
-  "/clients/client3.svg",
-  "/clients/client4.svg",
-];
-
-const achievements = [
-  { label: "Projects", value: 30, icon: <Star size={28} /> },
-  { label: "Clients", value: 25, icon: <Users size={28} /> },
-  { label: "Lypha Pharmacy System", value: 1, icon: <ShoppingCart size={28} /> },
-  { label: "Sentra POS System", value: 1, icon: <ShoppingCart size={28} /> },
-  { label: "DRAIS School Management System", value: 1, icon: <BookOpen size={28} /> },
-  { label: "Constra Construction Management System", value: 1, icon: <BookOpen size={28} /> },
-  { label: "Zyra SACCO Management System", value: 1, icon: <BookOpen size={28} /> },
-];
+import TeamSection from "../../components/TeamSection";
 
 export default function AboutPage() {
+  const values = [
+    {
+      icon: <Heart className="w-8 h-8" />,
+      title: "Client-Centric Approach",
+      description: "Every solution we build is tailored to meet the unique needs and challenges of our clients."
+    },
+    {
+      icon: <Zap className="w-8 h-8" />,
+      title: "Innovation & Excellence",
+      description: "We stay at the forefront of technology to deliver cutting-edge solutions that drive results."
+    },
+    {
+      icon: <Shield className="w-8 h-8" />,
+      title: "Integrity & Transparency",
+      description: "We build trust through honest communication, reliable delivery, and ethical business practices."
+    },
+    {
+      icon: <Globe className="w-8 h-8" />,
+      title: "African Focus",
+      description: "We understand the unique challenges and opportunities in the African market and build accordingly."
+    }
+  ];
+
+  const milestones = [
+    {
+      year: "June 2025",
+      title: "Company Founded",
+      description: "Xhenvolt Uganda was established with a vision to transform businesses through technology, marking the beginning of our journey in digital innovation."
+    },
+    {
+      year: "July 2025",
+      title: "First Major Clients",
+      description: "Successfully launched with major clients: delivered DRAIS School Management System to Northgate School and Zyra SACCO Management System to Bumwena Scrap SACCO, establishing our foundation in educational and financial technology solutions."
+    },
+    {
+      year: "August 2025",
+      title: "Islamic Education Solutions",
+      description: "Expanded into specialized educational solutions, developing custom systems for Bugembe Islamic Institute and Albayan Quran Memorization Center, along with several other educational institutions."
+    },
+    {
+      year: "September 2025",
+      title: "Rapid Growth Phase",
+      description: "Achieved 25+ successful project deliveries across education, healthcare, finance, and other sectors, establishing ourselves as a trusted technology partner in East Africa."
+    }
+  ];
+
   return (
-    <main className="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen font-sans">
+    <main className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-900 dark:to-blue-900">
       <Navbar />
-      <div className="pt-24 md:pt-32 max-w-5xl mx-auto px-6">
-        {/* Headline */}
-        <section className="text-center mb-12">
-          <motion.h1 initial={{ opacity: 0, y: -30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="text-4xl md:text-5xl font-extrabold text-blue-700 dark:text-blue-400 mb-4">About Xhenvolt Uganda</motion.h1>
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className="text-lg md:text-xl text-gray-700 dark:text-gray-200">Innovating Digital Solutions for Uganda’s Businesses and Beyond</motion.p>
-        </section>
-        {/* Our Story / Company Overview */}
-        <section className="mb-12">
-          <motion.h2 initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-2xl font-bold mb-4 text-blue-700 dark:text-blue-400">Our Story</motion.h2>
-          <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="text-lg text-gray-700 dark:text-gray-200">Xhenvolt Uganda is a technology company dedicated to delivering <b>innovative software solutions, automated systems, and digital transformation services</b> to businesses across Uganda. Founded with a vision to empower companies through technology, we specialize in building scalable, efficient, and user-friendly platforms that solve real-world business challenges.<br /><br />Since our inception, we have been committed to <b>excellence, innovation, and client satisfaction</b>, providing services that help organizations grow, streamline operations, and adapt to a rapidly changing digital landscape.</motion.p>
-        </section>
-        {/* Mission, Vision & Values */}
-        <section className="mb-12">
-          <motion.h2 initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-2xl font-bold mb-4 text-blue-700 dark:text-blue-400">Mission, Vision & Values</motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <h3 className="font-semibold text-blue-700 dark:text-blue-400 mb-2">Mission</h3>
-              <p className="text-gray-700 dark:text-gray-200">To empower businesses with <b>cutting-edge digital solutions</b> that enhance efficiency, productivity, and growth.</p>
-            </div>
-            <div>
-              <h3 className="font-semibold text-blue-700 dark:text-blue-400 mb-2">Vision</h3>
-              <p className="text-gray-700 dark:text-gray-200">To become <b>Uganda’s leading technology partner</b>, driving innovation and transformation across industries.</p>
-            </div>
-            <div>
-              <h3 className="font-semibold text-blue-700 dark:text-blue-400 mb-2">Core Values</h3>
-              <ul className="list-disc list-inside text-gray-700 dark:text-gray-200">
-                <li><b>Innovation:</b> We constantly explore new ideas and technologies.</li>
-                <li><b>Integrity:</b> Transparent and honest interactions with our clients and partners.</li>
-                <li><b>Excellence:</b> Commitment to high-quality, reliable solutions.</li>
-                <li><b>Client-Centric:</b> We prioritize the success and satisfaction of our clients.</li>
-                <li><b>Collaboration:</b> Working together as a team and with our clients to achieve exceptional results.</li>
-              </ul>
-            </div>
+      
+      {/* Hero Section */}
+      <section className="pt-32 pb-16">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center max-w-4xl mx-auto"
+          >
+            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent mb-6">
+              Pioneering Digital Transformation in East Africa
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+              Since June 2025, we've been rapidly empowering organizations across East Africa with innovative technology solutions that drive growth, efficiency, and success.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      <div className="max-w-7xl mx-auto px-6 pb-16">
+        {/* Mission, Vision, Values */}
+        <section className="mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-white/20 dark:border-gray-700/50"
+            >
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center text-white mb-6">
+                <Target className="w-8 h-8" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Our Mission</h3>
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                To empower African businesses and institutions with cutting-edge technology solutions that drive sustainable growth, improve efficiency, and create lasting positive impact in communities across the continent.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20 dark:border-gray-700/50"
+            >
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center text-white mb-6">
+                <Eye className="w-8 h-8" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Our Vision</h3>
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                To become the leading technology partner for organizations across Africa, driving digital transformation that bridges the gap between traditional operations and modern innovation, creating a more connected and prosperous continent.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20 dark:border-gray-700/50"
+            >
+              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-cyan-500 rounded-2xl flex items-center justify-center text-white mb-6">
+                <Award className="w-8 h-8" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Our Impact</h3>
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                In just 3 months since our founding in June 2025, we've delivered 25+ successful projects, serving 25+ satisfied clients across education, healthcare, finance, and construction sectors throughout East Africa.
+              </p>
+            </motion.div>
           </div>
         </section>
-        {/* Why Choose Us */}
-        <section className="mb-12">
-          <motion.h2 initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-2xl font-bold mb-4 text-blue-700 dark:text-blue-400">Why Choose Us</motion.h2>
-          <ul className="list-disc list-inside text-lg text-gray-700 dark:text-gray-200 space-y-2">
-            <li><b>Local Expertise:</b> Deep understanding of Uganda’s market needs and challenges.</li>
-            <li><b>Customized Solutions:</b> Tailored software and systems that fit your unique business requirements.</li>
-            <li><b>Reliable Support:</b> End-to-end assistance from consultation, development, deployment, to maintenance.</li>
-            <li><b>Proven Track Record:</b> Successfully completed multiple projects for businesses, schools, and retail operations.</li>
-          </ul>
-        </section>
-        {/* Team Section */}
-        <TeamSection />
-        {/* Achievements / Milestones */}
-        <section className="mb-12">
-          <motion.h2 initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-2xl font-bold mb-8 text-blue-700 dark:text-blue-400">Achievements & Milestones</motion.h2>
+
+        {/* Our Story */}
+        <motion.section
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mb-20"
+        >
+          <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 rounded-3xl p-12 text-white shadow-2xl">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-4xl md:text-5xl font-bold mb-8">Our Story</h2>
+              <p className="text-xl leading-relaxed mb-8">
+                Founded in June 2025 by visionary tech entrepreneur Hamuza Ibrahim, Xhenvolt Uganda emerged from a powerful vision: African businesses and institutions needed technology solutions that truly understood their unique challenges, cultural context, and growth aspirations.
+              </p>
+              <p className="text-lg leading-relaxed opacity-90">
+                In just 3 months, what started as a passionate team of developers has rapidly grown into East Africa's most promising technology partner. We've delivered 25+ transformative projects ranging from comprehensive school management systems to SACCO platforms managing member funds, and construction management systems overseeing significant projects across the region.
+              </p>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Core Values */}
+        <section className="mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+              Our Core Values
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              These principles guide every decision we make and every solution we build.
+            </p>
+          </motion.div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {achievements.map((ach, i) => (
-              <motion.div key={ach.label} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="bg-white dark:bg-gray-800 rounded-xl shadow p-6 flex flex-col items-center text-center">
-                <div className="mb-2">{ach.icon}</div>
-                <div className="text-3xl font-bold text-blue-700 dark:text-blue-400">{ach.value}+</div>
-                <div className="mt-2 text-gray-600 dark:text-gray-300">{ach.label}</div>
+            {values.map((value, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ scale: 1.05, y: -10 }}
+                className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20 dark:border-gray-700/50 text-center hover:shadow-3xl transition-all duration-500"
+              >
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center text-white mx-auto mb-6">
+                  {value.icon}
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
+                  {value.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  {value.description}
+                </p>
               </motion.div>
             ))}
           </div>
-          <ul className="mt-8 list-disc list-inside text-gray-700 dark:text-gray-200 space-y-2">
-            <li>Successfully implemented <b>Lypha Pharmacy System</b>, <b>Sentra POS System</b>, <b>DRAIS School Management System</b>, <b>Constra Construction Management System</b>, and <b>Zyra SACCO Management System</b> for clients in Uganda.</li>
-            <li>Completed over <b>30 projects</b> serving more than <b>25 clients</b>.</li>
-            <li>Received recognition for <b>innovation and excellence</b> in digital solutions.</li>
-          </ul>
         </section>
-        {/* Client Logos Carousel */}
-        <section className="mb-12">
-          <div className="flex items-center justify-center gap-8 overflow-x-auto py-4">
-            {clientLogos.map((logo, i) => (
-              <div key={i} className="w-32 h-16 flex items-center justify-center bg-white dark:bg-gray-800 rounded shadow">
-                <Image src={logo} alt={`Client ${i + 1}`} width={120} height={48} className="object-contain" />
-              </div>
+
+        {/* Timeline */}
+        <section className="mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+              Our Journey
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Remarkable milestones achieved in just 3 months since our founding in June 2025.
+            </p>
+          </motion.div>
+
+          <div className="relative">
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-blue-500 to-purple-600 h-full rounded-full"></div>
+            
+            {milestones.map((milestone, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className={`relative flex items-center mb-12 ${
+                  index % 2 === 0 ? "flex-row" : "flex-row-reverse"
+                }`}
+              >
+                <div className={`w-1/2 ${index % 2 === 0 ? "pr-8" : "pl-8"}`}>
+                  <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-2xl p-6 shadow-xl border border-white/20 dark:border-gray-700/50">
+                    <div className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-2">
+                      {milestone.year}
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+                      {milestone.title}
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                      {milestone.description}
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full border-4 border-white dark:border-gray-900"></div>
+              </motion.div>
             ))}
           </div>
         </section>
-        {/* Call-to-Action Banner */}
-        <section className="mb-16">
-          <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="bg-blue-700 dark:bg-blue-800 rounded-xl shadow p-12 flex flex-col items-center text-center text-white">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to Transform Your Business?</h2>
-            <p className="mb-8">Partner with Xhenvolt Uganda to implement systems and software that streamline operations, enhance productivity, and grow your business.</p>
-            <div className="flex gap-4">
-              <Link href="/contact" className="px-6 py-3 bg-yellow-400 text-blue-900 rounded-lg font-semibold shadow hover:bg-yellow-300 transition-colors">Contact Us</Link>
-              <Link href="/contact" className="px-6 py-3 bg-white text-blue-700 rounded-lg font-semibold shadow hover:bg-blue-100 transition-colors">Schedule a Demo</Link>
-            </div>
-          </motion.div>
-        </section>
-        {/* Footer */}
-        <Footer />
       </div>
+
+      {/* Team Section */}
+      <TeamSection />
+
+      <Footer />
     </main>
   );
 }

@@ -1,476 +1,290 @@
 "use client";
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
-import { FaPalette, FaStar, FaLightbulb, FaLayerGroup, FaMobileAlt, FaBookOpen, FaShoppingCart, FaProjectDiagram } from "react-icons/fa";
-import TeamSection from "../components/TeamSection";
-import Footer from "../components/Footer";
-import SeoHead from "../components/SeoHead";
+import { ArrowRight, Zap, Shield, Users, Globe, Star, CheckCircle } from "lucide-react";
+import Link from "next/link";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import TeamSection from "../components/TeamSection";
 
-const Icon = ({ children }: { children: React.ReactNode }) => (
-  <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300">
-    {children}
-  </span>
-);
+export default function HomePage() {
+  const features = [
+    {
+      icon: <Zap className="w-8 h-8" />,
+      title: "Lightning Fast Development",
+      description: "Agile methodologies ensure rapid delivery without compromising on quality or security."
+    },
+    {
+      icon: <Shield className="w-8 h-8" />,
+      title: "Enterprise Security",
+      description: "Bank-level security protocols protect your data and business operations."
+    },
+    {
+      icon: <Users className="w-8 h-8" />,
+      title: "Expert Team",
+      description: "Seasoned professionals with deep expertise in cutting-edge technologies."
+    },
+    {
+      icon: <Globe className="w-8 h-8" />,
+      title: "Global Reach",
+      description: "Serving clients across Africa and beyond with 24/7 support."
+    }
+  ];
 
-const stats = [
-  { label: "Projects", value: 120 },
-  { label: "Clients", value: 40 },
-  { label: "Awards", value: 8 },
-];
+  const solutions = [
+    {
+      title: "DRAIS School Management",
+      description: "Complete educational institution management system",
+      features: ["Student Management", "Grade Tracking", "Parent Portal", "Fee Management"],
+      image: "/solutions/school.jpg"
+    },
+    {
+      title: "Zyra SACCO System",
+      description: "Comprehensive SACCO and cooperative management platform",
+      features: ["Member Management", "Loan Processing", "Savings Tracking", "Reports"],
+      image: "/solutions/sacco.jpg"
+    },
+    {
+      title: "Constra Construction",
+      description: "Project management system for construction companies",
+      features: ["Project Tracking", "Resource Management", "Cost Control", "Timeline Management"],
+      image: "/solutions/construction.jpg"
+    }
+  ];
 
-const services = [
-  {
-    title: "Custom Software Development",
-    desc: "Tailored systems for schools, businesses, and retail management.",
-    icon: <FaLayerGroup size={32} />,
-  },
-  {
-    title: "POS & Inventory Systems",
-    desc: "Streamlined solutions for efficient business operations.",
-    icon: <FaShoppingCart size={32} />,
-  },
-  {
-    title: "School Management Systems",
-    desc: "Modern platforms for academic administration and reporting.",
-    icon: <FaBookOpen size={32} />,
-  },
-  {
-    title: "Web & Mobile Development",
-    desc: "Responsive web apps and mobile applications.",
-    icon: <FaMobileAlt size={32} />,
-  },
-  {
-    title: "Automation & Integration",
-    desc: "Workflow automation and system integrations for improved efficiency.",
-    icon: <FaProjectDiagram size={32} />,
-  },
-  {
-    title: "UI/UX Design",
-    desc: "Intuitive interfaces for seamless user experiences.",
-    icon: <FaPalette size={32} />,
-  },
-];
-
-const caseStudies = [
-  {
-    title: "AgroTech Platform",
-    desc: "Connecting farmers with buyers, featuring real-time analytics and efficient workflow.",
-    icon: <FaStar size={32} />,
-  },
-  {
-    title: "EduConnect",
-    desc: "Digital learning portal for schools with interactive content, progress tracking, and cloud hosting.",
-    icon: <FaLightbulb size={32} />,
-  },
-  {
-    title: "Lypha POS System",
-    desc: "Complete pharmacy and retail management solution with reporting and stock tracking.",
-    icon: <FaShoppingCart size={32} />,
-  },
-];
-
-const testimonials = [
-  {
-    name: "Jane Doe",
-    role: "CEO, TechCorp",
-    text: "Xhenvolt delivered beyond expectations. Highly recommended!",
-  },
-  {
-    name: "John Smith",
-    role: "CTO, InnovateX",
-    text: "Professional, creative, and reliable team.",
-  },
-];
-
-const blogPosts = [
-  {
-    title: "The Future of System Automation in Uganda",
-    img: "/blog/automation.jpg",
-    link: "#",
-  },
-  {
-    title: "How Custom Software Transforms Businesses",
-    img: "/blog/software.jpg",
-    link: "#",
-  },
-  {
-    title: "Case Study: Lypha POS for Pharmacies",
-    img: "/blog/lypha.jpg",
-    link: "#",
-  },
-];
-
-const clientLogos = [
-  "/clients_logos/northgateschool.png",
-  "/clients_logos/albayan.png",
-  "/clients_logos/bumwenascrap.jpeg",
-  "/clients_logos/Bugembe.jpeg",
-];
-
-export default function Home() {
   return (
-    <main className="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen font-sans">
+    <main className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-900 dark:to-blue-900">
       <Navbar />
-      <SeoHead
-        title="Xhenvolt Uganda | Web, Mobile, POS & Cloud Solutions"
-        description="Leading Uganda tech company for web development, mobile apps, POS, UI/UX, and cloud solutions. Empowering African businesses with digital innovation."
-        url="https://xhenvolt.com/"
-        ogImage="https://xhenvolt.com/og-image.png"
-        ogTitle="Xhenvolt Uganda | Digital Solutions for Africa"
-        ogDescription="Web, mobile, POS, and cloud solutions for Uganda. Transform your business with Xhenvolt&apos;s expert tech team."
-        jsonLd={{
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          "name": "Xhenvolt Uganda",
-          "url": "https://xhenvolt.com/",
-          "logo": "https://xhenvolt.com/logo.png",
-          "contactPoint": [
-            {
-              "@type": "ContactPoint",
-              "telephone": "+256 741 341 483",
-              "contactType": "customer support",
-              "email": "info@xhenvolt.com"
-            }
-          ],
-          "sameAs": [
-            "https://twitter.com/xhenvolt",
-            "https://linkedin.com/company/xhenvolt"
-          ]
-        }}
-      />
-      <div className="pt-24 md:pt-32">
-        {/* Hero Section */}
-        <section className="max-w-7xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center gap-12">
+      
+      {/* Hero Section */}
+      <section className="pt-32 pb-20 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1 className="text-5xl lg:text-7xl font-bold mb-6">
+                <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent">
+                  Transforming
+                </span>
+                <br />
+                <span className="text-gray-900 dark:text-white">
+                  Africa with Technology
+                </span>
+              </h1>
+              <p className="text-xl lg:text-2xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                We deliver cutting-edge software solutions that empower businesses, schools, and organizations across East Africa to achieve their digital transformation goals.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 gap-2"
+                  >
+                    Start Your Project
+                    <ArrowRight className="w-5 h-5" />
+                  </Link>
+                </motion.div>
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Link
+                    href="/services"
+                    className="inline-flex items-center px-8 py-4 border-2 border-blue-600 text-blue-600 dark:text-blue-400 rounded-xl font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300"
+                  >
+                    Explore Services
+                  </Link>
+                </motion.div>
+              </div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative"
+            >
+              <div className="relative z-10 bg-white/10 dark:bg-gray-800/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 dark:border-gray-700/50">
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className="bg-green-100 dark:bg-green-900/30 p-4 rounded-2xl text-center">
+                    <div className="text-3xl font-bold text-green-600 dark:text-green-400">25+</div>
+                    <div className="text-sm text-green-700 dark:text-green-300">Projects Delivered</div>
+                  </div>
+                  <div className="bg-blue-100 dark:bg-blue-900/30 p-4 rounded-2xl text-center">
+                    <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">100%</div>
+                    <div className="text-sm text-blue-700 dark:text-blue-300">Client Satisfaction</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-6 h-6 text-yellow-400 fill-current" />
+                  ))}
+                  <span className="text-gray-600 dark:text-gray-300 ml-2">Trusted by 25+ clients</span>
+                </div>
+                <p className="text-gray-600 dark:text-gray-300 italic">
+                  "Xhenvolt Uganda has been instrumental in our digital transformation journey."
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-6">
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="flex-1"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
           >
-            <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-blue-700 dark:text-blue-400">
-              Empowering Uganda&apos;s Digital Future
-            </h1>
-            <p className="text-lg md:text-xl mb-8 text-gray-700 dark:text-gray-200">
-              Xhenvolt Uganda delivers innovative technology solutions, transforming
-              businesses with modern web, software, and system automation expertise.
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+              Why Choose Xhenvolt Uganda?
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              In just 3 months since our founding in June 2025, we've established ourselves as a trusted technology partner with rapid delivery and exceptional results.
             </p>
-            <div className="flex gap-4">
-              <Link href="#contact" className="px-6 py-3 bg-blue-700 text-white rounded-lg font-semibold shadow hover:bg-blue-800 transition-colors">
-                Get Started
-              </Link>
-              <Link href="#services" className="px-6 py-3 bg-blue-100 text-blue-700 rounded-lg font-semibold hover:bg-blue-200 transition-colors">
-                Our Services
-              </Link>
-            </div>
           </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="flex-1 flex justify-center"
-          >
-            {/* Hero Graphic */}
-            <svg
-              width="320"
-              height="240"
-              viewBox="0 0 320 240"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect
-                width="320"
-                height="240"
-                rx="32"
-                fill="#1D4ED8"
-                fillOpacity="0.1"
-              />
-              <circle cx="160" cy="120" r="80" fill="#3B82F6" fillOpacity="0.2" />
-              <circle cx="160" cy="120" r="48" fill="#FBBF24" fillOpacity="0.7" />
-              <text
-                x="50%"
-                y="50%"
-                textAnchor="middle"
-                fill="#1D4ED8"
-                fontSize="32"
-                fontWeight="bold"
-                dy=".3em"
-              >
-                Xhenvolt
-              </text>
-            </svg>
-          </motion.div>
-        </section>
-        {/* Stats Counters */}
-        <section className="max-w-4xl mx-auto px-6 py-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-          {stats.map((stat, i) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.2 }}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow p-6"
-            >
-              <div className="text-4xl font-bold text-blue-700 dark:text-blue-400">
-                {/* Animated Counter (placeholder) */}
-                {stat.value}+
-              </div>
-              <div className="mt-2 text-gray-600 dark:text-gray-300">
-                {stat.label}
-              </div>
-            </motion.div>
-          ))}
-        </section>
-        {/* About Section */}
-        <section id="about" className="max-w-4xl mx-auto px-6 py-16">
-          <motion.h2
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-3xl font-bold mb-4 text-blue-700 dark:text-blue-400"
-          >
-            About Us
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-lg text-gray-700 dark:text-gray-200"
-          >
-            Passionate team of technologists, software developers, and strategists
-            dedicated to building scalable digital solutions for businesses in Uganda and beyond.
-            <br />
-            Mission: Empower businesses with cutting-edge software systems and automated workflows.
-          </motion.p>
-        </section>
-        {/* Services Section */}
-        <section id="services" className="max-w-7xl mx-auto px-6 py-16">
-          <motion.h2
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-3xl font-bold mb-8 text-blue-700 dark:text-blue-400"
-          >
-            Our Services
-          </motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, i) => (
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {features.map((feature, index) => (
               <motion.div
-                key={service.title}
-                whileHover={{
-                  scale: 1.05,
-                  boxShadow: "0 8px 32px rgba(59,130,246,0.15)",
-                }}
+                key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.15 }}
-                className="bg-white dark:bg-gray-800 rounded-xl shadow p-8 flex flex-col items-center text-center cursor-pointer group"
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ scale: 1.05, y: -10 }}
+                className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-white/20 dark:border-gray-700/50 text-center hover:shadow-3xl transition-all duration-500"
               >
-                <Icon>{service.icon}</Icon>
-                <h3 className="mt-4 text-xl font-semibold text-blue-700 dark:text-blue-400 group-hover:text-yellow-400 transition-colors">
-                  {service.title}
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center text-white mx-auto mb-6">
+                  {feature.icon}
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
+                  {feature.title}
                 </h3>
-                <p className="mt-2 text-gray-600 dark:text-gray-300">
-                  {service.desc}
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  {feature.description}
                 </p>
               </motion.div>
             ))}
           </div>
-        </section>
-        {/* Case Studies Section */}
-        <section id="case-studies" className="max-w-7xl mx-auto px-6 py-16">
-          <motion.h2
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
+        </div>
+      </section>
+
+      {/* Solutions Showcase */}
+      <section className="py-20 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-3xl font-bold mb-8 text-blue-700 dark:text-blue-400"
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
           >
-            Case Studies
-          </motion.h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Proven Solutions in Action
+            </h2>
+            <p className="text-xl text-white/90 max-w-3xl mx-auto">
+              See how our custom-built systems are transforming organizations across East Africa in record time.
+            </p>
+          </motion.div>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {caseStudies.map((cs, i) => (
+            {solutions.map((solution, index) => (
               <motion.div
-                key={cs.title}
-                whileHover={{ scale: 1.03 }}
+                key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.15 }}
-                className="bg-white dark:bg-gray-800 rounded-xl shadow p-8 flex flex-col gap-4 cursor-pointer"
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ scale: 1.02, y: -5 }}
+                className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:bg-white/20 transition-all duration-500"
               >
-                <div className="flex items-center gap-3">
-                  <Icon>{cs.icon}</Icon>
-                  <span className="font-semibold text-blue-700 dark:text-blue-400">
-                    {cs.title}
-                  </span>
-                </div>
-                <p className="text-gray-700 dark:text-gray-200">
-                  {cs.desc}
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {solution.title}
+                </h3>
+                <p className="text-white/80 mb-6 leading-relaxed">
+                  {solution.description}
                 </p>
+                <ul className="space-y-3 mb-6">
+                  {solution.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-center gap-3 text-white/90">
+                      <CheckCircle className="w-5 h-5 text-green-400" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  href="/testimonials"
+                  className="inline-flex items-center text-white hover:text-yellow-300 transition-colors duration-300 gap-2"
+                >
+                  See Client Stories
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
               </motion.div>
             ))}
           </div>
-        </section>
-        {/* Why Choose Us Section */}
-        <section className="max-w-5xl mx-auto px-6 py-16">
-          <motion.h2
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <TeamSection />
+
+      {/* CTA Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-3xl font-bold mb-8 text-blue-700 dark:text-blue-400"
+            transition={{ duration: 0.8 }}
+            className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-3xl p-12 shadow-2xl border border-white/20 dark:border-gray-700/50 text-center"
           >
-            Why Choose Us
-          </motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow p-8"
-            >
-              <h3 className="text-xl font-semibold text-blue-700 dark:text-blue-400 mb-2">
-                Innovative Solutions
-              </h3>
-              <p className="text-gray-700 dark:text-gray-200">
-                Systems built to solve real business challenges.
-              </p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow p-8"
-            >
-              <h3 className="text-xl font-semibold text-blue-700 dark:text-blue-400 mb-2">
-                End-to-End Support
-              </h3>
-              <p className="text-gray-700 dark:text-gray-200">
-                From strategy to development and maintenance.
-              </p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow p-8"
-            >
-              <h3 className="text-xl font-semibold text-blue-700 dark:text-blue-400 mb-2">
-                Local Expertise
-              </h3>
-              <p className="text-gray-700 dark:text-gray-200">
-                Deep understanding of Uganda&apos;s market.
-              </p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow p-8"
-            >
-              <h3 className="text-xl font-semibold text-blue-700 dark:text-blue-400 mb-2">
-                Client-Centric
-              </h3>
-              <p className="text-gray-700 dark:text-gray-200">
-                Focused on long-term business growth.
-              </p>
-            </motion.div>
-          </div>
-        </section>
-        {/* Team Section */}
-        <TeamSection />
-        {/* Client Logos Carousel */}
-        <section className="max-w-5xl mx-auto px-6 py-8">
-          <div className="flex items-center justify-center gap-8 overflow-x-auto py-4">
-            {clientLogos.map((logo, i) => (
-              <div key={i} className="w-48 h-24 flex items-center justify-center bg-white dark:bg-gray-800 rounded shadow">
-                <Image src={logo} alt={`Client ${i + 1}`} width={180} height={96} className="object-contain max-h-20 max-w-full" />
-              </div>
-            ))}
-          </div>
-        </section>
-        {/* Blog / Insights */}
-        <section className="max-w-7xl mx-auto px-6 py-16">
-          <motion.h2 initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-3xl font-bold mb-8 text-blue-700 dark:text-blue-400">Insights &amp; Blog</motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {blogPosts.map((post, i) => (
-              <motion.div key={post.title} whileHover={{ scale: 1.03 }} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="bg-white dark:bg-gray-800 rounded-xl shadow p-6 flex flex-col">
-                <div className="w-full h-40 rounded-lg overflow-hidden mb-4 bg-gray-200 dark:bg-gray-700">
-                  <Image src={post.img} alt={post.title} width={320} height={160} className="object-cover w-full h-full" />
-                </div>
-                <h3 className="text-lg font-semibold text-blue-700 dark:text-blue-400 mb-2">{post.title}</h3>
-                <Link href={post.link} className="text-blue-600 dark:text-blue-300 hover:underline mt-auto">Read More</Link>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+              Ready to Transform Your Organization?
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+              Join our growing list of 25+ satisfied clients across East Africa who have revolutionized their operations with our innovative technology solutions in just 3 months.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 gap-2"
+                >
+                  Get Free Consultation
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
               </motion.div>
-            ))}
-          </div>
-        </section>
-        {/* Call-to-Action Banner */}
-        <section className="max-w-5xl mx-auto px-6 py-16">
-          <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="bg-blue-700 dark:bg-blue-800 rounded-xl shadow p-12 flex flex-col items-center text-center text-white">
-            <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Business?</h2>
-            <p className="mb-8">Partner with Xhenvolt Uganda to automate and scale your business with innovative digital systems.</p>
-            <div className="flex gap-4">
-              <Link href="#contact" className="px-6 py-3 bg-yellow-400 text-blue-900 rounded-lg font-semibold shadow hover:bg-yellow-300 transition-colors">Contact Us</Link>
-              <Link href="#contact" className="px-6 py-3 bg-white text-blue-700 rounded-lg font-semibold shadow hover:bg-blue-100 transition-colors">Schedule a Demo</Link>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Link
+                  href="/testimonials"
+                  className="inline-flex items-center px-8 py-4 bg-transparent border-2 border-blue-600 text-blue-600 dark:text-blue-400 rounded-xl font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300"
+                >
+                  View Success Stories
+                </Link>
+              </motion.div>
             </div>
           </motion.div>
-        </section>
-        {/* Newsletter Signup */}
-        <section className="max-w-2xl mx-auto px-6 py-8">
-          <motion.form initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="flex flex-col md:flex-row gap-4 bg-white dark:bg-gray-800 rounded-xl shadow p-6 items-center">
-            <input type="email" placeholder="Your email address" className="flex-1 px-4 py-3 rounded border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400" />
-            <button type="submit" className="px-6 py-3 bg-blue-700 text-white rounded-lg font-semibold shadow hover:bg-blue-800 transition-colors">Subscribe</button>
-          </motion.form>
-        </section>
-        {/* Testimonials Section */}
-        <section id="testimonials" className="max-w-4xl mx-auto px-6 py-16">
-          <motion.h2 initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-3xl font-bold mb-8 text-blue-700 dark:text-blue-400">Testimonials</motion.h2>
-          <div className="relative overflow-hidden">
-            <motion.div className="flex gap-8" animate={{ x: [0, -400, 0] }} transition={{ repeat: Infinity, duration: 10, ease: 'linear' }}>
-              {testimonials.map((t, i) => (
-                <div key={i} className="min-w-[320px] bg-white dark:bg-gray-800 rounded-xl shadow p-8 mx-2">
-                  <div className="text-lg font-semibold text-blue-700 dark:text-blue-400">{t.name}</div>
-                  <div className="text-sm text-gray-500 dark:text-gray-400 mb-2">{t.role}</div>
-                  <div className="text-gray-700 dark:text-gray-200">“{t.text}”</div>
-                </div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
-        {/* Contact Section */}
-        <section id="contact" className="max-w-2xl mx-auto px-6 py-16">
-          <motion.h2 initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-3xl font-bold mb-4 text-blue-700 dark:text-blue-400">Contact Us</motion.h2>
-          <motion.form initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="flex flex-col gap-4 bg-white dark:bg-gray-800 rounded-xl shadow p-8">
-            <input type="text" placeholder="Name" className="px-4 py-3 rounded border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400" />
-            <input type="email" placeholder="Email" className="px-4 py-3 rounded border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400" />
-            <textarea placeholder="Message" rows={4} className="px-4 py-3 rounded border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400" />
-            <button type="submit" className="mt-2 px-6 py-3 bg-blue-700 text-white rounded-lg font-semibold shadow hover:bg-blue-800 transition-colors">Send Message</button>
-          </motion.form>
-          <div className="mt-8 text-center text-gray-600 dark:text-gray-400">
-            <div>Phone: <a href="tel:+256741341483" className="hover:text-blue-600">+256 741 341 483</a></div>
-            <div>Email: <a href="mailto:info@xhenvolt.com" className="hover:text-blue-600">info@xhenvolt.com</a></div>
-            <div>Address: <span>Iganga, Uganda</span></div>
-            <div className="flex justify-center gap-4 mt-2">
-              <a href="#" aria-label="Twitter" className="hover:text-blue-600"><svg width="24" height="24" fill="currentColor"><circle cx="12" cy="12" r="10" /></svg></a>
-              <a href="#" aria-label="LinkedIn" className="hover:text-blue-600"><svg width="24" height="24" fill="currentColor"><rect x="4" y="4" width="16" height="16" rx="2" /></svg></a>
-            </div>
-          </div>
-        </section>
-        {/* Footer */}
-        <Footer />
-      </div>
+        </div>
+      </section>
+
+      <Footer />
     </main>
   );
 }
