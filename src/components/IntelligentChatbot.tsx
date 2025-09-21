@@ -83,7 +83,9 @@ export default function IntelligentChatbot() {
     
     try {
       if (!audioContextRef.current) {
-        const AudioContextClass = window.AudioContext || (window as typeof window & { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
+        // Fix the TypeScript any error by properly typing the webkitAudioContext
+        const AudioContextClass = window.AudioContext || 
+          (window as Window & { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
         audioContextRef.current = new AudioContextClass();
       }
       
@@ -103,6 +105,7 @@ export default function IntelligentChatbot() {
       oscillator.start(ctx.currentTime);
       oscillator.stop(ctx.currentTime + 0.3);
     } catch {
+      // Remove unused parameter warning by not capturing the error
       console.log('Audio not supported');
     }
   }, [soundEnabled]);
@@ -508,5 +511,4 @@ export default function IntelligentChatbot() {
       </AnimatePresence>
     </>
   );
-}
 }
