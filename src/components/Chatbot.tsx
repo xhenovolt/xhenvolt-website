@@ -262,7 +262,7 @@ export default function Chatbot() {
                   value={inputText}
                   onChange={(e) => setInputText(e.target.value)}
                   onKeyPress={handleKeyPress}
-                  placeholder="Chat with me about anything! 😊"
+                  placeholder="Ask me anything about Xhenvolt! 😊"
                   className="flex-1 px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white/50 dark:bg-gray-700/50 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
                   disabled={isLoading}
                 />
@@ -277,7 +277,7 @@ export default function Chatbot() {
                 </motion.button>
               </div>
               <p className="text-xs text-gray-400 mt-2 text-center">
-                I'm here to help 24/7! Ask me anything about Xhenvolt 🚀
+                I&apos;m here to help 24/7! Ask me anything about Xhenvolt 🚀
               </p>
             </div>
           </motion.div>

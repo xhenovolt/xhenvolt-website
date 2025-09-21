@@ -116,7 +116,6 @@ export default function ContactPage() {
 
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -127,7 +126,7 @@ export default function ContactPage() {
             <div className="mb-8">
               <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Send us a Message</h2>
               <p className="text-gray-600 dark:text-gray-300">
-                Tell us about your project and we'll get back to you with a customized solution.
+                Tell us about your project and we&apos;ll get back to you with a customized solution.
               </p>
             </div>
 
@@ -323,4 +322,5 @@ export default function ContactPage() {
       <Footer />
     </main>
   );
+}
 }

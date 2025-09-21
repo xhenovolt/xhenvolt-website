@@ -49,7 +49,7 @@ const happiestClient = {
 	name: "Wekesa Muhammad",
 	role: "Chairperson, Bumwena Scrap SACCO",
 	company: "Bumwena Scrap SACCO",
-	text: "The Zyra SACCO Management System has transformed our scrap metal dealers' cooperative completely. Before this system, managing member contributions, loans, and savings was a manual nightmare with frequent errors and disputes. Now everything is automated and transparent. Members can check their account balances, loan status, and transaction history anytime through the member portal. The loan management module calculates interest automatically, tracks repayments, and generates payment schedules. The system's reporting capabilities have helped us maintain compliance with cooperative regulations and provided insights that improved our financial decision-making. Member satisfaction has increased dramatically due to the transparency and efficiency the system provides.",
+	text: "&ldquo;The Zyra SACCO Management System has transformed our scrap metal dealers&apos; cooperative completely. Before this system, managing member contributions, loans, and savings was a manual nightmare with frequent errors and disputes. Now everything is automated and transparent. Members can check their account balances, loan status, and transaction history anytime through the member portal.&rdquo;",
 	rating: 5,
 	project: "Zyra SACCO Management System",
 	location: "Mbale, Uganda",
@@ -324,10 +324,10 @@ export default function TestimonialsPage() {
 						<div className="text-center max-w-4xl mx-auto">
 							<Quote className="w-16 h-16 text-white/30 mx-auto mb-6" />
 							<blockquote className="text-2xl md:text-3xl font-medium mb-8 leading-relaxed">
-								"Xhenvolt Uganda doesn't just deliver software - they deliver
+								&ldquo;Xhenvolt Uganda doesn&apos;t just deliver software - they deliver
 								solutions that understand our unique challenges in East Africa.
 								Their team took time to understand our cultural and operational
-								needs, resulting in systems that truly work for our context."
+								needs, resulting in systems that truly work for our context.&rdquo;
 							</blockquote>
 							<div className="flex items-center justify-center gap-4">
 								<div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center text-2xl font-bold">
@@ -431,4 +431,3 @@ export default function TestimonialsPage() {
 		</main>
 	);
 }
-				

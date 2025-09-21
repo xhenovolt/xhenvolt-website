@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle, X, Send, Bot, User, Sparkles, Settings, Minimize2, Volume2, VolumeX } from 'lucide-react';
+import { MessageCircle, X, Send, Bot, User, Sparkles, Minimize2, Volume2, VolumeX } from 'lucide-react';
 
 interface Message {
   id: string;
@@ -57,12 +57,10 @@ export default function IntelligentChatbot() {
   const [inputText, setInputText] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
-  const [config, setConfig] = useState<ChatbotConfig>(defaultConfig);
   const [sessionContext, setSessionContext] = useState<string[]>([]);
   const [lastActivity, setLastActivity] = useState(Date.now());
   const [hasEngaged, setHasEngaged] = useState(false);
   const [soundEnabled, setSoundEnabled] = useState(true);
-  const [showSettings, setShowSettings] = useState(false);
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inactivityTimerRef = useRef<NodeJS.Timeout>();
@@ -85,7 +83,8 @@ export default function IntelligentChatbot() {
     
     try {
       if (!audioContextRef.current) {
-        audioContextRef.current = new (window.AudioContext || (window as Window & typeof globalThis & { webkitAudioContext: typeof AudioContext }).webkitAudioContext)();
+        const AudioContextClass = window.AudioContext || (window as typeof window & { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
+        audioContextRef.current = new AudioContextClass();
       }
       
       const ctx = audioContextRef.current;
@@ -103,7 +102,7 @@ export default function IntelligentChatbot() {
       
       oscillator.start(ctx.currentTime);
       oscillator.stop(ctx.currentTime + 0.3);
-    } catch (error) {
+    } catch {
       console.log('Audio not supported');
     }
   }, [soundEnabled]);
@@ -126,7 +125,7 @@ export default function IntelligentChatbot() {
   const initiateProactiveEngagement = useCallback(() => {
     if (hasEngaged || isOpen) return;
 
-    const shouldEngage = Math.random() * 100 < config.proactiveEngagementChance;
+    const shouldEngage = Math.random() * 100 < defaultConfig.proactiveEngagementChance;
     if (!shouldEngage) return;
 
     setHasEngaged(true);
@@ -146,7 +145,7 @@ export default function IntelligentChatbot() {
         playNotificationSound();
       }, 1000);
     }
-  }, [hasEngaged, isOpen, config.proactiveEngagementChance, playNotificationSound]);
+  }, [hasEngaged, isOpen, playNotificationSound]);
 
   // Inactivity timer
   useEffect(() => {
@@ -156,14 +155,14 @@ export default function IntelligentChatbot() {
 
     inactivityTimerRef.current = setTimeout(() => {
       initiateProactiveEngagement();
-    }, config.inactivityTriggerTime * 1000);
+    }, defaultConfig.inactivityTriggerTime * 1000);
 
     return () => {
       if (inactivityTimerRef.current) {
         clearTimeout(inactivityTimerRef.current);
       }
     };
-  }, [lastActivity, config.inactivityTriggerTime, initiateProactiveEngagement]);
+  }, [lastActivity, initiateProactiveEngagement]);
 
   // Track user activity
   useEffect(() => {
@@ -185,14 +184,14 @@ export default function IntelligentChatbot() {
   // Simulate human-like typing
   const simulateTyping = useCallback((duration?: number) => {
     setIsTyping(true);
-    const delay = duration || (config.typingDelayMin + Math.random() * (config.typingDelayMax - config.typingDelayMin));
+    const delay = duration || (defaultConfig.typingDelayMin + Math.random() * (defaultConfig.typingDelayMax - defaultConfig.typingDelayMin));
     
     setTimeout(() => {
       setIsTyping(false);
     }, delay);
     
     return delay;
-  }, [config.typingDelayMin, config.typingDelayMax]);
+  }, []);
 
   // Enhanced message processing with context
   const processMessageWithContext = useCallback((userMessage: string, context: string[]) => {
@@ -227,7 +226,7 @@ export default function IntelligentChatbot() {
     setMessages(prev => [...prev, userMessage]);
     
     // Update context
-    const newContext = [...sessionContext, inputText].slice(-config.contextMemoryLength);
+    const newContext = [...sessionContext, inputText].slice(-defaultConfig.contextMemoryLength);
     setSessionContext(newContext);
     
     const currentInput = inputText;
@@ -509,4 +508,5 @@ export default function IntelligentChatbot() {
       </AnimatePresence>
     </>
   );
+}
 }
