@@ -116,6 +116,7 @@ export default function ContactPage() {
 
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -172,7 +173,7 @@ export default function ContactPage() {
                   onChange={handleChange}
                   required
                   type="text"
-                  placeholder="What's this about?"
+                  placeholder="What&apos;s this about?"
                   className="w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-600 bg-white/50 dark:bg-gray-700/50 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
                 />
               </div>
@@ -322,5 +323,4 @@ export default function ContactPage() {
       <Footer />
     </main>
   );
-}
 }

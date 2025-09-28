@@ -32,21 +32,21 @@ const defaultConfig: ChatbotConfig = {
 };
 
 const proactiveMessages = [
-  "👋 Hi there! I noticed you've been browsing our services. Is there anything specific about Xhenvolt's solutions I can help you with?",
-  "🚀 Exploring our technology solutions? I'm here to answer any questions about DRAIS, Zyra, or our custom software development!",
+  "👋 Hi there! I noticed you&apos;ve been browsing our services. Is there anything specific about Xhenvolt&apos;s solutions I can help you with?",
+  "🚀 Exploring our technology solutions? I&apos;m here to answer any questions about DRAIS, Zyra, or our custom software development!",
   "💡 Need help finding the right solution for your business? I can guide you through our services and success stories!",
-  "🌟 Curious about how we've helped clients like Wekesa Muhammad achieve 100% satisfaction? Let me share some insights!",
-  "📱 Interested in mobile app development or custom software? I'd love to tell you about our latest projects!",
+  "🌟 Curious about how we&apos;ve helped clients like Wekesa Muhammad achieve 100% satisfaction? Let me share some insights!",
+  "📱 Interested in mobile app development or custom software? I&apos;d love to tell you about our latest projects!",
   "🏆 Want to know why 25+ clients chose Xhenvolt Uganda for their digital transformation? Ask me anything!",
-  "💬 I'm your friendly Xhenvolt AI assistant! Feel free to ask about our services, pricing, or schedule a demo.",
-  "🎯 Looking for specific solutions? Whether it's school management, SACCO systems, or POS - I can help you find the perfect fit!"
+  "💬 I&apos;m your friendly Xhenvolt AI assistant! Feel free to ask about our services, pricing, or schedule a demo.",
+  "🎯 Looking for specific solutions? Whether it&apos;s school management, SACCO systems, or POS - I can help you find the perfect fit!"
 ];
 
 const contextualPrompts = [
-  "Based on what you're looking at, would you like to know more about our implementation process?",
-  "I see you're interested in our services. Would you like me to explain how we can customize solutions for your industry?",
+  "Based on what you&apos;re looking at, would you like to know more about our implementation process?",
+  "I see you&apos;re interested in our services. Would you like me to explain how we can customize solutions for your industry?",
   "Curious about pricing or timeline for your project? I can provide detailed information!",
-  "Would you like to hear about similar projects we've completed in your industry?",
+  "Would you like to hear about similar projects we&apos;ve completed in your industry?",
   "Interested in scheduling a demo or consultation? I can help you get started!"
 ];
 
@@ -70,7 +70,7 @@ export default function IntelligentChatbot() {
   useEffect(() => {
     const welcomeMessage: Message = {
       id: '1',
-      text: "👋 Hi! I'm your intelligent Xhenvolt AI assistant! I can help you with our services, answer questions about DRAIS, Zyra, pricing, or even just have a friendly chat. What would you like to explore today? 😊",
+      text: "👋 Hi! I&apos;m your intelligent Xhenvolt AI assistant! I can help you with our services, answer questions about DRAIS, Zyra, pricing, or even just have a friendly chat. What would you like to explore today? 😊",
       isUser: false,
       timestamp: new Date()
     };
@@ -200,18 +200,18 @@ export default function IntelligentChatbot() {
   const processMessageWithContext = useCallback((userMessage: string, context: string[]) => {
     const contextString = context.join(' ').toLowerCase();
     const messageLC = userMessage.toLowerCase();
-    
+
     // Context-aware responses
     if (messageLC.includes('more') && contextString.includes('drais')) {
-      return "I'd love to tell you more about DRAIS! It's helped schools like Northgate reduce administrative work by 60%. Would you like to know about specific features like grade management, parent portals, or fee tracking? Or would you prefer to see a demo? 📚✨";
+      return "I&apos;d love to tell you more about DRAIS! It&apos;s helped schools like Northgate reduce administrative work by 60%. Would you like to know about specific features like grade management, parent portals, or fee tracking? Or would you prefer to see a demo? 📚✨";
     }
-    
+
     if (messageLC.includes('price') || messageLC.includes('cost')) {
       if (contextString.includes('drais') || contextString.includes('school')) {
         return "Great question about DRAIS pricing! Our school management solutions are very competitively priced with flexible payment plans. The exact cost depends on your school size and specific features needed. Would you like me to connect you with our team for a personalized quote? Call +256 741 341 483 or I can help you schedule a free consultation! 💰🎓";
       }
     }
-    
+
     return null; // Use normal processing
   }, []);
 
@@ -274,7 +274,7 @@ export default function IntelligentChatbot() {
 
       const data = await response.json();
       
-      let responseText = data.answer || "I'm not quite sure about that, but I'd love to help you find the right information! 🤔 Try asking me about our services like DRAIS, Zyra, pricing, or contact our amazing team at +256 741 341 483 for personalized assistance! 😊";
+      let responseText = data.answer || "I&apos;m not quite sure about that, but I&apos;d love to help you find the right information! 🤔 Try asking me about our services like DRAIS, Zyra, pricing, or contact our amazing team at +256 741 341 483 for personalized assistance! 😊";
       
       // Add contextual follow-ups
       if (currentInput.toLowerCase().includes('drais') && !responseText.includes('demo')) {
@@ -299,7 +299,7 @@ export default function IntelligentChatbot() {
       console.error('Error sending message:', error);
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
-        text: "Oops! I'm having a tiny technical hiccup 😅 But don't worry - our awesome human team is always available at +256 741 341 483 or info@xhenvolt.com. They'll take excellent care of you! 💙",
+        text: "Oops! I&apos;m having a tiny technical hiccup 😅 But don&apos;t worry - our awesome human team is always available at +256 741 341 483 or info@xhenvolt.com. They&apos;ll take excellent care of you! 💙",
         isUser: false,
         timestamp: new Date()
       };
@@ -469,7 +469,7 @@ export default function IntelligentChatbot() {
                             transition={{ duration: 0.6, repeat: Infinity, delay: 0.4 }}
                             className="w-2 h-2 bg-cyan-500 rounded-full"
                           />
-                          <span className="text-xs text-gray-500 ml-2">thinking...</span>
+                          <span className="text-xs text-gray-500 dark:text-gray-400">Xhenvolt AI is typing...</span>
                         </div>
                       </div>
                     </motion.div>

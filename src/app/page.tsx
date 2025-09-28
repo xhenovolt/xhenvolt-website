@@ -169,7 +169,7 @@ export default function HomePage() {
 							Why Choose Xhenvolt?
 						</h2>
 						<p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-							In just 3 months since our founding in June 2025, we've established ourselves as a trusted technology partner with rapid delivery and exceptional results.
+							We don&apos;t just build software—we craft solutions that transform businesses and create lasting value.
 						</p>
 					</motion.div>
 

@@ -15,12 +15,12 @@ const values = [
 	{
 		icon: <Zap className="w-8 h-8" />,
 		title: "Innovation & Excellence",
-		description: "We stay at the forefront of technology to deliver cutting-edge solutions that drive results."
+		description: "We stay at the forefront of technology to deliver cutting-edge solutions that drive success."
 	},
 	{
 		icon: <Shield className="w-8 h-8" />,
 		title: "Integrity & Transparency",
-		description: "We build trust through honest communication, reliable delivery, and ethical business practices."
+		description: "We build trust through honest communication and transparent business practices."
 	},
 	{
 		icon: <Globe className="w-8 h-8" />,
