@@ -429,5 +429,4 @@ export default function TestimonialsPage() {
 		</main>
 	);
 }
-	);
-}
+	

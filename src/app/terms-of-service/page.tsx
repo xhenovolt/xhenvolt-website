@@ -258,7 +258,4 @@ export default function TermsOfServicePage() {
 		</main>
 	);
 }
-			<Footer />
-		</main>
-	);
-}
+		
