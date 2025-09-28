@@ -7,6 +7,29 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import TeamSection from "../components/TeamSection";
 
+const features = [
+	{
+		icon: <Zap className="w-8 h-8" />,
+		title: "Innovative Solutions",
+		description: "We deliver cutting-edge technology solutions tailored to your business needs.",
+	},
+	{
+		icon: <Shield className="w-8 h-8" />,
+		title: "Enterprise-Grade Security",
+		description: "Our systems are built with bank-level security to protect your data and operations.",
+	},
+	{
+		icon: <Users className="w-8 h-8" />,
+		title: "Client-Centric Approach",
+		description: "We prioritize your success by delivering solutions that align with your goals.",
+	},
+	{
+		icon: <Globe className="w-8 h-8" />,
+		title: "Global Expertise",
+		description: "Our team has experience delivering solutions for clients across East Africa and beyond.",
+	},
+];
+
 const testimonials = [
 	{
 		name: "Wekesa Muhammad",
@@ -67,6 +90,36 @@ const testimonials = [
 		role: "HR Manager, Great Lakes Services",
 		text: "&ldquo;Xhenvolt's solutions are a game-changer. Our recruitment and onboarding process is now so efficient!&rdquo;",
 		rating: 5,
+	},
+];
+
+const solutions = [
+	{
+		title: "DRAIS School Management System",
+		description: "Empowering schools with efficient student management, grade tracking, and parent-teacher communication.",
+		features: [
+			"Student Information System",
+			"Grade & Attendance Management",
+			"Parent-Teacher Communication",
+		],
+	},
+	{
+		title: "Zyra SACCO Management System",
+		description: "Streamlining SACCO operations with automated member contributions, loan processing, and financial reporting.",
+		features: [
+			"Member Account Management",
+			"Loan Application & Approval",
+			"Financial Reporting & Analytics",
+		],
+	},
+	{
+		title: "Custom POS System for Retail",
+		description: "Enhancing retail operations with real-time inventory tracking, sales analytics, and customer loyalty programs.",
+		features: [
+			"Real-time Inventory Tracking",
+			"Sales Analytics & Reporting",
+			"Customer Loyalty Programs",
+		],
 	},
 ];
 
