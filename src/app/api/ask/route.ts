@@ -75,9 +75,10 @@ export async function POST(request: NextRequest) {
       for (const pattern of match.patterns) {
         if (normalizedQuestion.includes(pattern)) {
           const responseKey = match.responses[Math.floor(Math.random() * match.responses.length)];
-          if (faqsData[responseKey]) {
-            return NextResponse.json({ 
-              answer: faqsData[responseKey],
+          // Type guard for safe indexing
+          if (responseKey in faqsData) {
+            return NextResponse.json({
+              answer: faqsData[responseKey as keyof typeof faqsData],
               confidence: 0.9,
               source: 'conversational'
             });
