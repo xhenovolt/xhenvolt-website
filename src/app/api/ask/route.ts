@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
-// Change import to add index signature type assertion
+// Explicitly type as a string-indexed object
 import faqsDataRaw from '../../../data/faqs.json';
-const faqsData: { [key: string]: string } = faqsDataRaw;
+const faqsData = faqsDataRaw as Record<string, string>;
 
 interface RequestBody {
   question: string;
