@@ -49,8 +49,7 @@ export default function Footer() {
                 Xhenvolt Uganda
               </h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                Transforming businesses across Africa with innovative technology solutions. 
-                We deliver custom software, mobile apps, and enterprise systems that drive growth and success.
+                Transforming businesses across Africa with innovative technology solutions. We deliver custom software, mobile apps, and enterprise systems that drive growth and success.
               </p>
               
               {/* Contact Info */}
@@ -162,4 +161,5 @@ export default function Footer() {
       </div>
     </footer>
   );
+}
 }

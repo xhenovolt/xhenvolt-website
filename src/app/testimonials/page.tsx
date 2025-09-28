@@ -82,9 +82,7 @@ export default function TestimonialsPage() {
 							Real Stories from Real Clients
 						</h1>
 						<p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-							Discover how educational institutions, businesses, and organizations
-							across East Africa have transformed their operations with our
-							innovative technology solutions.
+							Discover how educational institutions, businesses, and organizations across East Africa have transformed their operations with our innovative technology solutions.
 						</p>
 					</motion.div>
 				</div>
@@ -429,5 +427,7 @@ export default function TestimonialsPage() {
 
 			<Footer />
 		</main>
+	);
+}
 	);
 }

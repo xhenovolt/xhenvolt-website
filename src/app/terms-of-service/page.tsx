@@ -98,11 +98,7 @@ export default function TermsOfServicePage() {
 							</h2>
 						</div>
 						<p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-							These Terms of Service outline the rules, responsibilities, and
-							expectations for all users of Xhenvolt Uganda's digital services and
-							platforms. By establishing clear guidelines, we ensure a professional,
-							secure, and mutually beneficial relationship with our clients and website
-							visitors.
+							These Terms of Service outline the rules, responsibilities, and expectations for all users of Xhenvolt Uganda&apos;s digital services and platforms. By establishing clear guidelines, we ensure a professional, secure, and mutually beneficial relationship with our clients and website visitors.
 						</p>
 						<p className="text-gray-600 dark:text-gray-300 leading-relaxed">
 							Our terms are designed to protect both your interests and ours while
@@ -258,6 +254,10 @@ export default function TermsOfServicePage() {
 				</motion.section>
 			</div>
 
+			<Footer />
+		</main>
+	);
+}
 			<Footer />
 		</main>
 	);
