@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
-import faqsData from '../../../data/faqs.json';
+// Change import to add index signature type assertion
+import faqsDataRaw from '../../../data/faqs.json';
+const faqsData: { [key: string]: string } = faqsDataRaw;
 
 interface RequestBody {
   question: string;
