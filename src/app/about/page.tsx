@@ -70,7 +70,7 @@ export default function AboutPage() {
 							Pioneering Digital Transformation in East Africa
 						</h1>
 						<p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-							Since June 2025, we've been rapidly empowering organizations across East Africa with innovative technology solutions that drive growth, efficiency, and success.
+							Since June 2025, we&apos;ve been rapidly empowering organizations across East Africa with innovative technology solutions that drive growth, efficiency, and success.
 						</p>
 					</motion.div>
 				</div>
@@ -124,7 +124,7 @@ export default function AboutPage() {
 							</div>
 							<h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Our Impact</h3>
 							<p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-								In just 3 months since our founding in June 2025, we've delivered 25+ successful projects, serving 25+ satisfied clients across education, healthcare, finance, and construction sectors throughout East Africa.
+								In just 3 months since our founding in June 2025, we&apos;ve delivered 25+ successful projects, serving 25+ satisfied clients across education, healthcare, finance, and construction sectors throughout East Africa.
 							</p>
 						</motion.div>
 					</div>

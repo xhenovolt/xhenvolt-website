@@ -233,8 +233,8 @@ export default function PrivacyPolicyPage() {
 							Questions About Your Privacy?
 						</h2>
 						<p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-							We're here to help. If you have any questions about this privacy
-							policy or how we handle your data, don't hesitate to reach out.
+							We&apos;re here to help. If you have any questions about this privacy
+							policy or how we handle your data, don&apos;t hesitate to reach out.
 						</p>
 						<div className="flex flex-col sm:flex-row gap-4 justify-center">
 							<motion.a

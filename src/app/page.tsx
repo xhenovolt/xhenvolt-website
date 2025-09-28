@@ -200,7 +200,7 @@ export default function HomePage() {
 									<span className="text-gray-600 dark:text-gray-300 ml-2">Trusted by 25+ clients</span>
 								</div>
 								<p className="text-gray-600 dark:text-gray-300 italic">
-									"Xhenvolt Uganda has been instrumental in our digital transformation journey."
+									&quot;Xhenvolt Uganda has been instrumental in our digital transformation journey.&quot;
 								</p>
 							</div>
 						</motion.div>

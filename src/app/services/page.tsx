@@ -324,7 +324,7 @@ export default function ServicesPage() {
 					<div className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 rounded-3xl p-12 text-center text-white shadow-2xl">
 						<h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Business?</h2>
 						<p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-							Let's discuss your project and discover how our technology solutions can accelerate your growth and success.
+							Let&apos;s discuss your project and discover how our technology solutions can accelerate your growth and success.
 						</p>
 						<div className="flex flex-col sm:flex-row gap-4 justify-center">
 							<motion.a

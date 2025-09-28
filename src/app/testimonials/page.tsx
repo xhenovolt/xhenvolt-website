@@ -149,7 +149,7 @@ export default function TestimonialsPage() {
 								<div className="relative mb-6">
 									<Quote className="absolute -top-2 -left-2 w-10 h-10 text-yellow-300 dark:text-yellow-600" />
 									<blockquote className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed italic pl-8">
-										"{happiestClient.text}"
+										&quot;{happiestClient.text}&quot;
 									</blockquote>
 								</div>
 
@@ -270,7 +270,7 @@ export default function TestimonialsPage() {
 								<div className="relative mb-8">
 									<Quote className="absolute -top-2 -left-2 w-8 h-8 text-blue-200 dark:text-blue-800" />
 									<p className="text-gray-700 dark:text-gray-300 leading-relaxed italic pl-6 text-lg">
-										"{testimonial.text}"
+										&quot;{testimonial.text}&quot;
 									</p>
 								</div>
 
@@ -398,8 +398,8 @@ export default function TestimonialsPage() {
 							Ready to Join Our Success Stories?
 						</h2>
 						<p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-							Let's discuss how our proven technology solutions can transform your
-							organization and create lasting value, just like we've done for
+							Let&apos;s discuss how our proven technology solutions can transform your
+							organization and create lasting value, just like we&apos;ve done for
 							clients across East Africa.
 						</p>
 						<div className="flex flex-col sm:flex-row gap-4 justify-center">
