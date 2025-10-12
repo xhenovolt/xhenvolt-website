@@ -85,7 +85,7 @@ export default function IntelligentChatbot() {
       if (!audioContextRef.current) {
         // Fix the TypeScript error with proper type checking
         const AudioContextClass = window.AudioContext || 
-          (window as any).webkitAudioContext;
+          (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
         
         if (!AudioContextClass) {
           console.log('AudioContext not supported');
@@ -286,7 +286,7 @@ export default function IntelligentChatbot() {
         if (response.ok) {
           data = await response.json();
         }
-      } catch (fetchError) {
+      } catch {
         console.log('API fetch failed, using fallback response');
       }
       
