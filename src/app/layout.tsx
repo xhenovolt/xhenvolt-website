@@ -47,7 +47,7 @@ export default function RootLayout({
           <div className="relative z-10">
             {children}
           </div>
-          <IntelligentChatbot />
+          {/* <IntelligentChatbot /> */}
         </div>
       </body>
     </html>
