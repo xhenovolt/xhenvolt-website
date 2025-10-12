@@ -63,7 +63,7 @@ export default function IntelligentChatbot() {
   const [soundEnabled, setSoundEnabled] = useState(true);
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const inactivityTimerRef = useRef<NodeJS.Timeout>();
+  const inactivityTimerRef = useRef<number>();
   const audioContextRef = useRef<AudioContext | null>(null);
 
   // Initialize with welcome message
