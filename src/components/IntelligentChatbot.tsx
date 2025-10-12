@@ -21,68 +21,47 @@ interface FAQ {
   category?: string;
 }
 
-// Updated FAQ data with correct product information - Step 2 + corrections
+// Sample FAQ data - Step 2 implementation
 const XHENVOLT_FAQS: FAQ[] = [
   {
     id: "drais-1",
     question: "What is DRAIS?",
-    answer: "DRAIS is Xhenvolt's comprehensive school management system for attendance, grades, fees, student records, and parent communication. It helps schools reduce administrative work by 60%. Want a demo? 📚",
-    keywords: ["drais", "school", "management", "attendance", "grades", "fees", "students", "education"],
+    answer: "DRAIS is Xhenvolt's comprehensive school management system for attendance, grades, fees, and communication. It helps schools reduce administrative work by 60%. Want a demo? 📚",
+    keywords: ["drais", "school", "management", "attendance", "grades", "fees"],
     category: "products"
   },
   {
-    id: "constra-1", 
-    question: "What is Constra?",
-    answer: "Constra is our construction management system that handles project planning, resource allocation, progress tracking, and cost management for construction companies. Perfect for contractors in Uganda. 🏗️",
-    keywords: ["constra", "construction", "building", "project", "contractor", "management"],
-    category: "products"
-  },
-  {
-    id: "zyra-1",
+    id: "zyra-1", 
     question: "What is Zyra?",
-    answer: "Zyra is our SACCO management system that handles member management, loans, savings, shares, and financial reporting for savings and credit cooperatives. Trusted by SACCOs across Uganda. 💰",
-    keywords: ["zyra", "sacco", "savings", "credit", "loans", "cooperative", "members"],
+    answer: "Zyra is our intelligent business automation platform that streamlines operations and improves efficiency. Perfect for SMEs in Uganda. 🚀",
+    keywords: ["zyra", "automation", "business", "platform", "efficiency"],
     category: "products"
   },
   {
-    id: "inveto-1",
-    question: "What is Inveto?",
-    answer: "Inveto is our investment management system that tracks portfolios, analyzes performance, manages assets, and provides investment insights for financial institutions and individual investors. 📈",
-    keywords: ["inveto", "investment", "portfolio", "assets", "financial", "trading"],
+    id: "lypha-1",
+    question: "What is Lypha?",
+    answer: "Lypha is our data analytics and visualization tool that helps businesses make informed decisions through powerful insights. 📊",
+    keywords: ["lypha", "analytics", "data", "visualization", "insights"],
     category: "products"
   },
   {
-    id: "sentra-1",
-    question: "What is Sentra?",
-    answer: "Sentra is our Point of Sale (POS) system for retail businesses. It handles sales, inventory, customer management, and reporting. Perfect for shops, restaurants, and retail chains. 🛒",
-    keywords: ["sentra", "pos", "point of sale", "retail", "sales", "inventory", "shop"],
+    id: "rise-1",
+    question: "What is RISE?",
+    answer: "RISE is our enterprise resource planning solution designed for growing businesses in Uganda. It manages inventory, finance, and operations. 📈",
+    keywords: ["rise", "erp", "enterprise", "inventory", "finance", "operations"],
     category: "products"
   },
   {
-    id: "pricing-drais",
-    question: "How much does DRAIS cost?",
-    answer: "DRAIS pricing starts from UGX 800,000/year for small schools (up to 200 students) and scales based on school size and features. Call +256 741 341 483 for a personalized quote! 💰",
-    keywords: ["drais", "price", "cost", "school", "pricing", "ugx"],
-    category: "pricing"
-  },
-  {
-    id: "pricing-zyra",
-    question: "How much does Zyra cost?",
-    answer: "Zyra SACCO management system starts from UGX 1,200,000/year for small SACCOs (up to 500 members). Pricing varies by member count and features. Contact us for details! 💳",
-    keywords: ["zyra", "price", "cost", "sacco", "pricing", "ugx"],
-    category: "pricing"
-  },
-  {
-    id: "pricing-sentra",
-    question: "How much does Sentra cost?",
-    answer: "Sentra POS starts from UGX 300,000/year for single outlet retail businesses. Multi-outlet packages available. Call +256 741 341 483 for competitive pricing! 🏪",
-    keywords: ["sentra", "pos", "price", "cost", "retail", "pricing", "ugx"],
+    id: "pricing-1",
+    question: "How much do your solutions cost?",
+    answer: "Our pricing is flexible and depends on your specific needs. DRAIS starts from UGX 500,000/year, Zyra from UGX 300,000/year. Call +256 741 341 483 for a personalized quote! 💰",
+    keywords: ["price", "cost", "pricing", "how much", "ugx", "money"],
     category: "pricing"
   },
   {
     id: "demo-1",
     question: "How can I schedule a demo?",
-    answer: "Easy! Call +256 741 341 483 or email info@xhenvolt.com. We'll set up a personalized demo within 48 hours. Which product interests you most - DRAIS, Zyra, Constra, Inveto, or Sentra? 🎯",
+    answer: "Easy! Call +256 741 341 483 or email info@xhenvolt.com. We'll set up a personalized demo within 48 hours. Which product interests you most? 🎯",
     keywords: ["demo", "schedule", "appointment", "meeting", "show"],
     category: "sales"
   },
@@ -187,42 +166,39 @@ const XHENVOLT_FAQS: FAQ[] = [
   {
     id: "industries-1",
     question: "Which industries do you serve?",
-    answer: "We serve schools (DRAIS), SACCOs (Zyra), construction companies (Constra), investment firms (Inveto), retail businesses (Sentra), and various SMEs across Uganda and East Africa. 🏢",
-    keywords: ["industries", "sectors", "business", "schools", "sacco", "retail", "construction"],
+    answer: "We serve schools, SACCOs, retail businesses, healthcare, manufacturing, and SMEs across various sectors in Uganda and East Africa. 🏢",
+    keywords: ["industries", "sectors", "business", "schools", "sacco", "retail"],
+    category: "services"
+  },
+  {
+    id: "cloud-1",
+    question: "Do you offer cloud hosting?",
+    answer: "Yes! We offer secure cloud hosting with 99.9% uptime guarantee. Your systems are accessible anywhere, anytime. ☁️",
+    keywords: ["cloud", "hosting", "server", "online", "uptime"],
+    category: "technical"
+  },
+  {
+    id: "maintenance-1",
+    question: "What about ongoing maintenance?",
+    answer: "We provide comprehensive maintenance including monitoring, updates, bug fixes, and performance optimization. All included in your plan. 🔧",
+    keywords: ["maintenance", "monitor", "fix", "optimize", "ongoing"],
+    category: "support"
+  },
+  {
+    id: "reports-1",
+    question: "Can I generate custom reports?",
+    answer: "Absolutely! Our systems include powerful reporting tools with custom report builders, automated scheduling, and export options. 📊",
+    keywords: ["reports", "reporting", "analytics", "custom", "export"],
+    category: "features"
+  },
+  {
+    id: "migration-1",
+    question: "Can you help migrate from my current system?",
+    answer: "Yes! We provide full data migration services from any existing system. We ensure zero data loss and minimal downtime. 📦",
+    keywords: ["migration", "migrate", "transfer", "move", "data"],
     category: "services"
   }
 ];
-
-// Step 3: Business context and facts
-const XHENVOLT_BUSINESS_FACTS = {
-  contact: {
-    phone: "+256 741 341 483",
-    email: "info@xhenvolt.com",
-    website: "xhenvolt.com",
-    location: "Uganda, East Africa"
-  },
-  products: {
-    drais: "School Management System",
-    constra: "Construction Management System", 
-    zyra: "SACCO Management System",
-    inveto: "Investment Management System",
-    sentra: "Point of Sale (POS) System"
-  },
-  stats: {
-    clients: "25+",
-    satisfaction: "100%",
-    experience: "5+ years",
-    support: "24/7"
-  },
-  services: [
-    "Custom software development",
-    "System integration", 
-    "Training and support",
-    "Data migration",
-    "Cloud hosting",
-    "Mobile app development"
-  ]
-};
 
 const IntelligentChatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -231,8 +207,6 @@ const IntelligentChatbot = () => {
   const [inputText, setInputText] = useState('');
   const [hasShownWelcome, setHasShownWelcome] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
-  const [conversationContext, setConversationContext] = useState<string[]>([]);
-  const [userInterests, setUserInterests] = useState<string[]>([]);
 
   // Check if welcome message was already shown (localStorage)
   useEffect(() => {
@@ -270,41 +244,10 @@ const IntelligentChatbot = () => {
     }
   }, [isOpen, hasShownWelcome, messages.length]);
 
-  // Step 3: Context-aware conversation memory
-  const updateConversationContext = (userInput: string, botResponse: string) => {
-    const newContext = [...conversationContext, userInput, botResponse].slice(-6); // Keep last 6 exchanges
-    setConversationContext(newContext);
-    
-    // Track user interests based on keywords
-    const interests = [];
-    const input = userInput.toLowerCase();
-    if (input.includes('drais') || input.includes('school')) interests.push('school-management');
-    if (input.includes('zyra') || input.includes('sacco')) interests.push('sacco-management');
-    if (input.includes('constra') || input.includes('construction')) interests.push('construction-management');
-    if (input.includes('inveto') || input.includes('investment')) interests.push('investment-management');
-    if (input.includes('sentra') || input.includes('pos') || input.includes('retail')) interests.push('pos-retail');
-    if (input.includes('price') || input.includes('cost')) interests.push('pricing');
-    
-    if (interests.length > 0) {
-      setUserInterests(prev => [...new Set([...prev, ...interests])]);
-    }
-  };
-
   // Keyword matching function for FAQ lookup
   const findMatchingFAQ = (userInput: string): FAQ | null => {
     const input = userInput.toLowerCase().trim();
     
-    // Context-aware matching - boost scores for previously discussed topics
-    const contextBoost = (faq: FAQ): number => {
-      let boost = 0;
-      if (userInterests.includes('school-management') && faq.id.includes('drais')) boost += 2;
-      if (userInterests.includes('sacco-management') && faq.id.includes('zyra')) boost += 2;
-      if (userInterests.includes('construction-management') && faq.id.includes('constra')) boost += 2;
-      if (userInterests.includes('investment-management') && faq.id.includes('inveto')) boost += 2;
-      if (userInterests.includes('pos-retail') && faq.id.includes('sentra')) boost += 2;
-      return boost;
-    };
-
     // Direct question match first
     const directMatch = XHENVOLT_FAQS.find(faq => 
       faq.question.toLowerCase().includes(input) || 
@@ -312,17 +255,15 @@ const IntelligentChatbot = () => {
     );
     if (directMatch) return directMatch;
 
-    // Keyword scoring with context awareness
+    // Keyword scoring
     const faqScores = XHENVOLT_FAQS.map(faq => {
-      const keywordScore = faq.keywords.reduce((acc, keyword) => {
+      const score = faq.keywords.reduce((acc, keyword) => {
         if (input.includes(keyword)) {
-          return acc + keyword.length;
+          return acc + keyword.length; // Longer keywords get higher scores
         }
         return acc;
       }, 0);
-      
-      const contextScore = contextBoost(faq);
-      return { faq, score: keywordScore + contextScore };
+      return { faq, score };
     });
 
     // Find best match (minimum score threshold of 3)
@@ -333,7 +274,7 @@ const IntelligentChatbot = () => {
     return bestMatch ? bestMatch.faq : null;
   };
 
-  // Enhanced message handler with context memory
+  // Enhanced message handler with FAQ lookup
   const handleSendMessage = () => {
     if (!inputText.trim()) return;
 
@@ -357,46 +298,25 @@ const IntelligentChatbot = () => {
       
       // Try FAQ matching first
       const matchedFAQ = findMatchingFAQ(currentInput);
-      let response = '';
       
       if (matchedFAQ) {
-        response = matchedFAQ.answer;
-        
-        // Add contextual follow-ups based on user interests
-        if (matchedFAQ.category === 'products' && !userInterests.includes('pricing')) {
-          response += "\n\nWould you like to know about pricing for this solution?";
-        }
-        if (matchedFAQ.category === 'pricing' && !userInterests.includes('demo')) {
-          response += "\n\nInterested in seeing a demo?";
-        }
+        addBotMessage(matchedFAQ.answer);
       } else {
-        // Enhanced fallback responses with business context
+        // Fallback responses based on input patterns
         const input = currentInput.toLowerCase();
         
         if (input.includes('hello') || input.includes('hi') || input.includes('hey')) {
-          const productMention = userInterests.length > 0 
-            ? ` I see you've been interested in ${userInterests.includes('school-management') ? 'DRAIS' : userInterests.includes('sacco-management') ? 'Zyra' : 'our solutions'}.`
-            : '';
-          response = `Hello! 👋 I'm here to help you with DRAIS, Zyra, Constra, Inveto, Sentra, or any Xhenvolt services.${productMention} What would you like to know?`;
+          addBotMessage("Hello! 👋 I'm here to help you with questions about DRAIS, Zyra, Lypha, pricing, demos, or any other Xhenvolt services. What would you like to know?");
         } else if (input.includes('thank') || input.includes('thanks')) {
-          response = "You're welcome! 😊 Is there anything else about our solutions I can help you with? We're here 24/7!";
+          addBotMessage("You're welcome! 😊 Is there anything else about Xhenvolt's solutions I can help you with?");
         } else if (input.includes('bye') || input.includes('goodbye')) {
-          response = `Goodbye! Thanks for chatting with Xhenvolt AI. ${XHENVOLT_BUSINESS_FACTS.contact.phone} or ${XHENVOLT_BUSINESS_FACTS.contact.email} for any follow-up questions! 👋`;
+          addBotMessage("Goodbye! Thanks for chatting with Xhenvolt AI. Feel free to reach out anytime at +256 741 341 483 or info@xhenvolt.com! 👋");
         } else {
-          // Contextual suggestions based on conversation history
-          const suggestions = [];
-          if (!userInterests.includes('school-management')) suggestions.push('• DRAIS school management');
-          if (!userInterests.includes('sacco-management')) suggestions.push('• Zyra SACCO management');
-          if (!userInterests.includes('pos-retail')) suggestions.push('• Sentra POS system');
-          if (!userInterests.includes('pricing')) suggestions.push('• Pricing information');
-          
-          response = `I'd love to help you with "${currentInput}"! 🤔\n\nWhile I'm learning about that topic, I can definitely help with:\n\n${suggestions.slice(0, 4).join('\n')}\n\nOr call ${XHENVOLT_BUSINESS_FACTS.contact.phone} for immediate assistance!`;
+          // General fallback with helpful suggestions
+          addBotMessage(`I'd love to help you with "${currentInput}"! 🤔\n\nWhile I'm still learning about that specific topic, I can definitely help you with:\n\n• DRAIS school management\n• Zyra business automation\n• Lypha analytics\n• Pricing and demos\n• Technical support\n\nOr call our team at +256 741 341 483 for immediate assistance!`);
         }
       }
-      
-      addBotMessage(response);
-      updateConversationContext(currentInput, response);
-    }, 800 + Math.random() * 1200);
+    }, 800 + Math.random() * 1200); // Random delay 0.8-2s
   };
 
   const handleCTAClick = (action: string) => {
@@ -407,12 +327,12 @@ const IntelligentChatbot = () => {
         if (input) input.focus();
         break;
       case 'faqs':
-        // Updated FAQ summary with correct products
-        const faqSummary = `Here are our most common questions by category:\n\n🏢 **Products**\n• What is DRAIS? (School Management)\n• What is Zyra? (SACCO Management)\n• What is Constra? (Construction Management)\n• What is Inveto? (Investment Management)\n• What is Sentra? (POS System)\n\n💰 **Pricing**\n• How much do solutions cost?\n• Payment methods?\n• Free trials?\n\n🎯 **Sales & Demos**\n• Schedule a demo\n• Implementation time\n• Customization options\n\n🛠️ **Support**\n• Technical support (${XHENVOLT_BUSINESS_FACTS.stats.support})\n• Training provided\n• Data security\n\nJust ask me about any of these topics! 😊`;
+        // Show categorized FAQs
+        const faqSummary = `Here are our most common questions by category:\n\n🏢 **Products**\n• What is DRAIS?\n• What is Zyra?\n• What is Lypha?\n\n💰 **Pricing**\n• How much do solutions cost?\n• Payment methods?\n• Free trials?\n\n🎯 **Sales & Demos**\n• Schedule a demo\n• Implementation time\n• Customization options\n\n🛠️ **Support**\n• Technical support\n• Training provided\n• Data security\n\nJust ask me about any of these topics! 😊`;
         addBotMessage(faqSummary);
         break;
       case 'demo':
-        addBotMessage(`I'd love to schedule a demo for you! 🎯\n\nCall us at ${XHENVOLT_BUSINESS_FACTS.contact.phone} or email ${XHENVOLT_BUSINESS_FACTS.contact.email}\n\nOur team will set up a personalized demo within 48 hours. Which product interests you most - DRAIS, Zyra, Constra, Inveto, or Sentra?`);
+        addBotMessage("I'd love to schedule a demo for you! 🎯\n\nCall us at +256 741 341 483 or email info@xhenvolt.com\n\nOur team will set up a personalized demo within 48 hours. Which product interests you most?");
         break;
     }
   };
