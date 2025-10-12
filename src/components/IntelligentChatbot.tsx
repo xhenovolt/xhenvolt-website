@@ -83,13 +83,21 @@ export default function IntelligentChatbot() {
     
     try {
       if (!audioContextRef.current) {
-        // Fix the TypeScript any error by properly typing the webkitAudioContext
+        // Fix the TypeScript error with proper type checking
         const AudioContextClass = window.AudioContext || 
-          (window as Window & { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
+          (window as any).webkitAudioContext;
+        
+        if (!AudioContextClass) {
+          console.log('AudioContext not supported');
+          return;
+        }
+        
         audioContextRef.current = new AudioContextClass();
       }
       
       const ctx = audioContextRef.current;
+      if (!ctx) return;
+      
       const oscillator = ctx.createOscillator();
       const gainNode = ctx.createGain();
       
@@ -104,9 +112,8 @@ export default function IntelligentChatbot() {
       
       oscillator.start(ctx.currentTime);
       oscillator.stop(ctx.currentTime + 0.3);
-    } catch {
-      // Remove unused parameter warning by not capturing the error
-      console.log('Audio not supported');
+    } catch (error) {
+      console.log('Audio not supported:', error);
     }
   }, [soundEnabled]);
 
@@ -261,18 +268,27 @@ export default function IntelligentChatbot() {
       // Normal API processing
       await new Promise(resolve => setTimeout(resolve, typingDuration));
       
-      const response = await fetch('/api/ask', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ 
-          question: currentInput,
-          context: newContext.slice(-3) // Send recent context
-        }),
-      });
+      // Add error handling for fetch
+      let data: { answer?: string } = {};
+      
+      try {
+        const response = await fetch('/api/ask', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ 
+            question: currentInput,
+            context: newContext.slice(-3) // Send recent context
+          }),
+        });
 
-      const data = await response.json();
+        if (response.ok) {
+          data = await response.json();
+        }
+      } catch (fetchError) {
+        console.log('API fetch failed, using fallback response');
+      }
       
       let responseText = data.answer || "I&apos;m not quite sure about that, but I&apos;d love to help you find the right information! 🤔 Try asking me about our services like DRAIS, Zyra, pricing, or contact our amazing team at +256 741 341 483 for personalized assistance! 😊";
       
