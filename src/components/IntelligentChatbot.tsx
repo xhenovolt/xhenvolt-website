@@ -30,6 +30,21 @@ interface ConversationContext {
   conversationStage: 'greeting' | 'exploring' | 'interested' | 'ready' | 'closing';
 }
 
+interface AIResponse {
+  answer: string;
+  confidence: number;
+  source: 'ai' | 'faq' | 'context' | 'fallback';
+  suggestedActions?: string[];
+}
+
+interface ChatSession {
+  id: string;
+  messages: Message[];
+  context: ConversationContext;
+  startTime: Date;
+  lastActivity: Date;
+}
+
 // Business facts and context data - Step 3
 const XHENVOLT_BUSINESS_FACTS = {
   contact: {
@@ -248,6 +263,60 @@ const XHENVOLT_FAQS: FAQ[] = [
   }
 ];
 
+// Step 4: AI System Prompt for Xhenvolt
+const XHENVOLT_SYSTEM_PROMPT = `You are the official Xhenvolt AI assistant. Use a concise, helpful, and professional tone. 
+
+COMPANY INFO:
+- Location: Uganda, East Africa
+- Phone: +256 741 341 483
+- Email: info@xhenvolt.com
+- Products: DRAIS (School Management), Zyra (SACCO Management), Constra (Construction Management), Inveto (Investment Management), Sentra (POS System)
+
+GUIDELINES:
+- Prioritize clarity and action-oriented responses
+- Always propose demos, share pricing when appropriate
+- Offer to connect to human agents for complex queries  
+- Include contact info when relevant
+- Use Ugandan context (UGX currency, local business understanding)
+- If uncertain, ask clarifying questions
+- Keep responses under 150 words unless detailed explanation needed
+- Use emojis appropriately to maintain friendly tone
+
+TONE: Professional, helpful, confident, friendly, concise, locally aware.`;
+
+// JSON-based conversation storage (Step 4)
+const saveConversationToJSON = (session: ChatSession) => {
+  if (typeof window !== 'undefined') {
+    try {
+      const sessions = JSON.parse(localStorage.getItem('xhenvolt-chat-sessions') || '[]');
+      const existingIndex = sessions.findIndex((s: ChatSession) => s.id === session.id);
+      
+      if (existingIndex >= 0) {
+        sessions[existingIndex] = session;
+      } else {
+        sessions.push(session);
+      }
+      
+      // Keep only last 10 sessions
+      const recentSessions = sessions.slice(-10);
+      localStorage.setItem('xhenvolt-chat-sessions', JSON.stringify(recentSessions));
+    } catch (error) {
+      console.log('Failed to save conversation:', error);
+    }
+  }
+};
+
+const loadConversationHistory = (): ChatSession[] => {
+  if (typeof window !== 'undefined') {
+    try {
+      return JSON.parse(localStorage.getItem('xhenvolt-chat-sessions') || '[]');
+    } catch (error) {
+      console.log('Failed to load conversation history:', error);
+    }
+  }
+  return [];
+};
+
 const IntelligentChatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
@@ -255,6 +324,8 @@ const IntelligentChatbot = () => {
   const [inputText, setInputText] = useState('');
   const [hasShownWelcome, setHasShownWelcome] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
+  const [sessionId] = useState(() => `session-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`);
+  const [aiBackendAvailable, setAiBackendAvailable] = useState(false);
   
   // Step 3: Context memory and conversation tracking
   const [context, setContext] = useState<ConversationContext>({
@@ -420,7 +491,161 @@ const IntelligentChatbot = () => {
     );
   };
 
-  // Enhanced message handler with context
+  // Check AI backend availability on mount
+  useEffect(() => {
+    const checkAIBackend = async () => {
+      try {
+        const response = await fetch('/api/chat/health', { method: 'GET' });
+        setAiBackendAvailable(response.ok);
+      } catch {
+        setAiBackendAvailable(false);
+      }
+    };
+    
+    checkAIBackend();
+  }, []);
+
+  // Save conversation periodically
+  useEffect(() => {
+    if (messages.length > 0) {
+      const currentSession: ChatSession = {
+        id: sessionId,
+        messages,
+        context,
+        startTime: new Date(messages[0]?.timestamp || Date.now()),
+        lastActivity: new Date()
+      };
+      
+      saveConversationToJSON(currentSession);
+    }
+  }, [messages, context, sessionId]);
+
+  // Enhanced AI response generation
+  const generateAIResponse = async (userInput: string, conversationContext: ConversationContext): Promise<AIResponse> => {
+    // Try real AI backend first (if available)
+    if (aiBackendAvailable) {
+      try {
+        const response = await fetch('/api/chat', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            message: userInput,
+            context: conversationContext,
+            systemPrompt: XHENVOLT_SYSTEM_PROMPT,
+            conversationHistory: conversationHistory.slice(-6) // Last 6 exchanges
+          }),
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          return {
+            answer: data.answer,
+            confidence: data.confidence || 0.8,
+            source: 'ai',
+            suggestedActions: data.suggestedActions
+          };
+        }
+      } catch (error) {
+        console.log('AI backend failed, using fallback:', error);
+        setAiBackendAvailable(false);
+      }
+    }
+
+    // JSON-based intelligent fallback
+    return generateIntelligentFallback(userInput, conversationContext);
+  };
+
+  // Enhanced fallback with JSON-based intelligence
+  const generateIntelligentFallback = (userInput: string, currentContext: ConversationContext): AIResponse => {
+    const input = userInput.toLowerCase();
+    
+    // Context-aware responses first
+    const contextualResponse = generateContextualResponse(userInput, currentContext);
+    if (contextualResponse) {
+      return {
+        answer: contextualResponse,
+        confidence: 0.9,
+        source: 'context',
+        suggestedActions: getSuggestedActions(currentContext)
+      };
+    }
+
+    // FAQ matching
+    const matchedFAQ = findMatchingFAQ(userInput, currentContext);
+    if (matchedFAQ) {
+      return {
+        answer: matchedFAQ.answer,
+        confidence: 0.8,
+        source: 'faq',
+        suggestedActions: getSuggestedActions(currentContext)
+      };
+    }
+
+    // Pattern-based responses
+    if (input.includes('hello') || input.includes('hi')) {
+      return {
+        answer: `Hello! 👋 I'm here to help you with questions about our solutions:\n\n🏢 **Our Products:**\n• DRAIS (Schools) • Zyra (SACCOs) • Constra (Construction)\n• Inveto (Investment) • Sentra (POS)\n\nWhat interests you most?`,
+        confidence: 0.9,
+        source: 'context'
+      };
+    }
+
+    if (input.includes('thank')) {
+      const suggestions = currentContext.mentionedProducts.length > 0 
+        ? "Would you like to know more about implementation or schedule a demo?"
+        : "Would you like to explore our products or learn about pricing?";
+      return {
+        answer: `You're welcome! 😊 ${suggestions}`,
+        confidence: 0.9,
+        source: 'context'
+      };
+    }
+
+    if (input.includes('bye')) {
+      return {
+        answer: `Goodbye! Thanks for chatting with Xhenvolt AI. Remember:\n\n📞 ${XHENVOLT_BUSINESS_FACTS.contact.phone}\n📧 ${XHENVOLT_BUSINESS_FACTS.contact.email}\n\nWe're here 24/7! 👋`,
+        confidence: 0.9,
+        source: 'context'
+      };
+    }
+
+    // Smart suggestions based on context
+    const suggestions = currentContext.mentionedProducts.length > 0
+      ? `Since you're interested in ${currentContext.mentionedProducts.join(', ')}, would you like to know about:\n\n• Pricing and payment plans\n• Implementation timeline\n• Demo scheduling\n• Similar client success stories`
+      : `I can help you with:\n\n• DRAIS (School Management)\n• Zyra (SACCO Management)\n• Constra (Construction Management)\n• Inveto (Investment Management)\n• Sentra (POS System)`;
+    
+    return {
+      answer: `I'd love to help you with "${userInput}"! 🤔\n\n${suggestions}\n\nOr call our team at ${XHENVOLT_BUSINESS_FACTS.contact.phone} for immediate assistance!`,
+      confidence: 0.6,
+      source: 'fallback',
+      suggestedActions: ['Schedule Demo', 'View Pricing', 'Contact Support']
+    };
+  };
+
+  // Get contextual action suggestions
+  const getSuggestedActions = (currentContext: ConversationContext): string[] => {
+    const actions: string[] = [];
+    
+    if (currentContext.mentionedProducts.length > 0 && !currentContext.requestedDemo) {
+      actions.push('Schedule Demo');
+    }
+    
+    if (currentContext.mentionedProducts.length > 0 && !currentContext.askedAboutPricing) {
+      actions.push('View Pricing');
+    }
+    
+    if (currentContext.conversationStage === 'interested') {
+      actions.push('Contact Sales');
+    }
+    
+    actions.push('View FAQs');
+    
+    return actions.slice(0, 3); // Max 3 suggestions
+  };
+
+  // Enhanced message handler with AI integration
   const handleSendMessage = () => {
     if (!inputText.trim()) return;
 
@@ -437,85 +662,65 @@ const IntelligentChatbot = () => {
     setInputText('');
     setIsTyping(true);
 
-    // Simulate thinking time
-    setTimeout(() => {
-      setIsTyping(false);
-      
-      let response = '';
-      
-      // Try contextual response first
-      const contextualResponse = generateContextualResponse(currentInput, context);
-      if (contextualResponse) {
-        response = contextualResponse;
-      } else {
-        // Try FAQ matching with context
-        const matchedFAQ = findMatchingFAQ(currentInput, context);
-        if (matchedFAQ) {
-          response = matchedFAQ.answer;
-        } else {
-          // Enhanced fallback responses
-          const input = currentInput.toLowerCase();
-          
-          if (input.includes('hello') || input.includes('hi') || input.includes('hey')) {
-            response = `Hello! 👋 I'm here to help you with questions about our solutions:\n\n🏢 **Our Products:**\n• DRAIS (Schools) • Zyra (SACCOs) • Constra (Construction)\n• Inveto (Investment) • Sentra (POS)\n\nWhat interests you most?`;
-          } else if (input.includes('thank') || input.includes('thanks')) {
-            const suggestions = context.mentionedProducts.length > 0 
-              ? "Would you like to know more about implementation or schedule a demo?"
-              : "Would you like to explore our products or learn about pricing?";
-            response = `You're welcome! 😊 ${suggestions}`;
-          } else if (input.includes('bye') || input.includes('goodbye')) {
-            response = `Goodbye! Thanks for chatting with Xhenvolt AI. Remember:\n\n📞 ${XHENVOLT_BUSINESS_FACTS.contact.phone}\n📧 ${XHENVOLT_BUSINESS_FACTS.contact.email}\n\nWe're here 24/7! 👋`;
-          } else {
-            // Smart suggestions based on context
-            const suggestions = context.mentionedProducts.length > 0
-              ? `Since you're interested in ${context.mentionedProducts.join(', ')}, would you like to know about:\n\n• Pricing and payment plans\n• Implementation timeline\n• Demo scheduling\n• Similar client success stories`
-              : `I can help you with:\n\n• DRAIS (School Management)\n• Zyra (SACCO Management)\n• Constra (Construction Management)\n• Inveto (Investment Management)\n• Sentra (POS System)`;
-            
-            response = `I'd love to help you with "${currentInput}"! 🤔\n\n${suggestions}\n\nOr call our team at ${XHENVOLT_BUSINESS_FACTS.contact.phone} for immediate assistance!`;
-          }
-        }
+    // Enhanced AI response generation
+    setTimeout(async () => {
+      try {
+        const aiResponse = await generateAIResponse(currentInput, context);
+        
+        setIsTyping(false);
+        addBotMessage(aiResponse.answer, aiResponse.suggestedActions);
+        updateContext(currentInput, aiResponse.answer);
+        
+      } catch (error) {
+        console.error('Error generating response:', error);
+        setIsTyping(false);
+        
+        const errorResponse = `I'm having a small technical issue right now! 😅\n\nBut our amazing human team is always available:\n\n📞 ${XHENVOLT_BUSINESS_FACTS.contact.phone}\n📧 ${XHENVOLT_BUSINESS_FACTS.contact.email}\n\nThey'll take excellent care of you! 💙`;
+        addBotMessage(errorResponse);
       }
-      
-      addBotMessage(response);
-      updateContext(currentInput, response);
-      
-    }, 800 + Math.random() * 1200); // Random delay 0.8-2s
+    }, 800 + Math.random() * 1200);
   };
 
-  const handleCTAClick = (action: string) => {
-    switch (action) {
-      case 'ask':
-        // Focus on input
-        const input = document.querySelector('#chat-input') as HTMLInputElement;
-        if (input) input.focus();
-        break;
-      case 'faqs':
-        // Show categorized FAQs with updated product info
-        const faqSummary = `Here are our most common questions by category:\n\n🏢 **Products**\n• What is DRAIS? (School Management)\n• What is Zyra? (SACCO Management)\n• What is Constra? (Construction Management)\n• What is Inveto? (Investment Management)\n• What is Sentra? (POS System)\n\n💰 **Pricing**\n• How much do solutions cost?\n• Payment methods?\n• Free trials?\n\n🎯 **Sales & Demos**\n• Schedule a demo\n• Implementation time\n• Customization options\n\n🛠️ **Support**\n• Technical support\n• Training provided\n• Data security\n\nJust ask me about any of these topics! 😊`;
-        addBotMessage(faqSummary);
-        break;
-      case 'demo':
-        addBotMessage(`I'd love to schedule a demo for you! 🎯\n\n📞 **Call**: ${XHENVOLT_BUSINESS_FACTS.contact.phone}\n📧 **Email**: ${XHENVOLT_BUSINESS_FACTS.contact.email}\n\nOur team will set up a personalized demo within 48 hours. Which product interests you most?`);
-        setContext(prev => ({ ...prev, requestedDemo: true, conversationStage: 'interested' }));
-        break;
-    }
-  };
-
-  const addBotMessage = (text: string) => {
+  // Enhanced addBotMessage with action suggestions
+  const addBotMessage = (text: string, suggestedActions?: string[]) => {
     const botMessage: Message = {
       id: `bot-${Date.now()}`,
       text,
       isUser: false,
       timestamp: new Date(),
-      type: 'text'
+      type: suggestedActions ? 'cta' : 'text',
+      ctaButtons: suggestedActions?.map(action => ({
+        label: action,
+        action: action.toLowerCase().replace(' ', '_')
+      }))
     };
     setMessages(prev => [...prev, botMessage]);
   };
 
-  const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter' && !e.shiftKey) {
-      e.preventDefault();
-      handleSendMessage();
+  // Enhanced CTA click handler
+  const handleCTAClick = (action: string) => {
+    switch (action) {
+      case 'ask':
+        const input = document.querySelector('#chat-input') as HTMLInputElement;
+        if (input) input.focus();
+        break;
+      case 'faqs':
+        const faqSummary = `Here are our most common questions by category:\n\n🏢 **Products**\n• What is DRAIS? (School Management)\n• What is Zyra? (SACCO Management)\n• What is Constra? (Construction Management)\n• What is Inveto? (Investment Management)\n• What is Sentra? (POS System)\n\n💰 **Pricing**\n• How much do solutions cost?\n• Payment methods?\n• Free trials?\n\n🎯 **Sales & Demos**\n• Schedule a demo\n• Implementation time\n• Customization options\n\n🛠️ **Support**\n• Technical support\n• Training provided\n• Data security\n\nJust ask me about any of these topics! 😊`;
+        addBotMessage(faqSummary);
+        break;
+      case 'demo':
+      case 'schedule_demo':
+        addBotMessage(`I'd love to schedule a demo for you! 🎯\n\n📞 **Call**: ${XHENVOLT_BUSINESS_FACTS.contact.phone}\n📧 **Email**: ${XHENVOLT_BUSINESS_FACTS.contact.email}\n\nOur team will set up a personalized demo within 48 hours. Which product interests you most?`);
+        setContext(prev => ({ ...prev, requestedDemo: true, conversationStage: 'interested' }));
+        break;
+      case 'view_pricing':
+        addBotMessage(`Here's our pricing overview:\n\n💰 **Product Pricing:**\n• DRAIS: from UGX 800,000/year\n• Zyra: from UGX 600,000/year\n• Constra: from UGX 1,200,000/year\n• Inveto: from UGX 1,500,000/year\n• Sentra: from UGX 400,000/year\n\n✅ All plans include setup, training, support & updates\n\nCall ${XHENVOLT_BUSINESS_FACTS.contact.phone} for a personalized quote! 💰`);
+        setContext(prev => ({ ...prev, askedAboutPricing: true }));
+        break;
+      case 'contact_support':
+      case 'contact_sales':
+        addBotMessage(`Ready to talk to our team? 🤝\n\n📞 **Phone**: ${XHENVOLT_BUSINESS_FACTS.contact.phone}\n📧 **Email**: ${XHENVOLT_BUSINESS_FACTS.contact.email}\n🌐 **Website**: ${XHENVOLT_BUSINESS_FACTS.contact.website}\n\nWe're available 24/7 and typically respond within 2 hours! Our team will be happy to discuss your specific needs.`);
+        break;
     }
   };
 
@@ -541,7 +746,7 @@ const IntelligentChatbot = () => {
         <div className={`fixed bottom-6 right-6 w-96 max-w-[calc(100vw-2rem)] bg-white rounded-2xl shadow-2xl z-50 flex flex-col overflow-hidden transition-all duration-300 ${
           isMinimized ? 'h-16' : 'h-[500px]'
         }`}>
-          {/* Header */}
+          {/* Header with AI status indicator */}
           <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
@@ -549,7 +754,9 @@ const IntelligentChatbot = () => {
               </div>
               <div>
                 <h3 className="font-semibold text-sm">Xhenvolt AI Assistant</h3>
-                <p className="text-xs text-white/80">Online • Ready to help</p>
+                <p className="text-xs text-white/80">
+                  {aiBackendAvailable ? '🤖 AI Enhanced' : '📚 Smart Mode'} • Ready to help
+                </p>
               </div>
             </div>
             <div className="flex items-center gap-2">
