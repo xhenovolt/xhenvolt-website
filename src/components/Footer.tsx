@@ -60,11 +60,21 @@ export default function Footer() {
                 </div>
                 <div className="flex items-center gap-3">
                   <Phone className="w-5 h-5 text-blue-600" />
-                  <span className="text-gray-600 dark:text-gray-300">+256 741 341 483</span>
+                  <a href="tel:+256745726350" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 transition-colors">
+                    0745 726 350
+                  </a>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Phone className="w-5 h-5 text-blue-600" />
+                  <a href="tel:+256774543406" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 transition-colors">
+                    +256 774 543 406
+                  </a>
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail className="w-5 h-5 text-blue-600" />
-                  <span className="text-gray-600 dark:text-gray-300">info@xhenvolt.com</span>
+                  <a href="mailto:info@xhenvolt.com" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 transition-colors">
+                    info@xhenvolt.com
+                  </a>
                 </div>
               </div>
             </motion.div>

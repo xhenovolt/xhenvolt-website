@@ -46,6 +46,7 @@ export default function Navbar() {
   const navItems = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
+    { name: "Systems", href: "/systems" },
     {
       name: "Services",
       href: "/services",
@@ -56,6 +57,7 @@ export default function Navbar() {
         { name: "UI/UX Design", href: "/services#design" }
       ]
     },
+    { name: "Pricing", href: "/pricing" },
     {
       name: "Resources",
       href: "#",

@@ -31,21 +31,10 @@ const team = [
 		},
 	},
 	{
-		name: "Sinsiga Shafic",
-		role: "Client Success Officer",
-		bio: "Dedicated to ensuring client satisfaction and success, Sinsiga Shafic bridges the gap between clients and the development team. With a strong background in customer relationship management and a passion for delivering value, Shafic ensures that every client&apos;s needs are met with precision and care.",
-		specialties: ["Client Relationship Management", "Project Coordination", "Customer Success Strategy"],
-		social: {
-			linkedin: "https://www.linkedin.com/in/sinsiga-shafic",
-			twitter: "https://twitter.com/sinsiga_shafic",
-			github: "https://github.com/sinsiga-shafic",
-		},
-	},
-	{
-		name: "Mubeezi Calebu Ashiraf",
-		role: "Lead UI/UX Designer",
-		bio: "Creative designer crafting intuitive user experiences and beautiful interfaces that drive engagement and conversions.",
-		specialties: ["UI/UX Design", "Brand Identity", "User Research"],
+		name: "Ssentamu Murshid",
+		role: "Chief Operating Officer",
+		bio: "Operational excellence leader ensuring seamless project delivery and organizational efficiency. Dedicated to building scalable processes and driving operational success.",
+		specialties: ["Operations Management", "Project Delivery", "Process Optimization"],
 		social: {
 			linkedin: "#",
 			twitter: "#",
@@ -54,9 +43,9 @@ const team = [
 	},
 	{
 		name: "Nasa Matovu",
-		role: "Lead Full-Stack Developer",
-		bio: "Expert developer specializing in scalable web applications and enterprise systems with modern technologies.",
-		specialties: ["Full-Stack Development", "System Architecture", "Database Design"],
+		role: "Chief Technology Officer",
+		bio: "Expert technologist specializing in scalable enterprise systems and technology architecture. Leads technical strategy and delivery of innovative solutions.",
+		specialties: ["System Architecture", "Technology Strategy", "Enterprise Solutions"],
 		social: {
 			linkedin: "#",
 			twitter: "#",
@@ -86,7 +75,7 @@ export default function TeamSection() {
 					</p>
 				</motion.div>
 
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 					{team.map((member, index) => (
 						<motion.div
 							key={index}

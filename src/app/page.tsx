@@ -44,10 +44,10 @@ const testimonials = [
 		rating: 5,
 	},
 	{
-		name: "James Onen",
-		role: "Project Manager, Constra Ltd.",
-		text: "&ldquo;The Constra system has improved our project tracking and resource management significantly.&rdquo;",
-		rating: 4.5,
+		name: "Sheikh Hassan Mwaita",
+		role: "General Director",
+		text: "&ldquo;DRAIS has transformed our school management beyond borders. Efficiency, control, and modernization are now at the core of our operations.&rdquo;",
+		rating: 5,
 	},
 	{
 		name: "Fatuma Abdi",
@@ -129,15 +129,15 @@ export default function HomePage() {
 			<Navbar />
 			
 			{/* Hero Section */}
-			<section className="pt-32 pb-20 overflow-hidden">
-				<div className="max-w-7xl mx-auto px-6">
-					<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+			<section className="pt-24 pb-12 md:pt-32 md:pb-20 overflow-hidden">
+				<div className="max-w-7xl mx-auto px-4 sm:px-6">
+					<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
 						<motion.div
 							initial={{ opacity: 0, x: -50 }}
 							animate={{ opacity: 1, x: 0 }}
 							transition={{ duration: 0.8 }}
 						>
-							<h1 className="text-5xl lg:text-7xl font-bold mb-6">
+							<h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-6">
 								<span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent">
 									Transforming
 								</span>
@@ -146,17 +146,18 @@ export default function HomePage() {
 									Africa with Technology
 								</span>
 							</h1>
-							<p className="text-xl lg:text-2xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+							<p className="text-lg sm:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 mb-6 sm:mb-8 leading-relaxed">
 								We deliver cutting-edge software solutions that empower businesses, schools, and organizations across East Africa to achieve their digital transformation goals.
 							</p>
-							<div className="flex flex-col sm:flex-row gap-4">
+							<div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
 								<motion.div
 									whileHover={{ scale: 1.05 }}
 									whileTap={{ scale: 0.95 }}
+									className="w-full sm:w-auto"
 								>
 									<Link
 										href="/contact"
-										className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 gap-2"
+										className="inline-flex w-full sm:w-auto items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 gap-2"
 									>
 										Start Your Project
 										<ArrowRight className="w-5 h-5" />
@@ -165,10 +166,11 @@ export default function HomePage() {
 								<motion.div
 									whileHover={{ scale: 1.05 }}
 									whileTap={{ scale: 0.95 }}
+									className="w-full sm:w-auto"
 								>
 									<Link
 										href="/services"
-										className="inline-flex items-center px-8 py-4 border-2 border-blue-600 text-blue-600 dark:text-blue-400 rounded-xl font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300"
+										className="inline-flex w-full sm:w-auto items-center justify-center px-6 sm:px-8 py-3 sm:py-4 border-2 border-blue-600 text-blue-600 dark:text-blue-400 rounded-xl font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300"
 									>
 										Explore Services
 									</Link>
@@ -208,25 +210,25 @@ export default function HomePage() {
 				</div>
 			</section>
 
-			{/* Features Section */}
-			<section className="py-20">
-				<div className="max-w-7xl mx-auto px-6">
-					<motion.div
-						initial={{ opacity: 0, y: 30 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						viewport={{ once: true }}
-						transition={{ duration: 0.8 }}
-						className="text-center mb-16"
-					>
-						<h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-							Why Choose Xhenvolt?
-						</h2>
-						<p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-							We don&apos;t just build software—we craft solutions that transform businesses and create lasting value.
-						</p>
-					</motion.div>
+		{/* Features Section */}
+		<section className="py-12 sm:py-16 md:py-20">
+			<div className="max-w-7xl mx-auto px-4 sm:px-6">
+				<motion.div
+					initial={{ opacity: 0, y: 30 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true }}
+					transition={{ duration: 0.8 }}
+					className="text-center mb-12 sm:mb-16"
+				>
+					<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
+						Why Choose Xhenvolt?
+					</h2>
+					<p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+						We don&apos;t just build software—we craft solutions that transform businesses and create lasting value.
+					</p>
+				</motion.div>
 
-					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
 						{features.map((feature, index) => (
 							<motion.div
 								key={index}
@@ -252,25 +254,25 @@ export default function HomePage() {
 				</div>
 			</section>
 
-			{/* Solutions Showcase */}
-			<section className="py-20 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600">
-				<div className="max-w-7xl mx-auto px-6">
-					<motion.div
-						initial={{ opacity: 0, y: 30 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						viewport={{ once: true }}
-						transition={{ duration: 0.8 }}
-						className="text-center mb-16"
-					>
-						<h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-							Proven Solutions in Action
-						</h2>
-						<p className="text-xl text-white/90 max-w-3xl mx-auto">
-							See how our custom-built systems are transforming organizations across East Africa in record time.
-						</p>
-					</motion.div>
+		{/* Solutions Showcase */}
+		<section className="py-12 sm:py-16 md:py-20 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600">
+			<div className="max-w-7xl mx-auto px-4 sm:px-6">
+				<motion.div
+					initial={{ opacity: 0, y: 30 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true }}
+					transition={{ duration: 0.8 }}
+					className="text-center mb-12 sm:mb-16"
+				>
+					<h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6">
+						Proven Solutions in Action
+					</h2>
+					<p className="text-base sm:text-lg md:text-xl text-white/90 max-w-3xl mx-auto">
+						See how our custom-built systems are transforming organizations across East Africa in record time.
+					</p>
+				</motion.div>
 
-					<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+				<div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
 						{solutions.map((solution, index) => (
 							<motion.div
 								key={index}
@@ -311,52 +313,52 @@ export default function HomePage() {
 			{/* Team Section */}
 			<TeamSection />
 
-			{/* CTA Section */}
-			<section className="py-20">
-				<div className="max-w-7xl mx-auto px-6">
-					<motion.div
-						initial={{ opacity: 0, y: 30 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						viewport={{ once: true }}
-						transition={{ duration: 0.8 }}
-						className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-3xl p-12 shadow-2xl border border-white/20 dark:border-gray-700/50 text-center"
-					>
-						<h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-							Ready to Transform Your Organization?
-						</h2>
-						<p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-							Join our growing list of 25+ satisfied clients across East Africa who have revolutionized their operations with our innovative technology solutions in just 3 months.
-						</p>
-						<div className="flex flex-col sm:flex-row gap-4 justify-center">
-							<motion.div
-								whileHover={{ scale: 1.05 }}
-								whileTap={{ scale: 0.95 }}
+		{/* CTA Section */}
+		<section className="py-12 sm:py-16 md:py-20">
+			<div className="max-w-7xl mx-auto px-4 sm:px-6">
+				<motion.div
+					initial={{ opacity: 0, y: 30 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true }}
+					transition={{ duration: 0.8 }}
+					className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-3xl p-8 sm:p-12 shadow-2xl border border-white/20 dark:border-gray-700/50 text-center"
+				>
+					<h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
+						Ready to Transform Your Organization?
+					</h2>
+					<p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-6 sm:mb-8 max-w-2xl mx-auto">
+						Join our growing list of 25+ satisfied clients across East Africa who have revolutionized their operations with our innovative technology solutions in just 3 months.
+					</p>
+					<div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+						<motion.div
+							whileHover={{ scale: 1.05 }}
+							whileTap={{ scale: 0.95 }}
+							className="w-full sm:w-auto"
+						>
+							<Link
+								href="/contact"
+								className="inline-flex w-full sm:w-auto items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 gap-2"
 							>
-								<Link
-									href="/contact"
-									className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 gap-2"
-								>
-									Get Free Consultation
-									<ArrowRight className="w-5 h-5" />
-								</Link>
-							</motion.div>
-							<motion.div
-								whileHover={{ scale: 1.05 }}
-								whileTap={{ scale: 0.95 }}
+								Get Free Consultation
+								<ArrowRight className="w-5 h-5" />
+							</Link>
+						</motion.div>
+						<motion.div
+							whileHover={{ scale: 1.05 }}
+							whileTap={{ scale: 0.95 }}
+							className="w-full sm:w-auto"
+						>
+							<Link
+								href="/testimonials"
+								className="inline-flex w-full sm:w-auto items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-transparent border-2 border-blue-600 text-blue-600 dark:text-blue-400 rounded-xl font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300"
 							>
-								<Link
-									href="/testimonials"
-									className="inline-flex items-center px-8 py-4 bg-transparent border-2 border-blue-600 text-blue-600 dark:text-blue-400 rounded-xl font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300"
-								>
-									View Success Stories
-								</Link>
-							</motion.div>
-						</div>
-					</motion.div>
-				</div>
-			</section>
-
-			<Footer />
+								View Success Stories
+							</Link>
+						</motion.div>
+					</div>
+				</motion.div>
+			</div>
+		</section>			<Footer />
 		</main>
 	);
 }

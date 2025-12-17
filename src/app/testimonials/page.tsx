@@ -34,13 +34,13 @@ const testimonials = [
 		location: "Bugumba, Iganga, Uganda",
 	},
 	{
-		name: "Dr. John Doe",
-		role: "Medical Director, Kampala Children's Hospital",
-		company: "Kampala Example Hospital",
-		text: "Our custom hospital management system has streamlined patient care from admission to discharge. The pediatric-focused features, including growth tracking, vaccination schedules, and specialized pediatric treatment protocols, have improved our care quality significantly. The system integrates seamlessly with our laboratory and pharmacy, reducing waiting times and improving accuracy. Staff productivity has increased by 45%, and patient satisfaction scores have reached an all-time high.",
+		name: "Sheikh Hassan Mwaita",
+		role: "General Director",
+		company: "Ibun Baz Girls Secondary School",
+		text: "DRAIS has transformed our school management in ways we never imagined. Before implementing this system, we were managing everything manually, which was inefficient and error-prone. Now, with DRAIS, our administrative operations run seamlessly. The system has elevated our school management far beyond what we could achieve with traditional methods. It has brought efficiency, control, and modernization to every aspect of our operations. Teachers can focus on teaching, parents receive real-time updates, and our administrative team has regained valuable time to focus on strategic improvements. The transformation has been remarkable.",
 		rating: 5,
-		project: "Pediatric Hospital Management System",
-		location: "Kampala, Uganda",
+		project: "DRAIS School Management System",
+		location: "Busei, Uganda",
 	},
 ];
 

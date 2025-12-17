@@ -53,14 +53,14 @@ export default function ContactPage() {
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Call Us",
-      details: "+256 741 341 483",
+      details: "0745 726 350",
       subtitle: "Mon - Fri, 8:00 AM - 6:00 PM"
     },
     {
-      icon: <Clock className="w-6 h-6" />,
-      title: "Business Hours",
-      details: "Monday - Friday",
-      subtitle: "8:00 AM - 6:00 PM EAT"
+      icon: <Phone className="w-6 h-6" />,
+      title: "Whatsapp / Telegram",
+      details: "+256 774 543 406",
+      subtitle: "Quick response for urgent matters"
     }
   ];
 
