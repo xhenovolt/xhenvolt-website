@@ -28,8 +28,8 @@ export default function VerifyPage() {
   useEffect(() => {
     const fetchInvoice = async () => {
       try {
-        // Fetch invoices from the public data directory
-        const response = await fetch('/data/invoices.json');
+        // Fetch invoices from the public directory
+        const response = await fetch('/invoices.json');
         if (!response.ok) {
           throw new Error('Unable to load invoice database');
         }
