@@ -1,0 +1,41 @@
+{
+  "XHV-INV-2025-0001": {
+    "invoiceId": "XHV-INV-2025-0001",
+    "clientName": "Acme Corporation",
+    "clientAddress": "1500 Business Park Drive, San Jose, CA 95110, USA",
+    "serviceDescription": "Enterprise automation system implementation with custom system design, implementation support, and staff training",
+    "totalAmount": 45000.00,
+    "amountPaid": 45000.00,
+    "balance": 0.00,
+    "status": "Paid",
+    "issuedBy": "Xhenvolt Uganda SMC Limited",
+    "issueDate": "2025-01-15",
+    "currency": "USD"
+  },
+  "XHV-INV-2025-0002": {
+    "invoiceId": "XHV-INV-2025-0002",
+    "clientName": "TechFlow Solutions Ltd",
+    "clientAddress": "Unit 12, Innovation Hub, London EC1V 4PY, United Kingdom",
+    "serviceDescription": "Custom SaaS platform development including consulting, architecture design, and API development",
+    "totalAmount": 32500.00,
+    "amountPaid": 16250.00,
+    "balance": 16250.00,
+    "status": "Partially Paid",
+    "issuedBy": "Xhenvolt Uganda SMC Limited",
+    "issueDate": "2025-01-20",
+    "currency": "USD"
+  },
+  "XHV-INV-2025-0003": {
+    "invoiceId": "XHV-INV-2025-0003",
+    "clientName": "Global Industries Inc",
+    "clientAddress": "500 Corporate Boulevard, Toronto, ON M1H 3G7, Canada",
+    "serviceDescription": "System maintenance, integration services, and ongoing technical support for 12 months",
+    "totalAmount": 18750.00,
+    "amountPaid": 0.00,
+    "balance": 18750.00,
+    "status": "Unpaid",
+    "issuedBy": "Xhenvolt Uganda SMC Limited",
+    "issueDate": "2025-01-10",
+    "currency": "USD"
+  }
+}
