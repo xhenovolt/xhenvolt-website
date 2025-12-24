@@ -1,16 +1,16 @@
 {
   "XHV-INV-2025-0001": {
     "invoiceId": "XHV-INV-2025-0001",
-    "clientName": "Acme Corporation",
-    "clientAddress": "1500 Business Park Drive, San Jose, CA 95110, USA",
-    "serviceDescription": "Enterprise automation system implementation with custom system design, implementation support, and staff training",
-    "totalAmount": 45000.00,
-    "amountPaid": 45000.00,
-    "balance": 0.00,
-    "status": "Paid",
+    "clientName": "Excel Islamic Nursary and Primary School",
+    "clientAddress": "Busembatia, Namutumba District, Uganda",
+    "serviceDescription": "System maintenance, integration services, and ongoing technical support for 12 months",
+    "totalAmount": 2950000,
+    "amountPaid": 500000,
+    "balance": 2450000,
+    "status": "Partially Paid",
     "issuedBy": "Xhenvolt Uganda SMC Limited",
-    "issueDate": "2025-01-15",
-    "currency": "USD"
+    "issueDate": "2025-12-24",
+    "currency": "UGX"
   },
   "XHV-INV-2025-0002": {
     "invoiceId": "XHV-INV-2025-0002",

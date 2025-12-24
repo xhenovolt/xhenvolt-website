@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+# security - API keys and credentials
+websitekey
+websitekey.pub
