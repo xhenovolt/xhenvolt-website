@@ -73,7 +73,7 @@ export default function TermsOfServicePage() {
 						</p>
 						<div className="flex items-center justify-center gap-4 text-sm text-gray-500 dark:text-gray-400">
 							<Calendar className="w-4 h-4" />
-							<span>Last updated: January 2024</span>
+							<span>Last updated: January 2026</span>
 						</div>
 					</motion.div>
 				</div>

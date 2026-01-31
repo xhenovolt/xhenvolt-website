@@ -102,6 +102,32 @@ const sections = [
 			},
 		],
 	},
+	{
+		icon: <Eye className="w-6 h-6" />,
+		title: "Third-Party Advertising & Analytics",
+		content: [
+			{
+				subtitle: "Google AdSense",
+				items: [
+					"We use Google AdSense to display personalized advertisements on our website",
+					"Google may use cookies and other tracking technologies to serve ads based on your interests",
+					"Google collects and uses data in accordance with their own privacy policy",
+					"You can opt out of personalized ads through Google's Ad Settings",
+					"Learn more at: https://www.google.com/policies/privacy/partners/",
+				],
+			},
+			{
+				subtitle: "Third-Party Cookies & Tracking",
+				items: [
+					"Third-party advertising networks may place cookies on your device",
+					"These cookies help deliver targeted advertising and measure campaign effectiveness",
+					"You can manage advertising preferences through NAI (Network Advertising Initiative)",
+					"Browser do-not-track signals are recognized and respected",
+					"We do not control third-party cookie practices, only our own",
+				],
+			},
+		],
+	},
 ];
 
 export default function PrivacyPolicyPage() {
@@ -127,7 +153,7 @@ export default function PrivacyPolicyPage() {
 						</p>
 						<div className="flex items-center justify-center gap-4 text-sm text-gray-500 dark:text-gray-400">
 							<Calendar className="w-4 h-4" />
-							<span>Last updated: January 2024</span>
+							<span>Last updated: January 2026</span>
 						</div>
 					</motion.div>
 				</div>

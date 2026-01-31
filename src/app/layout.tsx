@@ -17,17 +17,31 @@ export const metadata: Metadata = {
   keywords: "technology solutions Uganda, custom software development, mobile apps, POS systems, enterprise solutions, digital transformation Africa",
   authors: [{ name: "Xhenvolt Uganda" }],
   creator: "Xhenvolt Uganda",
+  metadataBase: new URL("https://xhenvolt.com"),
+  canonical: "https://xhenvolt.com",
   openGraph: {
     title: "Xhenvolt Uganda | Leading Technology Solutions Provider",
     description: "Transform your business with cutting-edge technology solutions",
     type: "website",
     locale: "en_US",
     siteName: "Xhenvolt Uganda",
+    url: "https://xhenvolt.com",
   },
   twitter: {
     card: "summary_large_image",
     title: "Xhenvolt Uganda | Leading Technology Solutions Provider",
     description: "Transform your business with cutting-edge technology solutions",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": "-1",
+      "max-video-preview": "-1",
+    },
   },
 };
 
