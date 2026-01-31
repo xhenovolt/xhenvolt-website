@@ -38,7 +38,7 @@ const milestones = [
 	{
 		year: "July 2025",
 		title: "First Major Clients",
-		description: "Successfully launched with major clients: delivered DRAIS School Management System to Northgate School and Zyra SACCO Management System to Bumwena Scrap SACCO, establishing our foundation in educational and financial technology solutions."
+		description: "Successfully launched with major clients: delivered DRAIS School Management System to Northgate School and Xhaira SACCO Management System to Bumwena Scrap SACCO, establishing our foundation in educational and financial technology solutions."
 	},
 	{
 		year: "August 2025",
@@ -48,8 +48,19 @@ const milestones = [
 	{
 		year: "September 2025",
 		title: "Rapid Growth Phase",
-		description: "Achieved 25+ successful project deliveries across education, healthcare, finance, and other sectors, establishing ourselves as a trusted technology partner in East Africa."
-	}
+		description: "Developed and established other major platforms such as JETON, a company executive operating system and XHETON for sales and inventory management."
+	},
+	{
+		year: "October 2025",
+		title: "Scaling Phase",
+		description: "Expanded DRAIS school system for more benefits like realtime biometric and pushed to schools such as Excel Islamic Nursary and Primary School Busembatia and more"
+	},
+	{
+		year: "January 2026",
+		title: "Rapid Growth Phase",
+		description: "Achieved 28+ successful project deliveries across education including, healthcare, finance, and other sectors, establishing ourselves as a trusted technology partner in East Africa."
+	},
+
 ];
 
 export default function AboutPage() {
@@ -124,7 +135,7 @@ export default function AboutPage() {
 							</div>
 							<h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Our Impact</h3>
 							<p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-								In just 3 months since our founding in June 2025, we&apos;ve delivered 25+ successful projects, serving 25+ satisfied clients across education, healthcare, finance, and construction sectors throughout East Africa.
+								In just 3 months since our founding in June 2025, we&apos;ve delivered 28+ successful projects, serving 28+ satisfied clients across education, healthcare, finance, and construction sectors throughout East Africa.
 							</p>
 						</motion.div>
 					</div>
@@ -152,7 +163,7 @@ export default function AboutPage() {
 									From Vision to Reality
 								</h3>
 								<p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-									Founded by visionary entrepreneur Hamuza Ibrahim, Xhenvolt Uganda emerged from a simple yet powerful idea: that every African business deserves access to world-class technology solutions. What started as a vision has quickly become a reality, with 25+ successful projects delivered in just our first three months of operation.
+									Founded by visionary entrepreneur Hamuza Ibrahim, Xhenvolt Uganda emerged from a simple yet powerful idea: that every African business deserves access to world-class technology solutions. What started as a vision has quickly become a reality, with 28+ successful projects delivered in just our first three months of operation.
 								</p>
 								<p className="text-gray-600 dark:text-gray-300 leading-relaxed">
 									Our rapid growth isn&apos;t just about numbers—it&apos;s about the real impact we&apos;re making. From helping schools reduce administrative burden by 60% to enabling SACCOs to serve 500+ members efficiently, we&apos;re proving that great technology can transform lives and communities across East Africa.

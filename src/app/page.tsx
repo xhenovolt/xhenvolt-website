@@ -187,11 +187,11 @@ export default function HomePage() {
 							<div className="relative z-10 bg-white/10 dark:bg-gray-800/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 dark:border-gray-700/50">
 								<div className="grid grid-cols-2 gap-4 mb-6">
 									<div className="bg-green-100 dark:bg-green-900/30 p-4 rounded-2xl text-center">
-										<div className="text-3xl font-bold text-green-600 dark:text-green-400">25+</div>
+										<div className="text-3xl font-bold text-green-600 dark:text-green-400">28+</div>
 										<div className="text-sm text-green-700 dark:text-green-300">Projects Delivered</div>
 									</div>
 									<div className="bg-blue-100 dark:bg-blue-900/30 p-4 rounded-2xl text-center">
-										<div className="text-3xl font-bold text-blue-600 dark:text-blue-400">100%</div>
+										<div className="text-3xl font-bold text-blue-600 dark:text-blue-400">97.3%</div>
 										<div className="text-sm text-blue-700 dark:text-blue-300">Client Satisfaction</div>
 									</div>
 								</div>
@@ -358,7 +358,9 @@ export default function HomePage() {
 					</div>
 				</motion.div>
 			</div>
-		</section>			<Footer />
+		</section>			
+		
+		<Footer />
 		</main>
 	);
 }

@@ -30,6 +30,17 @@ const systems = [
 		learnMore: "https://xheton.xhenvolt.com"
 	},
 	{
+		id: "xheton",
+		name: "JETON",
+		fullName: "Company Execution",
+		description: "Powerful system for company valuation and efficient execution.",
+		forWho: "Companies so much frustrated with paperwork or having issues with narrow ERP systems ",
+		coreValue: "Real-time valuation & pipeline tracking and sales analytics to drive profitability and operational efficiency.",
+		icon: <TrendingUp className="w-12 h-12" />,
+		href: "/systems/jeton",
+		learnMore: "https://jeton.xhenvolt.com"
+	},
+	{
 		id: "xhaira",
 		name: "XHAIRA",
 		fullName: "SACCO Management System",
