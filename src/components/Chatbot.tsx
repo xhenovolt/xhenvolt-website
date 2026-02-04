@@ -15,7 +15,7 @@ export default function Chatbot() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: "1",
-      text: "Hello! I'm the Xhenvolt AI assistant. I'm here to answer questions about our enterprise software solutions - DRAIS for schools, XHETON for retail, XHAIRA for SACCOs, CONSTY for construction, and JORC for project management. How can I help you today?",
+      text: "Hello! 👋 I'm the Al Hanan Education Centre AI assistant. I'm here to answer questions about our school - including our Qur'anic memorization program, Islamic studies, academics, admissions, and more. How can I help you today?",
       isUser: false,
       timestamp: new Date(),
     },
@@ -65,7 +65,7 @@ export default function Chatbot() {
           id: (Date.now() + 1).toString(),
           text:
             data.error ||
-            "I'm having trouble processing your request right now. Please contact our team at 0745 726 350 or +256 774 543 406 for assistance.",
+            "I'm having trouble processing your request right now. Please contact Al Hanan at 0745 726 350 or info@alhanan.ug for assistance.",
           isUser: false,
           timestamp: new Date(),
         };
@@ -86,7 +86,7 @@ export default function Chatbot() {
       console.error("Error sending message:", error);
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
-        text: "I'm experiencing a technical issue. Please contact our team at 0745 726 350 or +256 774 543 406 for assistance.",
+        text: "I'm experiencing a technical issue. Please contact Al Hanan at 0745 726 350 or info@alhanan.ug for assistance.",
         isUser: false,
         timestamp: new Date(),
       };
@@ -160,7 +160,7 @@ export default function Chatbot() {
                   </motion.div>
                 </div>
                 <div>
-                  <h3 className="font-bold text-white">Xhenvolt Assistant</h3>
+                  <h3 className="font-bold text-white">Al Hanan Assistant</h3>
                   <div className="flex items-center gap-1">
                     <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                     <p className="text-xs text-white/80">Online</p>

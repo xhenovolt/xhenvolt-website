@@ -1,8 +1,25 @@
 @import "tailwindcss";
 
 :root {
+  /* Al Hanan Education Centre - Premium Green & Blue Theme */
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* Primary Colors - Islamic Green & Tech Blue */
+  --primary-green: #10b981;        /* Emerald Green - trust, growth, discipline */
+  --primary-green-dark: #047857;   /* Darker emerald for text/elements */
+  --primary-blue: #0d6eff;         /* Futuristic tech blue */
+  --primary-blue-dark: #0055cc;    /* Darker blue for emphasis */
+  
+  /* Accent Colors */
+  --accent-gold: #fbbf24;          /* Optional gold for highlights */
+  --accent-cyan: #06b6d4;          /* Soft cyan for modern touches */
+  
+  /* Semantic Colors */
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  --info: #0d6eff;
 }
 
 @theme inline {
@@ -23,4 +40,13 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Al Hanan Custom Gradient Classes */
+.gradient-al-hanan {
+  @apply bg-gradient-to-r from-emerald-600 via-blue-600 to-cyan-500;
+}
+
+.gradient-al-hanan-dark {
+  @apply bg-gradient-to-r from-emerald-500 via-blue-500 to-cyan-400;
 }

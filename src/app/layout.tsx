@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
-import IntelligentChatbot from "../components/IntelligentChatbot";
+import Chatbot from "../components/Chatbot";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -11,26 +11,26 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Xhenvolt Uganda | Leading Technology Solutions Provider",
+  title: "Al Hanan Education Centre | Premium Muslim School in Uganda",
   description:
-    "Transform your business with Xhenvolt Uganda's cutting-edge technology solutions. We deliver custom software, mobile apps, POS systems, and enterprise solutions that drive innovation and growth across Africa.",
-  keywords: "technology solutions Uganda, custom software development, mobile apps, POS systems, enterprise solutions, digital transformation Africa",
-  authors: [{ name: "Xhenvolt Uganda" }],
-  creator: "Xhenvolt Uganda",
-  metadataBase: new URL("https://xhenvolt.com"),
-  canonical: "https://xhenvolt.com",
+    "Al Hanan Education Centre offers premium Islamic education combining Qur'anic memorization (Hifdh) with rigorous academics in Iganga, Uganda. Founded 2019 by Ummul Qura Foundation, registered with Ministry of Education.",
+  keywords: "Islamic school Uganda, Qur'an memorization, Hifdh school, primary education, Muslim school Iganga, Al Hanan Education Centre",
+  authors: [{ name: "Al Hanan Education Centre" }],
+  creator: "Al Hanan Education Centre",
+  metadataBase: new URL("https://alhanan.ug"),
+  canonical: "https://alhanan.ug",
   openGraph: {
-    title: "Xhenvolt Uganda | Leading Technology Solutions Provider",
-    description: "Transform your business with cutting-edge technology solutions",
+    title: "Al Hanan Education Centre | Premium Muslim School",
+    description: "Shaping minds, nurturing faith, building the future",
     type: "website",
     locale: "en_US",
-    siteName: "Xhenvolt Uganda",
-    url: "https://xhenvolt.com",
+    siteName: "Al Hanan Education Centre",
+    url: "https://alhanan.ug",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Xhenvolt Uganda | Leading Technology Solutions Provider",
-    description: "Transform your business with cutting-edge technology solutions",
+    title: "Al Hanan Education Centre | Premium Muslim School",
+    description: "Shaping minds, nurturing faith, building the future",
   },
   robots: {
     index: true,
@@ -65,13 +65,13 @@ export default function RootLayout({
         <div className="min-h-screen relative overflow-x-hidden">
           {/* Animated background elements */}
           <div className="fixed inset-0 opacity-20 dark:opacity-10 pointer-events-none">
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-400 rounded-full filter blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-400 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-400 rounded-full filter blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-400 rounded-full filter blur-3xl animate-pulse delay-1000"></div>
           </div>
           <div className="relative z-10">
             {children}
           </div>
-          <IntelligentChatbot />
+          <Chatbot />
         </div>
       </body>
     </html>

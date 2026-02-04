@@ -45,30 +45,20 @@ export default function Navbar() {
 
   const navItems = [
     { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Systems", href: "/systems" },
+    { name: "About Us", href: "/about" },
     {
-      name: "Services",
-      href: "/services",
+      name: "Academics",
+      href: "/academics",
       dropdown: [
-        { name: "Custom Software", href: "/services#software" },
-        { name: "Mobile Apps", href: "/services#mobile" },
-        { name: "POS Systems", href: "/services#pos" },
-        { name: "UI/UX Design", href: "/services#design" }
+        { name: "Qur'an Memorization", href: "/academics#quran" },
+        { name: "Islamic Studies", href: "/academics#islamic" },
+        { name: "Primary Education", href: "/academics#primary" }
       ]
     },
-    { name: "Pricing", href: "/pricing" },
-    {
-      name: "Resources",
-      href: "#",
-      dropdown: [
-        { name: "Case Studies", href: "/case-studies" },
-        { name: "Testimonials", href: "/testimonials" },
-        { name: "Blog", href: "/blog" },
-        { name: "FAQ", href: "/faq" }
-      ]
-    },
-    { name: "Contact", href: "/contact" }
+    { name: "Admissions", href: "/admissions" },
+    { name: "School Life", href: "/school-life" },
+    { name: "Gallery", href: "/gallery" },
+    { name: "Location & Contact", href: "/location" }
   ];
 
   return (
@@ -87,11 +77,11 @@ export default function Navbar() {
             transition={{ duration: 0.5 }}
           >
             <Link href="/" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
-                <span className="text-white font-bold text-xl">X</span>
+              <div className="w-10 h-10 bg-gradient-to-br from-emerald-600 to-blue-600 rounded-xl flex items-center justify-center">
+                <span className="text-white font-bold text-xl">A</span>
               </div>
-              <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Xhenvolt
+              <span className="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent">
+                Al Hanan
               </span>
             </Link>
           </motion.div>
@@ -102,7 +92,7 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 font-medium"
+                className="text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-300 font-medium"
               >
                 {item.name}
               </Link>
@@ -116,7 +106,7 @@ export default function Navbar() {
               onClick={toggleTheme}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="p-2 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
+              className="p-2 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-300"
             >
               {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
             </motion.button>
@@ -129,10 +119,10 @@ export default function Navbar() {
               className="hidden md:block"
             >
               <Link
-                href="/contact"
-                className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+                href="/admissions"
+                className="px-6 py-3 bg-gradient-to-r from-emerald-600 to-blue-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
               >
-                Get Started
+                Apply Now
               </Link>
             </motion.div>
 
@@ -161,7 +151,7 @@ export default function Navbar() {
                   <div key={item.name}>
                     <Link
                       href={item.href}
-                      className="block px-6 py-3 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
+                      className="block px-6 py-3 text-gray-700 dark:text-gray-300 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-300"
                       onClick={() => setIsOpen(false)}
                     >
                       {item.name}
@@ -172,7 +162,7 @@ export default function Navbar() {
                           <Link
                             key={dropdownItem.name}
                             href={dropdownItem.href}
-                            className="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
+                            className="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-300"
                             onClick={() => setIsOpen(false)}
                           >
                             {dropdownItem.name}
@@ -184,11 +174,11 @@ export default function Navbar() {
                 ))}
                 <div className="px-6 py-3">
                   <Link
-                    href="/contact"
-                    className="block w-full text-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold shadow-lg"
+                    href="/admissions"
+                    className="block w-full text-center px-6 py-3 bg-gradient-to-r from-emerald-600 to-blue-600 text-white rounded-xl font-semibold shadow-lg"
                     onClick={() => setIsOpen(false)}
                   >
-                    Get Started
+                    Apply Now
                   </Link>
                 </div>
               </div>

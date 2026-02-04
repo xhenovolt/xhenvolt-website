@@ -5,13 +5,13 @@ import { Linkedin, Github, Twitter } from "lucide-react";
 
 const team = [
 	{
-		name: "Hamuza Ibrahim",
-		role: "Founder & Chief Executive Officer",
-		bio: "Visionary leader driving digital transformation across Uganda with over 10 years of experience in technology innovation.",
+		name: "Naminya Aslam",
+		role: "Headteacher",
+		bio: "Visionary educational leader guiding Al Hanan Education Centre with excellence, discipline, and commitment to Islamic values and academic achievement.",
 		specialties: [
-			"Strategic Planning",
-			"Digital Transformation",
-			"Business Development",
+			"Educational Leadership",
+			"School Management",
+			"Academic Excellence",
 		],
 		social: {
 			linkedin: "#",
@@ -19,11 +19,22 @@ const team = [
 			github: "#",
 		},
 	},
-  {
+	{
+		name: "Faisal Naminya",
+		role: "School Center Director",
+		bio: "Dynamic director overseeing school operations, ensuring conducive learning environment and seamless coordination of all school activities and programs.",
+		specialties: ["Operations Management", "Strategic Planning", "Center Coordination"],
+		social: {
+			linkedin: "#",
+			twitter: "#",
+			github: "#",
+		},
+	},
+	{
 		name: "Ganiyu Kule Hussein",
-		role: "Marketing & Growth Lead",
-		bio: "Strategic marketing professional focused on driving growth and building lasting relationships with clients across Africa.",
-		specialties: ["Digital Marketing", "Growth Strategy", "Content Creation"],
+		role: "Director Of Studies - Upper Primary",
+		bio: "Experienced educator dedicated to delivering rigorous academics and Qur'anic excellence for upper primary learners, fostering discipline and intellectual growth.",
+		specialties: ["Curriculum Development", "Academic Strategy", "Upper Primary Education"],
 		social: {
 			linkedin: "#",
 			twitter: "#",
@@ -31,10 +42,10 @@ const team = [
 		},
 	},
 	{
-		name: "Ssentamu Murshid",
-		role: "Chief Operating Officer",
-		bio: "Operational excellence leader ensuring seamless project delivery and organizational efficiency. Dedicated to building scalable processes and driving operational success.",
-		specialties: ["Operations Management", "Project Delivery", "Process Optimization"],
+		name: "Wotali Hadijja",
+		role: "Director Of Studies - Lower Primary",
+		bio: "Nurturing educator focused on foundational learning and character development in lower primary, creating engaging and supportive learning experiences.",
+		specialties: ["Primary Education", "Foundational Learning", "Student Development"],
 		social: {
 			linkedin: "#",
 			twitter: "#",
@@ -42,10 +53,10 @@ const team = [
 		},
 	},
 	{
-		name: "Nasa Matovu",
-		role: "Chief Technology Officer",
-		bio: "Expert technologist specializing in scalable enterprise systems and technology architecture. Leads technical strategy and delivery of innovative solutions.",
-		specialties: ["System Architecture", "Technology Strategy", "Enterprise Solutions"],
+		name: "Maganda Thabit",
+		role: "Director Of Studies - Theology",
+		bio: "Islamic scholar dedicated to delivering comprehensive Islamic studies and Qur'anic memorization programs aligned with Al Hanan's faith-centered mission.",
+		specialties: ["Islamic Studies", "Qur'an Memorization", "Theology Education"],
 		social: {
 			linkedin: "#",
 			twitter: "#",
@@ -66,12 +77,11 @@ export default function TeamSection() {
 					className="text-center mb-16"
 				>
 					<h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-						Meet Our Expert Team
+						Meet Our Leadership Team
 					</h2>
 					<p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-						Our diverse team of passionate professionals brings together expertise
-						in technology, design, and business strategy to deliver exceptional
-						results.
+						Our dedicated team of educators and administrators is committed to 
+						delivering exceptional Islamic education combined with rigorous academics.
 					</p>
 				</motion.div>
 

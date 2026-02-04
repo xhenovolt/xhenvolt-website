@@ -1,125 +1,124 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { Target, Eye, Heart, Zap, Shield, Globe, CheckCircle, ArrowRight } from "lucide-react";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
-import TeamSection from "../../components/TeamSection";
+import { Target, Eye, Heart, BookOpen, Users, Sparkles, CheckCircle, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const values = [
 	{
 		icon: <Heart className="w-8 h-8" />,
-		title: "Client-Centric Approach",
-		description: "Every solution is tailored to meet our clients&apos; unique needs and business objectives."
+		title: "Islamic Excellence",
+		description: "Every aspect of our school is grounded in Islamic principles, values, and a deep commitment to Qur'anic mastery.",
 	},
 	{
-		icon: <Zap className="w-8 h-8" />,
-		title: "Innovation & Excellence",
-		description: "We stay at the forefront of technology to deliver cutting-edge solutions that drive success."
+		icon: <BookOpen className="w-8 h-8" />,
+		title: "Academic Rigor",
+		description: "We deliver world-class academics that prepare learners for success in secondary education and beyond.",
 	},
 	{
-		icon: <Shield className="w-8 h-8" />,
-		title: "Integrity & Transparency",
-		description: "We build trust through honest communication and transparent business practices."
+		icon: <Users className="w-8 h-8" />,
+		title: "Holistic Development",
+		description: "We shape disciplined, excellent individuals with strong character, faith, and leadership capabilities.",
 	},
 	{
-		icon: <Globe className="w-8 h-8" />,
-		title: "African Focus",
-		description: "We understand the unique challenges and opportunities in Africa&apos;s growing tech landscape."
+		icon: <Sparkles className="w-8 h-8" />,
+		title: "Innovation in Education",
+		description: "Futuristic approaches combined with traditional Islamic values create a unique learning environment.",
 	}
-];
-
-const milestones = [
-	{
-		year: "June 2025",
-		title: "Company Founded",
-		description: "Xhenvolt Uganda was established with a vision to transform businesses through technology, marking the beginning of our journey in digital innovation."
-	},
-	{
-		year: "July 2025",
-		title: "First Major Clients",
-		description: "Successfully launched with major clients: delivered DRAIS School Management System to Northgate School and Xhaira SACCO Management System to Bumwena Scrap SACCO, establishing our foundation in educational and financial technology solutions."
-	},
-	{
-		year: "August 2025",
-		title: "Islamic Education Solutions",
-		description: "Expanded into specialized educational solutions, developing custom systems for Bugembe Islamic Institute and Albayan Quran Memorization Center, along with several other educational institutions."
-	},
-	{
-		year: "September 2025",
-		title: "Rapid Growth Phase",
-		description: "Developed and established other major platforms such as JETON, a company executive operating system and XHETON for sales and inventory management."
-	},
-	{
-		year: "October 2025",
-		title: "Scaling Phase",
-		description: "Expanded DRAIS school system for more benefits like realtime biometric and pushed to schools such as Excel Islamic Nursary and Primary School Busembatia and more"
-	},
-	{
-		year: "January 2026",
-		title: "Rapid Growth Phase",
-		description: "Achieved 28+ successful project deliveries across education including, healthcare, finance, and other sectors, establishing ourselves as a trusted technology partner in East Africa."
-	},
-
 ];
 
 export default function AboutPage() {
 	return (
-		<main className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-900 dark:to-blue-900">
+		<main className="min-h-screen bg-gradient-to-br from-slate-50 to-emerald-50 dark:from-gray-900 dark:to-emerald-900">
 			<Navbar />
-			
+
 			{/* Hero Section */}
-			<section className="pt-32 pb-16">
-				<div className="max-w-7xl mx-auto px-6">
+			<section className="pt-24 pb-12 md:pt-32 md:pb-20">
+				<div className="max-w-7xl mx-auto px-4 sm:px-6">
 					<motion.div
 						initial={{ opacity: 0, y: 30 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.8 }}
-						className="text-center max-w-4xl mx-auto"
+						className="text-center mb-12"
 					>
-						<h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent mb-6">
-							Pioneering Digital Transformation in East Africa
+						<h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-emerald-600 via-blue-600 to-cyan-600 bg-clip-text text-transparent mb-6">
+							About Al Hanan Education Centre
 						</h1>
-						<p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-							Since June 2025, we&apos;ve been rapidly empowering organizations across East Africa with innovative technology solutions that drive growth, efficiency, and success.
+						<p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+							Shaping minds, nurturing faith, building the future—one learner at a time
 						</p>
 					</motion.div>
 				</div>
 			</section>
 
-			<div className="max-w-7xl mx-auto px-6 pb-16">
-				{/* Mission, Vision, Values */}
-				<section className="mb-20">
-					<div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+			{/* Our Story */}
+			<section className="py-12 md:py-20">
+				<div className="max-w-7xl mx-auto px-4 sm:px-6">
+					<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+						<motion.div
+							initial={{ opacity: 0, x: -50 }}
+							whileInView={{ opacity: 1, x: 0 }}
+							viewport={{ once: true }}
+							transition={{ duration: 0.8 }}
+						>
+							<h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+								Our Story
+							</h2>
+							<p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+								Al Hanan Education Centre was founded in 2019 by Ummul Qura Cultural and Development Foundation with a singular vision: to create a premium Muslim school in Uganda that would combine rigorous academics with comprehensive Qur'anic memorization (Hifdh).
+							</p>
+							<p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+								Fully registered and recognized by the Ministry of Education and Sports, Uganda, Al Hanan has grown into a beacon of Islamic education excellence in East Africa. Our learners are not ordinary—they embody discipline, academic excellence, unwavering Islamic faith, and authentic leadership.
+							</p>
+							<p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+								Located in Bulubandi, Nakigo, Iganga District, we provide a conducive learning environment where every learner completes Primary Seven having both memorized the entire Holy Qur'an and achieved outstanding academic performance.
+							</p>
+						</motion.div>
+
+						<motion.div
+							initial={{ opacity: 0, x: 50 }}
+							whileInView={{ opacity: 1, x: 0 }}
+							viewport={{ once: true }}
+							transition={{ duration: 0.8 }}
+							className="relative"
+						>
+							<div className="relative w-full h-[400px] rounded-3xl overflow-hidden shadow-2xl">
+								<Image
+									src="/Alhanan/Alhanan Admin block.jpeg"
+									alt="Al Hanan Education Centre Admin block building showcasing school infrastructure"
+									fill
+									className="object-cover"
+									sizes="(max-width: 768px) 100vw, 50vw"
+									quality={85}
+								/>
+								<div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-emerald-900/80 to-transparent p-6">
+									<p className="text-white font-semibold text-lg">Established 2019</p>
+								</div>
+							</div>
+						</motion.div>
+					</div>
+				</div>
+			</section>
+
+			{/* Mission & Vision */}
+			<section className="py-12 md:py-20 bg-white/50 dark:bg-gray-800/50">
+				<div className="max-w-7xl mx-auto px-4 sm:px-6">
+					<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 						<motion.div
 							initial={{ opacity: 0, y: 30 }}
 							whileInView={{ opacity: 1, y: 0 }}
 							viewport={{ once: true }}
 							transition={{ duration: 0.8 }}
-							className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-white/20 dark:border-gray-700/50"
+							className="bg-white/80 dark:bg-gray-700/80 rounded-2xl p-8 border border-emerald-200 dark:border-emerald-700"
 						>
-							<div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center text-white mb-6">
-								<Target className="w-8 h-8" />
-							</div>
-							<h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Our Mission</h3>
-							<p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-								To empower African businesses and institutions with cutting-edge technology solutions that drive sustainable growth, improve efficiency, and create lasting positive impact in communities across the continent.
-							</p>
-						</motion.div>
-
-						<motion.div
-							initial={{ opacity: 0, y: 30 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							viewport={{ once: true }}
-							transition={{ duration: 0.8, delay: 0.1 }}
-							className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20 dark:border-gray-700/50"
-						>
-							<div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center text-white mb-6">
-								<Eye className="w-8 h-8" />
-							</div>
-							<h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Our Vision</h3>
-							<p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-								To become the leading technology partner for organizations across Africa, driving digital transformation that bridges the gap between traditional operations and modern innovation, creating a more connected and prosperous continent.
+							<Target className="w-12 h-12 text-emerald-600 mb-4" />
+							<h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+								Our Mission
+							</h3>
+							<p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+								To provide comprehensive Islamic education combined with rigorous academics, shaping learners into leaders of character, faith, and intellectual excellence who will transform their communities and the world.
 							</p>
 						</motion.div>
 
@@ -128,151 +127,134 @@ export default function AboutPage() {
 							whileInView={{ opacity: 1, y: 0 }}
 							viewport={{ once: true }}
 							transition={{ duration: 0.8, delay: 0.2 }}
-							className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20 dark:border-gray-700/50"
+							className="bg-white/80 dark:bg-gray-700/80 rounded-2xl p-8 border border-blue-200 dark:border-blue-700"
 						>
-							<div className="w-16 h-16 bg-gradient-to-br from-green-500 to-cyan-500 rounded-2xl flex items-center justify-center text-white mb-6">
-								<CheckCircle className="w-8 h-8" />
-							</div>
-							<h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Our Impact</h3>
-							<p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-								In just 3 months since our founding in June 2025, we&apos;ve delivered 28+ successful projects, serving 28+ satisfied clients across education, healthcare, finance, and construction sectors throughout East Africa.
+							<Eye className="w-12 h-12 text-blue-600 mb-4" />
+							<h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+								Our Vision
+							</h3>
+							<p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+								To be a leading African Muslim school producing well-rounded, disciplined, excellent learners who are rooted in Islamic faith and academic excellence, setting the standard for premium Islamic education across East Africa.
 							</p>
 						</motion.div>
 					</div>
-				</section>
+				</div>
+			</section>
 
-				{/* Story Section */}
-				<motion.section
-					initial={{ opacity: 0, y: 30 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ once: true }}
-					transition={{ duration: 0.8 }}
-					className="mb-20"
-				>
-					<div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-3xl p-12 shadow-2xl border border-white/20 dark:border-gray-700/50">
-						<div className="text-center mb-12">
-							<h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">Our Story</h2>
-							<p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-								Since our founding in June 2025, we&apos;ve been on a mission to transform African businesses through innovative technology solutions that make a real difference.
-							</p>
-						</div>
-
-						<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-							<div>
-								<h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-									From Vision to Reality
-								</h3>
-								<p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
-									Founded by visionary entrepreneur Hamuza Ibrahim, Xhenvolt Uganda emerged from a simple yet powerful idea: that every African business deserves access to world-class technology solutions. What started as a vision has quickly become a reality, with 28+ successful projects delivered in just our first three months of operation.
-								</p>
-								<p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-									Our rapid growth isn&apos;t just about numbers—it&apos;s about the real impact we&apos;re making. From helping schools reduce administrative burden by 60% to enabling SACCOs to serve 500+ members efficiently, we&apos;re proving that great technology can transform lives and communities across East Africa.
-								</p>
-							</div>
-							
-							<div className="hidden lg:block">
-								<img src="/images/story-illustration.png" alt="Our Story Illustration" className="w-full h-auto" />
-							</div>
-						</div>
-					</div>
-				</motion.section>
-
-				{/* Core Values */}
-				<section className="mb-20">
+			{/* Our Values */}
+			<section className="py-12 md:py-20">
+				<div className="max-w-7xl mx-auto px-4 sm:px-6">
 					<motion.div
 						initial={{ opacity: 0, y: 30 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true }}
-						transition={{ duration: 0.8 }}
-						className="text-center mb-16"
+						className="text-center mb-12"
 					>
-						<h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+						<h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
 							Our Core Values
 						</h2>
-						<p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-							These principles guide every decision we make and every solution we build.
+						<p className="text-gray-600 dark:text-gray-300">
+							Guiding principles that define who we are and what we do
 						</p>
 					</motion.div>
 
-					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 						{values.map((value, index) => (
 							<motion.div
 								key={index}
-								initial={{ opacity: 0, y: 30 }}
+								initial={{ opacity: 0, y: 20 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								viewport={{ once: true }}
 								transition={{ delay: index * 0.1 }}
-								whileHover={{ scale: 1.05, y: -10 }}
-								className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20 dark:border-gray-700/50 text-center hover:shadow-3xl transition-all duration-500"
+								className="bg-white/80 dark:bg-gray-800/80 rounded-2xl p-6 border border-white/20 dark:border-gray-700/50 hover:shadow-lg transition-all"
 							>
-								<div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center text-white mx-auto mb-6">
+								<div className="w-12 h-12 bg-gradient-to-br from-emerald-600 to-blue-600 rounded-xl flex items-center justify-center text-white mb-4">
 									{value.icon}
 								</div>
-								<h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
+								<h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
 									{value.title}
 								</h3>
-								<p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+								<p className="text-sm text-gray-600 dark:text-gray-400">
 									{value.description}
 								</p>
 							</motion.div>
 						))}
 					</div>
-				</section>
+				</div>
+			</section>
 
-				{/* Timeline */}
-				<section className="mb-20">
+			{/* Why Al Hanan Learners Are Different */}
+			<section className="py-12 md:py-20 bg-gradient-to-r from-emerald-600 via-blue-600 to-cyan-500">
+				<div className="max-w-7xl mx-auto px-4 sm:px-6">
 					<motion.div
 						initial={{ opacity: 0, y: 30 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true }}
-						transition={{ duration: 0.8 }}
-						className="text-center mb-16"
+						className="text-center mb-12"
 					>
-						<h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-							Our Journey
+						<h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+							Al Hanan Learners Are Different
 						</h2>
-						<p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-							Remarkable milestones achieved in just 3 months since our founding in June 2025.
+						<p className="text-white/90 text-lg">
+							Shaped by discipline, excellence, and unshakeable Islamic faith
 						</p>
 					</motion.div>
 
-					<div className="relative">
-						<div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-blue-500 to-purple-600 h-full rounded-full"></div>
-						
-						{milestones.map((milestone, index) => (
+					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+						{[
+							"Complete Qur'anic memorization",
+							"Exceptional academic performance",
+							"Strong Islamic faith and conviction",
+							"Disciplined character and conduct",
+							"Leadership and vision",
+							"Fluency in English and Arabic",
+							"Critical thinking and problem-solving",
+							"Community awareness and service",
+							"Preparation for secondary excellence"
+						].map((characteristic, idx) => (
 							<motion.div
-								key={index}
-								initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-								whileInView={{ opacity: 1, x: 0 }}
+								key={idx}
+								initial={{ opacity: 0, scale: 0.9 }}
+								whileInView={{ opacity: 1, scale: 1 }}
 								viewport={{ once: true }}
-								transition={{ delay: index * 0.1 }}
-								className={`relative flex items-center mb-12 ${
-									index % 2 === 0 ? "flex-row" : "flex-row-reverse"
-								}`}
+								transition={{ delay: idx * 0.05 }}
+								className="flex items-center gap-3 text-white"
 							>
-								<div className={`w-1/2 ${index % 2 === 0 ? "pr-8" : "pl-8"}`}>
-									<div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg rounded-2xl p-6 shadow-xl border border-white/20 dark:border-gray-700/50">
-										<div className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-2">
-											{milestone.year}
-										</div>
-										<h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-											{milestone.title}
-										</h3>
-										<p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-											{milestone.description}
-										</p>
-									</div>
-								</div>
-								
-								<div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full border-4 border-white dark:border-gray-900"></div>
+								<CheckCircle className="w-6 h-6 flex-shrink-0" />
+								<span>{characteristic}</span>
 							</motion.div>
 						))}
 					</div>
-				</section>
-			</div>
+				</div>
+			</section>
 
-			{/* Team Section */}
-			<TeamSection />
+			{/* Call to Action */}
+			<section className="py-12 md:py-20">
+				<div className="max-w-7xl mx-auto px-4 sm:px-6">
+					<motion.div
+						initial={{ opacity: 0, y: 30 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true }}
+						className="bg-white/80 dark:bg-gray-800/80 rounded-3xl p-8 md:p-12 text-center border border-emerald-200 dark:border-emerald-700/50"
+					>
+						<h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+							Ready to Join Al Hanan?
+						</h2>
+						<p className="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+							Begin your child's journey of academic excellence and Qur'anic mastery today.
+						</p>
+						<div className="flex flex-col sm:flex-row gap-4 justify-center">
+							<a href="/admissions" className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-700 transition">
+								Apply Now
+								<ArrowRight className="w-5 h-5" />
+							</a>
+							<a href="/location" className="inline-flex items-center justify-center gap-2 px-8 py-3 border-2 border-emerald-600 text-emerald-600 rounded-lg font-semibold hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition">
+								Visit Us
+							</a>
+						</div>
+					</motion.div>
+				</div>
+			</section>
 
 			<Footer />
 		</main>

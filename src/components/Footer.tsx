@@ -6,23 +6,23 @@ import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 
 export default function Footer() {
   const footerLinks = {
-    "Company": [
+    "School": [
       { name: "About Us", href: "/about" },
-      { name: "Our Team", href: "/about#team" },
-      { name: "Careers", href: "/careers" },
-      { name: "Contact", href: "/contact" }
+      { name: "Academics", href: "/academics" },
+      { name: "Admissions", href: "/admissions" },
+      { name: "Contact", href: "/location" }
     ],
-    "Services": [
-      { name: "Custom Software", href: "/services" },
-      { name: "Mobile Apps", href: "/services" },
-      { name: "POS Systems", href: "/services" },
-      { name: "UI/UX Design", href: "/services" }
+    "Academic": [
+      { name: "Qur'an Memorization", href: "/academics#quran" },
+      { name: "Islamic Studies", href: "/academics#islamic" },
+      { name: "Primary Education", href: "/academics#primary" },
+      { name: "School Life", href: "/school-life" }
     ],
     "Resources": [
-      { name: "Case Studies", href: "/case-studies" },
+      { name: "Gallery", href: "/gallery" },
       { name: "Testimonials", href: "/testimonials" },
-      { name: "Blog", href: "/blog" },
-      { name: "FAQ", href: "/faq" }
+      { name: "FAQ", href: "/faq" },
+      { name: "Blog", href: "/blog" }
     ],
     "Legal": [
       { name: "Privacy Policy", href: "/privacy-policy" },
@@ -45,35 +45,37 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
-                Xhenvolt Uganda
+              <h3 className="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-blue-600 bg-clip-text text-transparent mb-4">
+                Al Hanan Education Centre
               </h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                Transforming businesses across Africa with innovative technology solutions. We deliver custom software, mobile apps, and enterprise systems that drive growth and success.
+                A premium Muslim school founded in 2019, dedicated to shaping minds through Qur'anic mastery and academic excellence. Registered with the Ministry of Education and Sports, Uganda.
               </p>
               
               {/* Contact Info */}
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
-                  <MapPin className="w-5 h-5 text-blue-600" />
-                  <span className="text-gray-600 dark:text-gray-300">Bulubandi, Iganga, Uganda</span>
+                  <MapPin className="w-5 h-5 text-emerald-600" />
+                  <span className="text-gray-600 dark:text-gray-300">Bulubandi, Nakigo, Iganga, Uganda</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-blue-600" />
-                  <a href="tel:+256745726350" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 transition-colors">
+                  <MapPin className="w-5 h-5 text-emerald-600" />
+                  <span className="text-sm text-gray-600 dark:text-gray-300">Bulubandi–Kiboyo Road</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <MapPin className="w-5 h-5 text-emerald-600" />
+                  <span className="text-sm text-gray-600 dark:text-gray-300">0°35'21.5"N 33°30'03.7"E</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Phone className="w-5 h-5 text-emerald-600" />
+                  <a href="tel:+256745726350" className="text-gray-600 dark:text-gray-300 hover:text-emerald-600 transition-colors">
                     0745 726 350
                   </a>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-blue-600" />
-                  <a href="tel:+256774543406" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 transition-colors">
-                    +256 774 543 406
-                  </a>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Mail className="w-5 h-5 text-blue-600" />
-                  <a href="mailto:info@xhenvolt.com" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 transition-colors">
-                    info@xhenvolt.com
+                  <Mail className="w-5 h-5 text-emerald-600" />
+                  <a href="mailto:info@alhanan.ug" className="text-gray-600 dark:text-gray-300 hover:text-emerald-600 transition-colors">
+                    info@alhanan.ug
                   </a>
                 </div>
               </div>
@@ -97,7 +99,7 @@ export default function Footer() {
                   <li key={linkIndex}>
                     <Link
                       href={link.href}
-                      className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 flex items-center gap-2 group"
+                      className="text-gray-600 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-300 flex items-center gap-2 group"
                     >
                       {link.name}
                       <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
@@ -115,12 +117,12 @@ export default function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 rounded-2xl p-8 mb-12"
+          className="bg-gradient-to-r from-emerald-600 via-blue-600 to-cyan-500 rounded-2xl p-8 mb-12"
         >
           <div className="text-center text-white">
-            <h4 className="text-2xl font-bold mb-4">Stay Updated</h4>
+            <h4 className="text-2xl font-bold mb-4">Stay Connected</h4>
             <p className="mb-6 opacity-90">
-              Get the latest insights on technology trends and digital transformation.
+              Subscribe to get updates on admissions, school events, and academic excellence insights.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
               <input
@@ -128,7 +130,7 @@ export default function Footer() {
                 placeholder="Enter your email"
                 className="flex-1 px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
               />
-              <button className="px-6 py-3 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">
+              <button className="px-6 py-3 bg-white text-emerald-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300">
                 Subscribe
               </button>
             </div>
@@ -143,8 +145,21 @@ export default function Footer() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-200 dark:border-gray-700"
         >
-          <div className="text-gray-600 dark:text-gray-400 mb-4 md:mb-0">
-            © {new Date().getFullYear()} Xhenvolt Uganda. All rights reserved.
+          <div className="text-gray-600 dark:text-gray-400 mb-4 md:mb-0 text-sm">
+            <span className="block">
+              © {new Date().getFullYear()} Al Hanan Education Centre. Registered with the Ministry of Education and Sports, Uganda.
+            </span>
+            <span className="block mt-1 text-xs text-gray-500 dark:text-gray-500 italic">
+              Designed with love by{' '}
+              <a
+                href="https://xhenvolt.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-500 dark:text-gray-500 hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors"
+              >
+                Xhenvolt
+              </a>
+            </span>
           </div>
           
           {/* Social Links */}

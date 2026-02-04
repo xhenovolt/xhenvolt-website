@@ -1,365 +1,303 @@
 /**
- * Xhenvolt Knowledge Base
- * This is the single source of truth for all company information.
+ * Al Hanan Education Centre Knowledge Base
+ * This is the single source of truth for all school information.
  * The AI assistant ONLY uses this data to answer questions.
  */
 
-export const xhenvoltKnowledgeBase = {
-  company: {
-    name: "Xhenvolt",
-    tagline: "Enterprise Software Solutions for East Africa",
-    description: "Xhenvolt is a leading technology solutions provider specializing in custom enterprise software, mobile applications, and digital transformation services.",
-    foundedYear: 2025,
+export const alHananKnowledgeBase = {
+  school: {
+    name: "Al Hanan Education Centre",
+    tagline: "Shaping Minds, Nurturing Faith, Building the Future",
+    description: "A premium Muslim school dedicated to academic excellence and Qur'anic mastery in an Islamic environment.",
+    foundedYear: 2019,
+    founder: "Ummul Qura Cultural and Development Foundation",
     location: {
-      address: "Bulubandi, Iganga, Uganda",
+      address: "Bulubandi, Nakigo, Iganga District, Uganda",
+      road: "Bulubandi–Kiboyo Road",
+      coordinates: "0°35'21.4\"N 33°30'03.6\"E",
       country: "Uganda",
       region: "East Africa"
     },
+    registration: {
+      status: "Fully Registered with the Ministry of Education and Sports, Uganda",
+      recognitionYear: "2019",
+      approvalStatus: "Approved and recognized educational institution"
+    },
     contact: {
-      phone: ["0745 726 350", "+256 774 543 406"],
-      email: "info@xhenvolt.com",
-      hours: "Monday-Friday, 8:00 AM - 6:00 PM EAT"
+      phone: ["0745 726 350"],
+      email: "info@alhanan.ug",
+      hours: "School Hours: 8:00 AM - 3:30 PM (Monday-Friday)"
+    },
+    vision: "To be a leading African Muslim school producing well-rounded, disciplined, excellent learners who are rooted in Islamic faith and academic excellence.",
+    mission: "To provide comprehensive Islamic education combined with rigorous academics, shaping learners into leaders of character, faith, and intellectual excellence."
+  },
+
+  programs: {
+    quranMemorization: {
+      name: "Qur'an Memorization (Hifdh)",
+      description: "Students memorize and master the entire Holy Qur'an with guidance from expert Qur'anic teachers.",
+      targetAudience: "All primary learners at Al Hanan",
+      keyFeatures: [
+        "Structured Memorization Curriculum aligned with national standards",
+        "Daily Qur'an study and revision sessions",
+        "Expert Qur'anic teachers with proven track record",
+        "Individual pace while maintaining high standards",
+        "Hifdh completion by Primary Seven graduation",
+        "Tajweed (proper recitation) mastery"
+      ],
+      benefits: [
+        "Complete Qur'anic memorization by graduation",
+        "Strong Islamic foundation",
+        "Spiritual development alongside academics",
+        "Leadership and character formation"
+      ],
+      highlight: "Al Hanan learners complete full Hifdh while maintaining excellent academic performance."
+    },
+
+    islamicStudies: {
+      name: "Islamic Studies",
+      description: "Deep theological knowledge and Islamic principles integrated into daily learning.",
+      targetAudience: "All learners at Al Hanan",
+      keyFeatures: [
+        "Islamic theology and jurisprudence",
+        "Qur'anic interpretation (Tafsir) basics",
+        "Islamic history and civilization",
+        "Character and values development through Islamic principles",
+        "Islamic ethics and leadership",
+        "Integration of Islamic values in all subjects"
+      ],
+      benefits: [
+        "Strong Islamic faith and conviction",
+        "Character formation based on Islamic values",
+        "Understanding of Islamic civilization and contributions",
+        "Leadership grounded in Islamic principles"
+      ]
+    },
+
+    primaryEducation: {
+      name: "Primary Education Excellence",
+      description: "Full national curriculum delivered with academic rigor, ensuring outstanding performance.",
+      targetAudience: "Primary learners (Classes 1-7)",
+      keyFeatures: [
+        "English language mastery and fluency",
+        "Arabic language strong proficiency",
+        "Mathematics and Science excellence",
+        "Social studies with Islamic perspective",
+        "Physical education and sports",
+        "Creative and performing arts",
+        "Digital literacy and technology skills"
+      ],
+      languages: {
+        english: "Mother tongue of instruction, comprehensive English curriculum",
+        arabic: "Strong fluency in Arabic language and Islamic terminology"
+      },
+      benefits: [
+        "Outstanding academic performance",
+        "Multilingual capability (English and Arabic)",
+        "Holistic development of learners",
+        "Critical thinking and problem-solving skills",
+        "Preparation for secondary education excellence"
+      ]
     }
   },
 
-  systems: {
-    drais: {
-      name: "DRAIS",
-      fullName: "DRAIS School Management System",
-      category: "Education",
-      description: "Comprehensive school management system that revolutionizes educational institution operations.",
-      targetAudience: "Schools, colleges, and educational institutions",
-      keyFeatures: [
-        "Student enrollment and profile management",
-        "Grade management and automated reporting",
-        "Parent-teacher communication portal",
-        "Fee management and payment tracking",
-        "Attendance tracking and reporting",
-        "Academic performance analytics"
-      ],
-      benefits: [
-        "60% reduction in administrative workload",
-        "Real-time parent engagement",
-        "Automated grade reporting",
-        "Comprehensive student data management"
-      ],
-      successStories: {
-        school: "Ibun Baz Girls Secondary School, Busei, Uganda",
-        contact: "Sheikh Hassan Mwaita (General Director)",
-        impact: "DRAIS elevated school management beyond borders, delivering efficiency, control, and modernization."
-      },
-      demoUrl: "https://drais.xhenvolt.com/demo"
-    },
-
-    xheton: {
-      name: "XHETON",
-      fullName: "XHETON Sales & Inventory Management",
-      category: "Retail & Commerce",
-      description: "Intelligent point-of-sale and inventory system for retail businesses.",
-      targetAudience: "Retail businesses, shops, and trading enterprises",
-      keyFeatures: [
-        "Real-time inventory tracking",
-        "Multi-location management",
-        "Sales analytics and reporting",
-        "Customer loyalty programs",
-        "POS system with offline capability",
-        "Automated reorder management"
-      ],
-      benefits: [
-        "Complete inventory control",
-        "Sales performance insights",
-        "Reduced stockouts and overstock",
-        "Improved customer experience"
-      ],
-      demoUrl: "https://xheton.xhenvolt.com/demo"
-    },
-
-    xhaira: {
-      name: "XHAIRA",
-      fullName: "XHAIRA SACCO Management System",
-      category: "Finance",
-      description: "Powerful system for managing savings and credit cooperative organizations.",
-      targetAudience: "SACCOs, financial cooperatives, and microfinance institutions",
-      keyFeatures: [
-        "Member account management",
-        "Loan processing and disbursement",
-        "Savings tracking and reporting",
-        "Interest calculation automation",
-        "Financial reporting and compliance",
-        "Member portal for self-service"
-      ],
-      benefits: [
-        "Automated member management",
-        "Streamlined loan processing",
-        "Accurate financial tracking",
-        "Regulatory compliance"
-      ],
-      demoUrl: "https://xhaira.xhenvolt.com/demo"
-    },
-
-    consty: {
-      name: "CONSTY",
-      fullName: "CONSTY Construction Management",
-      category: "Construction",
-      description: "Comprehensive project management system for construction and building enterprises.",
-      targetAudience: "Construction companies, contractors, and building firms",
-      keyFeatures: [
-        "Project planning and scheduling",
-        "Resource management",
-        "Budget control and cost tracking",
-        "Quality assurance tracking",
-        "Progress monitoring",
-        "Contractor and supplier management"
-      ],
-      benefits: [
-        "Improved project visibility",
-        "Budget control and cost savings",
-        "Quality management",
-        "Timeline adherence"
-      ],
-      demoUrl: "https://consty.xhenvolt.com/demo"
-    },
-
-    jorc: {
-      name: "JORC",
-      fullName: "JORC Project Management",
-      category: "Project Management",
-      description: "Modern project management and team collaboration platform.",
-      targetAudience: "Project-based organizations, agencies, and development teams",
-      keyFeatures: [
-        "Task management and assignment",
-        "Team collaboration tools",
-        "Timeline and milestone tracking",
-        "Progress reporting",
-        "Resource allocation",
-        "Team communication portal"
-      ],
-      benefits: [
-        "Enhanced team collaboration",
-        "Better project tracking",
-        "Improved deadline adherence",
-        "Team productivity boost"
-      ],
-      demoUrl: "https://jorc.xhenvolt.com/demo"
-    }
-  },
-
-  pricing: {
-    currency: "UGX",
-    disclaimer: "Pricing depends on project complexity, timeline, and specific features required. These are base prices.",
-    tiers: [
+  whyAlHanan: {
+    points: [
       {
-        name: "Professional",
-        price: "1,000,000",
-        description: "Suitable for small businesses and startups",
-        features: [
-          "Basic system setup",
-          "Core features implementation",
-          "Initial training",
-          "30 days of support"
-        ]
+        title: "Qur'an First Approach",
+        description: "Qur'anic memorization is central to the curriculum. Learners complete Hifdh by Primary Seven while excelling academically."
       },
       {
-        name: "Premium",
-        price: "1,800,000",
-        description: "Most popular for growing organizations",
-        features: [
-          "Complete system setup",
-          "All premium features",
-          "Advanced training",
-          "3 months of dedicated support",
-          "Customization support"
-        ],
-        highlighted: true
+        title: "Academic Excellence",
+        description: "Shaped by some of the most proficient teachers in the country. Performance is excellent not only on paper, but in real life and character."
       },
       {
-        name: "Gold",
-        price: "2,500,000",
-        description: "Enterprise-grade for large organizations",
-        features: [
-          "Full enterprise implementation",
-          "All features and customizations",
-          "Comprehensive training",
-          "6 months of dedicated support",
-          "Priority support",
-          "Custom integrations"
-        ]
-      }
-    ],
-    paymentOptions: "Flexible payment models available: fixed-price projects, hourly rates, monthly retainers, milestone-based payments, or custom packages.",
-    consultation: "Free consultation available to discuss project requirements and provide personalized quotes."
-  },
-
-  team: {
-    introduction: "Xhenvolt's expert team brings specialized expertise in technology and business strategy.",
-    members: [
-      {
-        name: "Hamuza Ibrahim",
-        role: "CEO & Founder",
-        bio: "Visionary leader and founder of Xhenvolt, driving the company's mission to transform African businesses through innovative technology solutions.",
-        specialties: ["Strategic Vision", "Business Development", "Leadership"]
+        title: "Experienced Teaching Staff",
+        description: "Highly qualified educators with proven track records in both Islamic and secular education."
       },
       {
-        name: "Ganiyu Kule Hussein",
-        role: "Marketing & Growth Lead",
-        bio: "Leads marketing and growth initiatives, building brand awareness and expanding Xhenvolt's presence across East Africa.",
-        specialties: ["Marketing Strategy", "Growth", "Brand Development"]
+        title: "Disciplined Islamic Environment",
+        description: "Strong Islamic values, discipline, and ethics permeate all aspects of school life."
       },
       {
-        name: "Ssentamu Murshid",
-        role: "COO (Chief Operations Officer)",
-        bio: "Oversees day-to-day operations and ensures excellence in project delivery and client satisfaction.",
-        specialties: ["Operations Management", "Project Oversight", "Client Success"]
+        title: "Holistic Development",
+        description: "Al Hanan learners are different from ordinary learners. Discipline, excellence, faith, and leadership are core to our approach."
       },
       {
-        name: "Nasa Matovu",
-        role: "CTO (Chief Technology Officer)",
-        bio: "Expert technologist specializing in scalable enterprise systems and technology architecture. Leads technical strategy and delivery of innovative solutions.",
-        specialties: ["System Architecture", "Technology Strategy", "Enterprise Solutions"]
+        title: "Modern Facilities & Approach",
+        description: "Futuristic school design with modern learning tools while maintaining traditional Islamic values."
       }
     ]
   },
 
-  services: {
-    overview: "Comprehensive technology solutions tailored to your business needs.",
-    offerings: [
-      {
-        name: "Enterprise Software Development",
-        description: "Custom software solutions built specifically for your business requirements."
-      },
-      {
-        name: "System Management",
-        description: "DRAIS, XHETON, XHAIRA, CONSTY, and JORC - industry-specific management systems."
-      },
-      {
-        name: "Process Automation",
-        description: "Automate repetitive processes to save time and reduce errors."
-      },
-      {
-        name: "Consulting & Strategy",
-        description: "Technology advisory and digital transformation consulting."
-      }
+  admissions: {
+    openPositions: "Classes 1-7 (Primary Education)",
+    applicationProcess: [
+      "Submit admission application form",
+      "Child assessment in English and Mathematics",
+      "Parent-child interview",
+      "Review of previous academic records (if applicable)",
+      "Final admission decision"
+    ],
+    requirements: [
+      "Birth certificate or national ID",
+      "Previous school records (if applicable)",
+      "Proof of residence",
+      "Health clearance"
+    ],
+    contactAdmissions: "0745 726 350 or info@alhanan.ug",
+    enrollmentDeadline: "Rolling admissions; early application recommended",
+    scholarships: "Merit-based scholarships available for exceptional learners. Contact admissions office for details."
+  },
+
+  schoolLife: {
+    daysOfOperation: "Monday - Friday",
+    schoolHours: "8:00 AM - 3:30 PM",
+    environment: "Faith-centered, disciplined, academically rigorous, and nurturing",
+    values: [
+      "Integrity and honesty",
+      "Excellence in all endeavors",
+      "Respect and discipline",
+      "Islamic faith and practice",
+      "Community and cooperation",
+      "Continuous improvement"
+    ],
+    activities: [
+      "Daily Qur'an memorization sessions",
+      "Islamic studies classes",
+      "Academic classes",
+      "Sports and physical activities",
+      "Arts and creative activities",
+      "Community service projects",
+      "School events and celebrations"
     ]
   },
 
   faqs: [
     {
-      question: "What makes Xhenvolt different?",
-      answer: "Xhenvolt combines rapid delivery, proven expertise, 100% client satisfaction, and deep understanding of East African market needs. We deliver enterprise-grade solutions tailored to your business."
+      question: "What is Al Hanan Education Centre?",
+      answer: "Al Hanan is a premium Muslim school founded in 2019, registered with the Ministry of Education and Sports in Uganda. We combine rigorous academics with comprehensive Qur'anic memorization, shaping disciplined leaders with unshakeable Islamic faith."
     },
     {
-      question: "How long does implementation take?",
-      answer: "Implementation timelines vary based on project scope and complexity. Typically, core system implementations range from 2-8 weeks. We'll provide specific timelines during your consultation."
+      question: "Where is Al Hanan located?",
+      answer: "Al Hanan Education Centre is located along Bulubandi–Kiboyo Road in Bulubandi, Nakigo, Iganga District, Uganda. Our coordinates are 0°35'21.4\"N 33°30'03.6\"E."
     },
     {
-      question: "Do you provide training?",
-      answer: "Yes, comprehensive training is included in all packages. Training covers system usage, best practices, and ongoing support resources."
+      question: "Is the school registered?",
+      answer: "Yes, Al Hanan is fully registered and recognized by the Ministry of Education and Sports, Uganda. We are an approved educational institution meeting all national standards."
     },
     {
-      question: "What about ongoing support?",
-      answer: "All pricing tiers include dedicated support. Professional tier includes 30 days, Premium includes 3 months, and Gold includes 6 months of support. Extended support packages are available."
+      question: "What curriculum does Al Hanan follow?",
+      answer: "Al Hanan follows the national Primary Education curriculum while integrating comprehensive Qur'anic memorization and Islamic studies. English is the mother tongue of instruction, and Arabic proficiency is developed throughout."
     },
     {
-      question: "Can you customize the systems?",
-      answer: "Yes, all systems can be customized to match your specific business processes and requirements. Customization details will be discussed during your consultation."
+      question: "Do learners memorize the entire Qur'an?",
+      answer: "Yes, Qur'an memorization (Hifdh) is a core part of the Al Hanan program. Learners complete the full Qur'an memorization by Primary Seven graduation while maintaining excellent academic performance."
     },
     {
-      question: "Do you offer demos?",
-      answer: "Absolutely. We offer personalized product demonstrations for all systems. Contact us at 0745 726 350 or +256 774 543 406 to schedule your demo."
+      question: "What languages are taught at Al Hanan?",
+      answer: "English is the main language of instruction, and learners develop strong Arabic fluency. Both languages are essential to our Islamic and academic curriculum."
+    },
+    {
+      question: "What makes Al Hanan different from other schools?",
+      answer: "Al Hanan learners are different from ordinary learners. We combine Islamic faith, academic excellence, and character development. Our unique Hifdh-while-excelling-academically approach is rare and highly effective."
+    },
+    {
+      question: "How can I apply to Al Hanan?",
+      answer: "Please contact our admissions office at 0745 726 350 or email info@alhanan.ug. We require assessment in English and Mathematics, birth certificate, and health clearance."
+    },
+    {
+      question: "What are the school hours?",
+      answer: "Al Hanan operates from 8:00 AM to 3:30 PM, Monday through Friday. This schedule allows for comprehensive academics and Qur'anic memorization."
+    },
+    {
+      question: "How can I visit the school?",
+      answer: "We welcome visits from parents and prospective families. Please contact us at 0745 726 350 to schedule a visit. We're located at Bulubandi, Nakigo, Iganga along the Bulubandi–Kiboyo Road."
     }
-  ],
-
-  compliance: {
-    security: "Enterprise-grade security with data encryption, secure authentication, and regular security audits.",
-    dataProtection: "All customer data is protected and handled in compliance with relevant regulations.",
-    sla: "Service level agreements available for all enterprise packages with guaranteed uptime and support response times."
-  }
+  ]
 };
 
 /**
  * Extract relevant knowledge sections based on user query
- * This implements keyword-based retrieval for knowledge grounding
  */
 export function extractRelevantKnowledge(userQuery: string): string {
   const queryLower = userQuery.toLowerCase();
   const relevantSections: string[] = [];
 
-  // System queries
-  if (queryLower.includes("drais") || queryLower.includes("school")) {
+  // Location queries
+  if (queryLower.includes("location") || queryLower.includes("where") || queryLower.includes("address") || queryLower.includes("coordinates")) {
     relevantSections.push(
-      `DRAIS System: ${JSON.stringify(xhenvoltKnowledgeBase.systems.drais, null, 2)}`
-    );
-  }
-  if (queryLower.includes("xheton") || queryLower.includes("sales") || queryLower.includes("inventory") || queryLower.includes("pos")) {
-    relevantSections.push(
-      `XHETON System: ${JSON.stringify(xhenvoltKnowledgeBase.systems.xheton, null, 2)}`
-    );
-  }
-  if (queryLower.includes("xhaira") || queryLower.includes("sacco")) {
-    relevantSections.push(
-      `XHAIRA System: ${JSON.stringify(xhenvoltKnowledgeBase.systems.xhaira, null, 2)}`
-    );
-  }
-  if (queryLower.includes("consty") || queryLower.includes("construction")) {
-    relevantSections.push(
-      `CONSTY System: ${JSON.stringify(xhenvoltKnowledgeBase.systems.consty, null, 2)}`
-    );
-  }
-  if (queryLower.includes("jorc") || queryLower.includes("project management")) {
-    relevantSections.push(
-      `JORC System: ${JSON.stringify(xhenvoltKnowledgeBase.systems.jorc, null, 2)}`
+      `Location Information: ${JSON.stringify(alHananKnowledgeBase.school.location, null, 2)}`
     );
   }
 
-  // Pricing queries
-  if (queryLower.includes("price") || queryLower.includes("cost") || queryLower.includes("pricing")) {
+  // Qur'an queries
+  if (queryLower.includes("quran") || queryLower.includes("memoriz") || queryLower.includes("hifdh")) {
     relevantSections.push(
-      `Pricing Information: ${JSON.stringify(xhenvoltKnowledgeBase.pricing, null, 2)}`
+      `Qur'an Memorization Program: ${JSON.stringify(alHananKnowledgeBase.programs.quranMemorization, null, 2)}`
+    );
+  }
+
+  // Islamic studies queries
+  if (queryLower.includes("islamic") || queryLower.includes("theology") || queryLower.includes("faith")) {
+    relevantSections.push(
+      `Islamic Studies Program: ${JSON.stringify(alHananKnowledgeBase.programs.islamicStudies, null, 2)}`
+    );
+  }
+
+  // Academic/Primary education queries
+  if (queryLower.includes("academic") || queryLower.includes("education") || queryLower.includes("curriculum")) {
+    relevantSections.push(
+      `Primary Education Program: ${JSON.stringify(alHananKnowledgeBase.programs.primaryEducation, null, 2)}`
+    );
+  }
+
+  // Admissions queries
+  if (queryLower.includes("admission") || queryLower.includes("apply") || queryLower.includes("enrollment")) {
+    relevantSections.push(
+      `Admissions Information: ${JSON.stringify(alHananKnowledgeBase.admissions, null, 2)}`
     );
   }
 
   // Contact queries
   if (queryLower.includes("contact") || queryLower.includes("phone") || queryLower.includes("email")) {
     relevantSections.push(
-      `Contact Information: ${JSON.stringify(xhenvoltKnowledgeBase.company.contact, null, 2)}`
+      `Contact Information: ${JSON.stringify(alHananKnowledgeBase.school.contact, null, 2)}`
     );
   }
 
-  // Team queries
-  if (queryLower.includes("team") || queryLower.includes("about") || queryLower.includes("who")) {
+  // About/Founder queries
+  if (queryLower.includes("founded") || queryLower.includes("founder") || queryLower.includes("who is") || queryLower.includes("established")) {
     relevantSections.push(
-      `Team: ${JSON.stringify(xhenvoltKnowledgeBase.team, null, 2)}`
+      `Founder Information: Founded in 2019 by Ummul Qura Cultural and Development Foundation. Al Hanan is a registered school dedicated to academic excellence and Qur'anic mastery.`
     );
   }
 
-  // Company info
-  if (queryLower.includes("xhenvolt") && relevantSections.length === 0) {
+  // Registration/Ministry queries
+  if (queryLower.includes("registered") || queryLower.includes("approved") || queryLower.includes("ministry")) {
     relevantSections.push(
-      `Company Overview: ${JSON.stringify(xhenvoltKnowledgeBase.company, null, 2)}`
+      `Registration Status: ${JSON.stringify(alHananKnowledgeBase.school.registration, null, 2)}`
     );
   }
 
-  // Services queries
-  if (queryLower.includes("service") && relevantSections.length === 0) {
+  // Why Al Hanan queries
+  if (queryLower.includes("why") || queryLower.includes("difference") || queryLower.includes("unique")) {
     relevantSections.push(
-      `Services: ${JSON.stringify(xhenvoltKnowledgeBase.services, null, 2)}`
+      `Why Al Hanan: ${JSON.stringify(alHananKnowledgeBase.whyAlHanan, null, 2)}`
     );
   }
 
-  // FAQ queries
-  if (queryLower.includes("how") || queryLower.includes("can") || queryLower.includes("do you")) {
+  // School life queries
+  if (queryLower.includes("school life") || queryLower.includes("environment") || queryLower.includes("hours")) {
     relevantSections.push(
-      `FAQs: ${JSON.stringify(xhenvoltKnowledgeBase.faqs, null, 2)}`
+      `School Life: ${JSON.stringify(alHananKnowledgeBase.schoolLife, null, 2)}`
     );
   }
 
-  // Always include company overview for context
+  // Always include school overview for context
   if (relevantSections.length === 0) {
     relevantSections.push(
-      `Company Overview: ${JSON.stringify(xhenvoltKnowledgeBase.company, null, 2)}`
-    );
-    relevantSections.push(
-      `Systems Overview: ${JSON.stringify(Object.keys(xhenvoltKnowledgeBase.systems).join(", "), null, 2)}`
+      `School Overview: ${JSON.stringify(alHananKnowledgeBase.school, null, 2)}`
     );
   }
 
@@ -372,6 +310,6 @@ export function extractRelevantKnowledge(userQuery: string): string {
 export function sanitizeInput(input: string): string {
   return input
     .trim()
-    .substring(0, 2000) // Limit input length
-    .replace(/[<>]/g, ""); // Remove angle brackets
+    .substring(0, 2000)
+    .replace(/[<>]/g, "");
 }
